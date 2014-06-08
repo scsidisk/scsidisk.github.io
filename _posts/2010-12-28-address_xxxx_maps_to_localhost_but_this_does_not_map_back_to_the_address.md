@@ -1,11 +1,10 @@
 ---
 layout: post
-Title: Address x.x.x.x maps to localhost, but this does not map back to the address
-Date: 2010-12-28 13:52
-Author: scsidisk
-Category: CentOS
-Tags: CentOS, Linux, Shell
-Slug: address_xxxx_maps_to_localhost_but_this_does_not_map_back_to_the_address
+title: Address x.x.x.x maps to localhost, but this does not map back to the address
+date: 2010-12-28 13:52
+author: scsidisk
+category: CentOS
+tags: CentOS, Linux, Shell
 ---
 
 ```

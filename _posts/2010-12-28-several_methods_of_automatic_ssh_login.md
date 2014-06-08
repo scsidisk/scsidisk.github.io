@@ -1,9 +1,11 @@
-Title: 自动ssh登录的几种方法
-Date: 2010-12-28 14:56
-Author: scsidisk
-Category: CentOS
-Tags: CentOS, SSH
-Slug: %e8%87%aa%e5%8a%a8ssh%e7%99%bb%e5%bd%95%e7%9a%84%e5%87%a0%e7%a7%8d%e6%96%b9%e6%b3%95
+---
+layout: post
+title: 自动ssh登录的几种方法
+date: 2010-12-28 14:56
+author: scsidisk
+category: CentOS
+tags: CentOS, SSH
+---
 
 ​1. 自动ssh/scp方法==
 

@@ -1,9 +1,11 @@
-Title: 轻量标记语言的比较
-Date: 2010-12-28 14:55
-Author: scsidisk
-Category: AsciiDoc
-Tags: AsciiDoc, Mac
-Slug: %e8%bd%bb%e9%87%8f%e6%a0%87%e8%ae%b0%e8%af%ad%e8%a8%80%e7%9a%84%e6%af%94%e8%be%83
+---
+layout: post
+title: 轻量标记语言的比较
+date: 2010-12-28 14:55
+author: scsidisk
+category: AsciiDoc
+tags: AsciiDoc, Mac
+---
 
 [TXT2TAGS](http://txt2tags.sourceforge.net/)
 --------------------------------------------

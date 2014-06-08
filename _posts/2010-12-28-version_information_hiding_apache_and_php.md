@@ -1,9 +1,11 @@
-Title: 隐藏apache和php的版本信息
-Date: 2010-12-28 14:56
-Author: scsidisk
-Category: Apache
-Tags: Apache
-Slug: %e9%9a%90%e8%97%8fapache%e5%92%8cphp%e7%9a%84%e7%89%88%e6%9c%ac%e4%bf%a1%e6%81%af
+---
+layout: post
+title: 隐藏apache和php的版本信息
+date: 2010-12-28 14:56
+author: scsidisk
+category: Apache
+tags: Apache
+---
 
 web server避免一些不必要的麻烦，可以把apache和php的版本信息不显示
 
