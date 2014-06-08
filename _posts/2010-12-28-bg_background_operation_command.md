@@ -1,11 +1,10 @@
 ---
 layout: post
-Title: bg：后台运行命令
-Date: 2010-12-28 13:53
-Author: scsidisk
-Category: CentOS
-Tags: CentOS, Linux, Shell, 命令
-Slug: bg_background_operation_command
+title: bg：后台运行命令
+date: 2010-12-28 13:53
+author: scsidisk
+category: CentOS
+tags: CentOS, Linux, Shell, 命令
 ---
 
 ### 作用

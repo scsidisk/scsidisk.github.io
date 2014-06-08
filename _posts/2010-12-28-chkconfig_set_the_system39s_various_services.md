@@ -1,11 +1,10 @@
 ---
 layout: post
-Title: chkconfig：设置系统的各种服务
-Date: 2010-12-28 13:53
-Author: scsidisk
-Category: CentOS
-Tags: CentOS, Shell, 命令
-Slug: chkconfig_set_the_system39s_various_services
+title: chkconfig：设置系统的各种服务
+date: 2010-12-28 13:53
+author: scsidisk
+category: CentOS
+tags: CentOS, Shell, 命令
 ---
 
 作用：chkconfig命令检查、设置系统的各种服务。

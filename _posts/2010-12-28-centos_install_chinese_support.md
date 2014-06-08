@@ -1,11 +1,10 @@
 ---
 layout: post
-Title: CentOS安装中文支持
-Date: 2010-12-28 13:51
-Author: scsidisk
-Category: CentOS
-Tags: CentOS, Linux
-Slug: centos_install_chinese_support
+title: CentOS安装中文支持
+date: 2010-12-28 13:51
+author: scsidisk
+category: CentOS
+tags: CentOS, Linux
 ---
 
 CentOS安装中文支持
