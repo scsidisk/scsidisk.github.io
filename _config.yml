@@ -1,0 +1,17 @@
+markdown: rdiscount
+permalink: /:year/:month/:title/
+url: http://scsidisk.github.io
+author: scsidisk
+highlighter: true
+paginate: 24
+disqus_shortname: scsidiskgithubio
+layout: post
+
+# asciidoc: asciidoctor
+# asciidoc_ext: asciidoc,adoc,ad,asc
+# asciidoctor:
+#   attributes:
+#     - hardbreaks!
+#     - source-highlighter=coderay
+#     - coderay-css=style
+
