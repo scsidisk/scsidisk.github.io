@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="scsidisk" />
+    <title>vim查找替换归纳总结 | scsidisk</title>
+    <link href="data:image/x-icon;base64,AAABAAEAEBAQAAAAAAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAD/APr59wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIiIiIiIiAAAiIiIiIiIAACIiIiIiIgERERERERIiAREREREREiIBERERERESIgERIiIiERIiAREiIiIREiIBESIhERESIgERIiERERIiAREiIiIiIiIBESIiIiIiIgERIiIiIiIiAREREREREAABEREREREQAAERERERERAADgAQAA4AEAAOABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAA8AAAAPAAAADwAA" rel="icon" type="image/x-icon" />
+    <link href="/feed/" rel="alternate" title="scsidisk" type="application/atom+xml" />
+
+    <link rel="stylesheet" href="/media/css/highlight.css">
+    <link href='/media/webfonts/ss-social.css' rel='stylesheet'>
+    <link href='/media/webfonts/ss-standard.css' rel='stylesheet'>
+    <link href="/media/css/screen.css" rel="stylesheet">
+
+    <script type="text/javascript" src="/media/js/jquery-1.7.1.min.js"></script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="main" role="main">
+        <header>
+        <div class="buttons">
+          <a href="/" class="ss-icon" title="Go to homepage">home</a>
+          <a href="/categories" class="ss-icon" title="Category" >list</a>
+          <a href="/tags" class="ss-icon" title="Tag Cloud" >tags</a>
+          <a href="/guestbook" class="ss-icon" title="Guest Book" >talk</a>
+          <a href="/about" class="ss-icon" title="About" >user</a>
+          <a href="/feed" class="ss-icon" title="Subscribe by RSS" >rss</a>
+        </div>
+        <h1>vim查找替换归纳总结</h1>
+        </header>
+        <hr>
+        <article class="content">
+        <section class="post">
+<p>1，简单替换表达式</p>
+
+<p>替换命令可以在全文中用一个单词替换另一个单词：<br/>
+:%s/four/4/g<br/>
+"%" 范围前缀表示在所有行中执行替换。最后的 "g"
+标记表示替换行中的所有匹配点。如果仅仅对当前行进行操作，那么只要去掉%即可</p>
+
+<p>如果你有一个象 "thirtyfour"
+这样的单词，上面的命令会出错。这种情况下，这个单词会被替换成"thirty4"。要解决这个问题，用
+"\\&lt;" 来指定匹配单词开头：<br/>
+:%s/\\&lt;four/4/g</p>
+
+<p>显然，这样在处理 "fourty" 的时候还是会出错。用 "\>" 来解决这个问题：<br/>
+:%s/\\&lt;four\>/4/g</p>
+
+<p>如果你在编码，你可能只想替换注释中的
+"four"，而保留代码中的。由于这很难指定，可以在替换命令中加一个 "c"
+标记，这样，Vim 会在每次替换前提示你：<br/>
+:%s/\\&lt;four\>/4/gc</p>
+
+<p>2，删除多余的空格</p>
+
+<p>要删除这些每行后面多余的空格，可以执行如下命令：<br/>
+:%s/\s\+\$//<br/>
+命令前面指明范围是 "%"，所以这会作用于整个文件。"substitute"
+命令的匹配模式是<br/>
+"\s\+\$"。这表示行末（\$）前的一个或者多个（\+）空格（\s）。替换命令的
+"to" 部分是空的："//"。这样就会删除那些匹配的空白字符。</p>
+
+<p>3，匹配重复性模式</p>
+
+<p>星号项 "*" 规定在它前面的项可以重复任意次。因此:<br/>
+/a*<br/>
+匹配 "a"，"aa"，"aaa"，等等。但也匹配 ""
+(空字串)，因为零次也包含在内。星号 "*"
+仅仅应用于那个紧邻在它前面的项。因此 "ab*" 匹配
+"a"，"ab"，"abb","abbb"，等等。</p>
+
+<p>如要多次重复整个字符串，那么该字符串必须被组成一个项。组成一项的方法就是在它前面加
+"\("，后面加 "\)"。因此这个命令:<br/>
+/\(ab\)*<br/>
+匹配: "ab"，"abab"，"ababab"，等等。而且也匹配 ""。</p>
+
+<p>要避免匹配空字串，使用 "\+"。这表示前面一项可以被匹配一次或多次。<br/>
+/ab\+<br/>
+匹配 "ab"，"abb"，"abbb"，等等。它不匹配 后面没有跟随 "b" 的 "a"。</p>
+
+<p>要匹配一个可选项，用 "\="。 例如:<br/>
+/folders\=<br/>
+匹配 "folder" 和 "folders"。</p>
+
+<p>4，指定重复次数</p>
+
+<p>要匹配某一项的特定次数重复，使用 "\{n,m}" 这样的形式。其中 "n" 和 "m"
+都是数字。在它前面的那个项将被重复 "n" 到 "m" 次 (|inclusive| 包含 "n"
+和 "m")。例如:<br/>
+/ab\{3,5}<br/>
+匹配 "abbb"，"abbbb" 以及 "abbbbb"。<br/>
+当 "n" 省略时，被默认为零。当 "m" 省略时，被默认为无限大。当 ",m"
+省略时，就表示重复正好 "n" 次。例如:<br/>
+模式 匹配次数<br/>
+\{,4} 0，1，2，3 或 4<br/>
+\{3,} 3，4，5，等等<br/>
+\{0,1} 0 或 1，同 \=<br/>
+\{0,} 0 或 更多，同 *<br/>
+\{1,} 1 或 更多，同 \+<br/>
+\{3} 3</p>
+
+<p>5，多选一匹配</p>
+
+<p>在一个查找模式中，"或" 运算符是 "\|"。例如:<br/>
+/foo\|bar<br/>
+这个命令匹配了 "foo" 或 "bar"。更多的抉择可以连在后面:<br/>
+/one\|two\|three<br/>
+匹配 "one"，"two" 或 "three"。</p>
+
+<p>如要匹配其多次重复，那么整个抉择结构须置于 "\(" 和 "\)" 之间:<br/>
+/\(foo\|bar\)\+<br/>
+这个命令匹配 "foo"，"foobar"，"foofoo"，"barfoobar"，等等。</p>
+
+<p>再举个例子:<br/>
+/end\(if\|while\|for\)<br/>
+这个命令匹配 "endif"，"endwhile" 和 "endfor"。</p>
+
+</section>
+<section class="meta">
+<span class="author">
+  <a href="http://scsidisk.github.io">scsidisk</a>
+</span>
+<span class="time">
+  /
+  <time datetime="2013-10-20">2013-10-20</time>
+</span>
+<br />
+<span class="license">
+  Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA</a>
+</span>
+
+<span class="categories">
+  in categories
+  
+  <a href="/categories/#vim" title="vim">vim</a>&nbsp;
+  
+</span>
+
+
+<span class="tags">
+  tagged with
+  
+  <a href="/tags/#Linux," title="Linux,">Linux,</a>&nbsp;
+  
+  <a href="/tags/#MacOSX," title="MacOSX,">MacOSX,</a>&nbsp;
+  
+  <a href="/tags/#Vim" title="Vim">Vim</a>&nbsp;
+  
+</span>
+
+</section>
+<section class="comment">
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'scsidiskgithuio'; // required: replace example with your forum shortname
+    var disqus_url = 'http://scsidisk.github.io/2013/10/vim_find_and_replace/';
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+<script type="text/javascript">
+$(function(){
+  $(document).keydown(function(e) {
+    var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow and J
+            
+        url = 'http://scsidisk.github.io/2013/09/real_time_query_memcached_state_of_the_two_shortcut/';
+        
+        }
+        else if (e.which == 39 || e.which == 75) {  // Right arrow and K
+            
+        url = 'http://scsidisk.github.io/2013/10/vim-map/';
+        
+        }
+        if (url) {
+            window.location = url;
+        }
+  });
+})
+</script>
+
+
+        </article>
+      </div>
+
+    <footer>
+        <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> | Copyright 2008 - 2014 by <a href="http://scsidisk.github.io">scsidisk</a> | <span class="label label-info">2014-06-09 14:28:47 CST</span></small></p>
+    </footer>
+
+    </div>
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', '');
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
+</html>
