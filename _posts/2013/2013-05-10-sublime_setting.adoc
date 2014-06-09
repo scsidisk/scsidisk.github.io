@@ -1,9 +1,15 @@
+---
+layout: post
+title: sublime配置全攻略
+date: 2013-05-10 13:25:57
+author: scsidisk
+category: Sublime
+tags: Mac, Sublime
+---
+
 = sublime配置全攻略
 scsidisk
 2013-05-10 13:25:57
-:layout: post
-:category: Sublime
-:tags: Mac, Sublime
 
 大家好，今天给大家分享一款编辑器：sublime text2
 

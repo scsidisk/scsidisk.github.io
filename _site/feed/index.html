@@ -7,7 +7,7 @@
     <title>scsidisk</title>
     <link href="http://scsidisk.github.io/feed/" rel="self" />
     <link href="http://scsidisk.github.io" />
-    <lastBuildDate>2014-06-09T19:19:16+08:00</lastBuildDate>
+    <lastBuildDate>2014-06-10T02:48:30+08:00</lastBuildDate>
     <webMaster>kejinlu@gmail.com</webMaster>
     
     <item>
@@ -16,7 +16,9 @@
       <pubDate>2014-06-05T20:55:55+08:00</pubDate>
       <author>scsidisk</author>
       <guid>http://scsidisk.github.io/2014/06/markdown_syntax_reference</guid>
-      <content:encoded><![CDATA[<h2>Part Ⅰ. 标准 Markdown 语法</h2>
+      <content:encoded><![CDATA[<h1>Mou Markdown 语法参考</h1>
+
+<h2>Part Ⅰ. 标准 Markdown 语法</h2>
 
 <h3>Strong and Emphasize</h3>
 
@@ -817,134 +819,9 @@ foreach ($list as $tmp)   
     </item>
     
     <item>
-      <title>如何使用 Homebrew 安装指定版本的工具？</title>
-      <link href="http://scsidisk.github.io/2013/05/use_homebrew_to_install_the_specified_version_of_the_tool/"/>
-      <pubDate>2013-05-10T00:00:00+08:00</pubDate>
-      <author>scsidisk</author>
-      <guid>http://scsidisk.github.io/2013/05/use_homebrew_to_install_the_specified_version_of_the_tool</guid>
-      <content:encoded><![CDATA[<h1>如何使用 Homebrew 安装指定版本的工具？</h1>
-<div id="preamble">
-<div class="sectionbody">
-<div class="paragraph">
-<p>Homebrew 是一个 Mac 下的安装管理 Unix 工具的工具。安装好之后，在命令行下使用 brew install FORMULANAME就可以安装 FORMULANAME 对应的工具，它会处理好依赖关系，非常方便。默认情况下，安装最新版本。</p>
-</div>
-<div class="paragraph">
-<p>但是在某些情况下，我们可能需要安装“旧”版本的工具，或者说安装指定/特定版本的工具，该怎么办呢？还好，Homebrew 已经提供了这类的支持。</p>
-</div>
-<div class="paragraph">
-<p>今天安装 gsl 这个 rubygem ，编译本地库时失败了。我机器的环境是：</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>gsl-1.15
-ruby-1.9.3p125</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>其中 gsl 是使用 brew install gsl 安装的，安装了最新的1.15版本。执行 gem install gsl 时的一条错误信息是：</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>conflicting types for ‘gsl_matrix_complex_equal’</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>于是顺着这条错误信息 Google ，发现很多人都遇到这个问题了。有人说，应该安装 gsl-1.14 而不是 gsl-1.15 。而最新的 gem 版本为 1.14.7 。看来很可能是版本不兼容。</p>
-</div>
-<div class="paragraph">
-<p>所以我需要给 gsl 降级。 由于 gsl 是通过 Homebrew 安装的，所以需要找到安装特定版本工具的方法。于是在 Stackoverflow 上找到了方法。其实很简单：</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>查看 brew 支持哪些版本的 gsl</p>
-</li>
-</ol>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>$ brew versions gsl
-1.15     git checkout 164c57f /usr/local/Library/Formula/gsl.rb
-1.14     git checkout 83ed494 /usr/local/Library/Formula/gsl.rb
-1.13     git checkout b0b2584 /usr/local/Library/Formula/gsl.rb</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>非常幸运，1.14 包括在内。</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>进入 brew 所在的git仓库</p>
-</li>
-</ol>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>cd `brew --prefix`</pre>
-</div>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>复制粘贴刚才 brew versions sql 命令的提示。执行</p>
-</li>
-</ol>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>git checkout 83ed494 /usr/local/Library/Formula/gsl.rb</pre>
-</div>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>此时安装使用 brew install gsl 会提示错误</p>
-</li>
-</ol>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>Error: gsl-1.15 already installed
-To install this version, first `brew unlink gsl'</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>因此需要先取消之前的链接，执行</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>brew unlink gsl</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>提示</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>Unlinking /usr/local/Cellar/gsl/1.15... 16 links removed</pre>
-</div>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>安装成功</p>
-</li>
-</ol>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>brew install gsl</pre>
-</div>
-</div>
-</div>
-</div>]]></content:encoded>
-    </item>
-    
-    <item>
       <title>sublime配置全攻略</title>
       <link href="http://scsidisk.github.io/2013/05/sublime_setting/"/>
-      <pubDate>2013-05-10T00:00:00+08:00</pubDate>
+      <pubDate>2013-05-10T21:25:57+08:00</pubDate>
       <author>scsidisk</author>
       <guid>http://scsidisk.github.io/2013/05/sublime_setting</guid>
       <content:encoded><![CDATA[<h1>sublime配置全攻略</h1>
@@ -1280,6 +1157,131 @@ alt+shift+` 快捷键又有什么用呢？ 我们需要同一个文件在左右�
 </div>
 <div class="paragraph">
 <p>虽然scim能让我们输入中文后， 但是也不是很完美，有候选词不跟随的问题， sublime失焦后候选词会消失的问题。候选词消失的问题，可以把sublime独立到一个单独的工作区中来暂时解决这个问题。</p>
+</div>
+</div>
+</div>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>如何使用 Homebrew 安装指定版本的工具？</title>
+      <link href="http://scsidisk.github.io/2013/05/use_homebrew_to_install_the_specified_version_of_the_tool/"/>
+      <pubDate>2013-05-10T00:00:00+08:00</pubDate>
+      <author>scsidisk</author>
+      <guid>http://scsidisk.github.io/2013/05/use_homebrew_to_install_the_specified_version_of_the_tool</guid>
+      <content:encoded><![CDATA[<h1>如何使用 Homebrew 安装指定版本的工具？</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Homebrew 是一个 Mac 下的安装管理 Unix 工具的工具。安装好之后，在命令行下使用 brew install FORMULANAME就可以安装 FORMULANAME 对应的工具，它会处理好依赖关系，非常方便。默认情况下，安装最新版本。</p>
+</div>
+<div class="paragraph">
+<p>但是在某些情况下，我们可能需要安装“旧”版本的工具，或者说安装指定/特定版本的工具，该怎么办呢？还好，Homebrew 已经提供了这类的支持。</p>
+</div>
+<div class="paragraph">
+<p>今天安装 gsl 这个 rubygem ，编译本地库时失败了。我机器的环境是：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>gsl-1.15
+ruby-1.9.3p125</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>其中 gsl 是使用 brew install gsl 安装的，安装了最新的1.15版本。执行 gem install gsl 时的一条错误信息是：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>conflicting types for ‘gsl_matrix_complex_equal’</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>于是顺着这条错误信息 Google ，发现很多人都遇到这个问题了。有人说，应该安装 gsl-1.14 而不是 gsl-1.15 。而最新的 gem 版本为 1.14.7 。看来很可能是版本不兼容。</p>
+</div>
+<div class="paragraph">
+<p>所以我需要给 gsl 降级。 由于 gsl 是通过 Homebrew 安装的，所以需要找到安装特定版本工具的方法。于是在 Stackoverflow 上找到了方法。其实很简单：</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>查看 brew 支持哪些版本的 gsl</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>$ brew versions gsl
+1.15     git checkout 164c57f /usr/local/Library/Formula/gsl.rb
+1.14     git checkout 83ed494 /usr/local/Library/Formula/gsl.rb
+1.13     git checkout b0b2584 /usr/local/Library/Formula/gsl.rb</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>非常幸运，1.14 包括在内。</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>进入 brew 所在的git仓库</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>cd `brew --prefix`</pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>复制粘贴刚才 brew versions sql 命令的提示。执行</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>git checkout 83ed494 /usr/local/Library/Formula/gsl.rb</pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>此时安装使用 brew install gsl 会提示错误</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Error: gsl-1.15 already installed
+To install this version, first `brew unlink gsl'</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>因此需要先取消之前的链接，执行</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>brew unlink gsl</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>提示</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Unlinking /usr/local/Cellar/gsl/1.15... 16 links removed</pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>安装成功</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>brew install gsl</pre>
+</div>
 </div>
 </div>
 </div>]]></content:encoded>
