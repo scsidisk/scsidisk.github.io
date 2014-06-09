@@ -1,7 +1,7 @@
 = 如何使用 Homebrew 安装指定版本的工具？
-scsidisk
-2013-05-10 13:25:56
 :layout: post
+:author: scsidisk
+:date: 2013-05-10 13:25:56
 :category: MacOSX
 :tags: Mac, Brew, Homebrew
 
