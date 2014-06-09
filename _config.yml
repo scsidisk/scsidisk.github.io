@@ -6,9 +6,6 @@ highlighter: true
 paginate: 24
 disqus_shortname: scsidiskgithubio
 sitename: ScsiDisk's Blog
-source:      ./_posts
-destination: ./_site
-plugins:     ./_plugins
 
 asciidoc: asciidoctor
 asciidoc_ext: asciidoc,adoc,ad,asc
