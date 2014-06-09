@@ -1,9 +1,12 @@
-Title: 拨乱反正：MyISAM中key_buffer_size的设置
-Date: 2010-12-28 13:52
-Author: scsidisk
-Category: MySQL
-Tags: MySQL
+---
+layout: post
+title: 拨乱反正：MyISAM中key_buffer_size的设置
+date: 2010-12-28 13:52
+author: scsidisk
+category: MySQL
+tags: MySQL
 Slug: order_out_of_chaos_myisam_key_buffer_size_setting_in
+---
 
 作者：老王
 

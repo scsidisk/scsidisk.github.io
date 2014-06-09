@@ -1,9 +1,12 @@
-Title: shell参数
-Date: 2010-12-28 15:22
-Author: scsidisk
-Category: CentOS
-Tags: CentOS, Linux, Shell
-Slug: shell%e5%8f%82%e6%95%b0
+---
+layout: post
+title: shell参数
+date: 2010-12-28 15:22
+author: scsidisk
+category: CentOS
+tags: CentOS, Linux, Shell
+Slug: 2010-12-28-shell_avgs
+---
 
 <span style="font-family: 'Lucida Grande', »ªÎÄÏ¸ºÚ, STHeiti; line-height: 18px;">在shell中，表示值是用\$,相当于DOS中的%。</span>
 

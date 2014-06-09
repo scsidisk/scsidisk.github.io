@@ -1,9 +1,12 @@
-Title: Mac OS X 禁用 Dashboard
-Date: 2010-12-28 13:51
-Author: scsidisk
-Category: MacOSX
-Tags: Mac
+---
+layout: post
+title: Mac OS X 禁用 Dashboard
+date: 2010-12-28 13:51
+author: scsidisk
+category: MacOSX
+tags: Mac
 Slug: mac_os_x_dashboard_disabled
+---
 
 打开 Terminal 敲入以下命令：
 

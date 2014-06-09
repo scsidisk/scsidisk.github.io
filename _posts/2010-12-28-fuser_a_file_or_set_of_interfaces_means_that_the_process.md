@@ -1,10 +1,10 @@
 ---
 layout: post
-Title: fuser：用文件或者套接口表示进程
-Date: 2010-12-28 14:54
-Author: scsidisk
-Category: CentOS
-Tags: CentOS, Shell, 命令
+title: fuser：用文件或者套接口表示进程
+date: 2010-12-28 14:54
+author: scsidisk
+category: CentOS
+tags: CentOS, Shell, 命令
 Slug: fuser_a_file_or_set_of_interfaces_means_that_the_process
 ---
 

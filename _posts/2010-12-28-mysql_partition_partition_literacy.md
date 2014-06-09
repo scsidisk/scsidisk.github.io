@@ -1,9 +1,12 @@
-Title: MySQL Partition（分区）扫盲
-Date: 2010-12-28 13:52
-Author: scsidisk
-Category: MySQL
-Tags: MySQL
+---
+layout: post
+title: MySQL Partition（分区）扫盲
+date: 2010-12-28 13:52
+author: scsidisk
+category: MySQL
+tags: MySQL
 Slug: mysql_partition_partition_literacy
+---
 
 作者：老王
 

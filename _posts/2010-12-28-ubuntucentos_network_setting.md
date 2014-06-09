@@ -1,9 +1,12 @@
-Title: ubuntu/centos 上的双网卡设置
-Date: 2010-12-28 14:56
-Author: scsidisk
-Category: CentOS
-Tags: CentOS, Linux
-Slug: ubuntucentos-%e4%b8%8a%e7%9a%84%e5%8f%8c%e7%bd%91%e5%8d%a1%e8%ae%be%e7%bd%ae
+---
+layout: post
+title: ubuntu/centos 上的双网卡设置
+date: 2010-12-28 14:56
+author: scsidisk
+category: CentOS
+tags: CentOS, Linux
+Slug: 2010-12-28-ubuntucentos_network_setting
+---
 
 我们经常有这样的需求，
 服务器托管在机房，分配了一个外网IP，还想弄一个内网IP。怎么实现呢，

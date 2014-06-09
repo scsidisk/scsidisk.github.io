@@ -1,9 +1,12 @@
-Title: jobs：显示后台程序
-Date: 2010-12-28 13:53
-Author: scsidisk
-Category: CentOS
-Tags: CentOS, Linux, Shell, 命令
+---
+layout: post
+title: jobs：显示后台程序
+date: 2010-12-28 13:53
+author: scsidisk
+category: CentOS
+tags: CentOS, Linux, Shell, 命令
 Slug: jobs_display_daemon
+---
 
 作用：jobs命令显示后台任务的执行情况。
 

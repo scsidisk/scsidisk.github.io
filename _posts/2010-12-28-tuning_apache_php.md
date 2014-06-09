@@ -1,9 +1,11 @@
-Title: 调优Apache, PHP
-Date: 2010-12-28 14:57
-Author: scsidisk
-Category: PHP
-Tags: Apache, PHP, 调优
-Slug: %e8%b0%83%e4%bc%98apache-php
+---
+layout: post
+title: 调优Apache, PHP
+date: 2010-12-28 14:57
+author: scsidisk
+category: PHP
+tags: Apache, PHP, 调优
+---
 
 Apache
 是一种高度可配置的软件。它具有大量特性，但每一种都代价高昂。从某种程度上来说，调优

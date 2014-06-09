@@ -1,9 +1,12 @@
-Title: Linux修改SSH端口和禁止Root远程登陆设置
-Date: 2010-12-28 14:56
-Author: scsidisk
-Category: CentOS
-Tags: CentOS, Linux, SSH
-Slug: linux%e4%bf%ae%e6%94%b9ssh%e7%ab%af%e5%8f%a3%e5%92%8c%e7%a6%81%e6%ad%a2root%e8%bf%9c%e7%a8%8b%e7%99%bb%e9%99%86%e8%ae%be%e7%bd%ae
+---
+layout: post
+title: Linux修改SSH端口和禁止Root远程登陆设置
+date: 2010-12-28 14:56
+author: scsidisk
+category: CentOS
+tags: CentOS, Linux, SSH
+Slug: 2010-12-28-linux_config_ssh_port_to_disable_root_remote_login
+---
 
 Linux修改ssh端口22  
 vi /etc/ssh/ssh\_config  

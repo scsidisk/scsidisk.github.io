@@ -1,9 +1,12 @@
-Title: centos网络配置
-Date: 2010-12-28 15:22
-Author: scsidisk
-Category: CentOS
-Tags: CentOS, Linux, 网卡, 配置
+---
+layout: post
+title: centos网络配置
+date: 2010-12-28 15:22
+author: scsidisk
+category: CentOS
+tags: CentOS, Linux, 网卡, 配置
 Slug: centos%e7%bd%91%e7%bb%9c%e9%85%8d%e7%bd%ae
+----
 
 ip设置：
 

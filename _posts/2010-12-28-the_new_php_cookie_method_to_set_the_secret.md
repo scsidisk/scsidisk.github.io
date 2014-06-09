@@ -1,9 +1,12 @@
-Title: 全新PHP Cookie设置方法揭秘
-Date: 2010-12-28 15:23
-Author: scsidisk
-Category: PHP
-Tags: Cookie, PHP
+---
+layout: post
+title: 全新PHP Cookie设置方法揭秘
+date: 2010-12-28 15:23
+author: scsidisk
+category: PHP
+tags: Cookie, PHP
 Slug: the_new_php_cookie_method_to_set_the_secret
+---
 
 PHP经过长时间的发展，很多用户都很了解PHP了，这里我发表一下关于PHP
 Cookie设置，PHP用SetCookie函数来设置Cookie。必须注意的一点是：Cookie是HTTP协议头的一部分，用于浏览器和服务器之间传递信息，所以必须在任何属于HTML文件本身的内容输出之前调用Cookie函数。SetCookie函数定义了一个Cookie，并且把它附加在HTTP头的后面，SetCookie函数的原型如下：

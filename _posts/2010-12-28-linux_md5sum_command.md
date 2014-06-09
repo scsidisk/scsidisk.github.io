@@ -1,9 +1,12 @@
-Title: linux md5sum命令
-Date: 2010-12-28 15:22
-Author: scsidisk
-Category: CentOS
-Tags: CentOS, Linux, md5, Shell
-Slug: linux-md5sum%e5%91%bd%e4%bb%a4
+---
+layout: post
+title: linux md5sum命令
+date: 2010-12-28 15:22
+author: scsidisk
+category: CentOS
+tags: CentOS, Linux, md5, Shell
+Slug: 2010-12-28-linux_md5sum_command
+---
 
 MD5算法常常被用来验证网络文件传输的完整性，防止文件被人篡改。MD5
 全称是报文摘要算法（Message-Digest Algorithm

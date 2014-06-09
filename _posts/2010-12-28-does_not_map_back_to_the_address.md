@@ -1,10 +1,10 @@
 ---
 layout: post
-Title: does not map back to the address
-Date: 2010-12-28 13:51
-Author: scsidisk
-Category: CentOS
-Tags: CentOS, Linux, Mac, Shell, SSH
+title: does not map back to the address
+date: 2010-12-28 13:51
+author: scsidisk
+category: CentOS
+tags: CentOS, Linux, Mac, Shell, SSH
 Slug: does_not_map_back_to_the_address
 ---
 

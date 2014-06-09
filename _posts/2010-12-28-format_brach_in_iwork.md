@@ -1,8 +1,11 @@
-Title: iWork中的格式刷[转]
-Date: 2010-12-28 14:55
-Author: scsidisk
-Category: MacOSX
-Slug: iwork%e4%b8%ad%e7%9a%84%e6%a0%bc%e5%bc%8f%e5%88%b7%e8%bd%ac
+---
+layout: post
+title: iWork中的格式刷[转]
+date: 2010-12-28 14:55
+author: scsidisk
+category: MacOSX
+Slug: format_brach_in_iwork
+---
 
 <font size="5">**快捷键：Command-Option-C, Command-Option-V**</font>
 

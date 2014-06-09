@@ -1,9 +1,12 @@
-Title: linux踢出用户
-Date: 2010-12-28 13:51
-Author: scsidisk
-Category: CentOS
-Tags: CentOS, Linux, Shell, SSH
+---
+layout: post
+title: linux踢出用户
+date: 2010-12-28 13:51
+author: scsidisk
+category: CentOS
+tags: CentOS, Linux, Shell, SSH
 Slug: linux_kicked_users
+---
 
 > linux强制踢出用户命令：
 >

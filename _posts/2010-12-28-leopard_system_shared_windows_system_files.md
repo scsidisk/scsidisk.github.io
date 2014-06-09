@@ -1,9 +1,12 @@
-Title: Leopard系统下共享Windows系统的文件
-Date: 2010-12-28 13:51
-Author: scsidisk
-Category: MacOSX
-Tags: Mac, Shell
+---
+layout: post
+title: Leopard系统下共享Windows系统的文件
+date: 2010-12-28 13:51
+author: scsidisk
+category: MacOSX
+tags: Mac, Shell
 Slug: leopard_system_shared_windows_system_files
+---
 
 如果你的PC机与Mac机在同一个局域网，可以考虑是否将你的Mac和PC加入到同一个工作组(workgroup)。与Mac
 OS 10.4不同，10.4系统的缺省工作组是”Workgroup”，而Mac OS

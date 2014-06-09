@@ -1,9 +1,12 @@
-Title: shell下取得字符串的md5值
-Date: 2010-12-28 15:22
-Author: scsidisk
-Category: CentOS
-Tags: CentOS, Linux, md5, md5sum, PHP, Shell
-Slug: shell%e4%b8%8b%e5%8f%96%e5%be%97%e5%ad%97%e7%ac%a6%e4%b8%b2%e7%9a%84md5%e5%80%bc
+---
+layout: post
+title: shell下取得字符串的md5值
+date: 2010-12-28 15:22
+author: scsidisk
+category: CentOS
+tags: CentOS, Linux, md5, md5sum, PHP, Shell
+Slug: 2010-12-28-shell_get_md5_string
+---
 
 shell下取得字符串的md5值
 

@@ -1,9 +1,12 @@
-Title: dooPHP带表名前缀的表生成模型为单独文件
-Date: 2011-02-13 15:07
-Author: scsidisk
-Category: PHP
-Tags: DooPHP, PHP
-Slug: doophp%e5%b8%a6%e8%a1%a8%e5%90%8d%e5%89%8d%e7%bc%80%e7%9a%84%e8%a1%a8%e7%94%9f%e6%88%90%e6%a8%a1%e5%9e%8b%e4%b8%ba%e5%8d%95%e7%8b%ac%e6%96%87%e4%bb%b6
+---
+layout: post
+title: dooPHP带表名前缀的表生成模型为单独文件
+date: 2011-02-13 15:07
+author: scsidisk
+category: PHP
+tags: DooPHP, PHP
+Slug: doophp_gen_model_singel_file
+---
 
 修改 dooframework/db/DooModelGen.php
 

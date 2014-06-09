@@ -1,9 +1,12 @@
-Title: sudo的使用说明
-Date: 2010-12-28 14:55
-Author: scsidisk
-Category: CentOS
-Tags: sudo
+---
+layout: post
+title: sudo的使用说明
+date: 2010-12-28 14:55
+author: scsidisk
+category: CentOS
+tags: sudo
 Slug: instructions_for_use_of_sudo
+---
 
 “sudo”是Unix/Linux平台上的一个非常有用的工具，它允许系统管理员分配给普通用户一些合理的“权利”，让他们执行一些只有超级用户或其他特许用户才能完成的任务，比如：运行一些像mount，halt，su之类的命令，或者编辑一些系统配置文件，像/etc/mtab，/etc/samba/smb.conf等。这样以来，就不仅减少了root用户的登陆次数和管理时间，也提高了系统安全性。
 

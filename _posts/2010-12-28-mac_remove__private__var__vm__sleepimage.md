@@ -1,9 +1,12 @@
-Title: MAC去掉/private/var/vm/sleepimage
-Date: 2010-12-28 14:54
-Author: scsidisk
-Category: MacOSX
-Tags: Mac
+---
+layout: post
+title: MAC去掉/private/var/vm/sleepimage
+date: 2010-12-28 14:54
+author: scsidisk
+category: MacOSX
+tags: Mac
 Slug: mac_remove__private__var__vm__sleepimage
+---
 
 禁用MAC中的休眠，去掉/private/var/vm/sleepimage
 

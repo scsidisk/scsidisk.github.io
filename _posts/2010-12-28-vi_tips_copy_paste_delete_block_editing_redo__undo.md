@@ -1,9 +1,12 @@
-Title: vi 使用技巧: copy, paste, delete, 块编辑，redo/undo
-Date: 2010-12-28 13:51
-Author: scsidisk
-Category: Vim
-Tags: CentOS, Linux, Mac, Shell, Vim
+---
+layout: post
+title: vi 使用技巧 copy, paste, delete, 块编辑，redo/undo
+date: 2010-12-28 13:51
+author: scsidisk
+category: Vim
+tags: CentOS, Linux, Mac, Shell, Vim
 Slug: vi_tips_copy_paste_delete_block_editing_redo__undo
+---
 
 ​1. copy and paste
 

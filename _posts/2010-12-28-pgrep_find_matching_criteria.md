@@ -1,9 +1,12 @@
-Title: pgrep：查找匹配条件的进程
-Date: 2010-12-28 13:53
-Author: scsidisk
-Category: CentOS
-Tags: CentOS, Linux, Shell
+---
+layout: post
+title: pgrep：查找匹配条件的进程
+date: 2010-12-28 13:53
+author: scsidisk
+category: CentOS
+tags: CentOS, Linux, Shell
 Slug: pgrep_find_matching_criteria
+---
 
 作用：pgrep命令用于查找当前运行的进程，并列出匹配给定条件的进程的PID。所有的条件都必须匹配才会被列出。
 

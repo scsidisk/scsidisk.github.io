@@ -1,9 +1,12 @@
-Title: linux如何修改hostname
-Date: 2010-12-28 14:57
-Author: scsidisk
-Category: CentOS
-Tags: CentOS, hostname, Linux
-Slug: linux%e5%a6%82%e4%bd%95%e4%bf%ae%e6%94%b9hostname
+---
+layout: post
+title: linux如何修改hostname
+date: 2010-12-28 14:57
+author: scsidisk
+category: CentOS
+tags: CentOS, hostname, Linux
+Slug: 2010-12-28-how_to_set_hostname_on_linux
+---
 
 很多人使用hostname 主机名
 来修改,其实这个只是做为暂时的,重启后将恢复到原来的名字.

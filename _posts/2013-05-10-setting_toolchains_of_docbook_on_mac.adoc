@@ -1,0 +1,140 @@
+= Mac配置docbook工具链
+:layout: post
+:date: 2013-05-11 13:25:55
+:author: scsidisk
+:category: Asciidoc
+:tags: Asciidoc
+
+docbook是一种在开源界极其流行的文档撰写格式，其源文件可以方便的转换为html，pdf等各种格式。 
+
+== 安装工具链 
+
+docbook工具链包含三部分
+
+- xsltproc (mac自带)
+- docbook-xsl (需要下载解压 wget http://downloads.sourceforge.net/project/docbook/docbook-xsl/1.76.1/docbook-xsl-1.76.1.tar.bz2)
+- fop (到http://www.apache.org/dyn/closer.cgi/xmlgraphics/fop下载)
+
+下载解压后得到：
+
+	docbook-xsl-1.76.1
+	fop-1.0
+
+两个目录。
+
+此时可以已经可以进行docbook撰写了，不过只限英文:) 
+
+== 撰写docbook，并生成pdf 
+
+使用文本编辑器编写如下xml，保存为webx.xml
+
+----
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.0//EN" "http://www.oasis-open.org/docbook/xml/4.0/docbookx.dtd">
+<book>
+	<bookinfo>
+		<title>Webx Source Code</title>
+		<author>
+			<firstname>Bo</firstname>
+			<surname>Jiang</surname>
+			<affiliation>
+				<address>
+					<email>jiang.bo.hit@gmail.com</email>
+				</address>
+			</affiliation>
+		</author>
+		<copyright>
+			<year>2011</year>
+		</copyright>
+		<abstract>
+			<para>Webx</para>
+		</abstract>
+	</bookinfo>
+	<part>
+		<title>Part1</title>
+		<chapter>
+			<title>Chapter 1 </title>
+			<sect1>
+				<title>Part1, Chapter 1, Section1</title>
+				<para> Your Text </para>
+			</sect1>
+		</chapter>
+		<chapter>
+			<title>Part 1, Chapter 2</title>
+			<sect1>
+				<title>Part1, Chapter 2, Section 1</title>
+				<para> Your Text </para>
+			</sect1>
+		</chapter>
+	</part>
+</book> 
+----
+
+使用xsltproc转换为中间文件
+
+	$xsltproc -o inter.fo ~/tools/docbook-xsl-1.76.1/fo/docbook.xsl webx.xml
+
+此时会生成中间文件inter.fo
+
+使用fop生成pdf
+
+	$~/tools/fop-1.0/fop -pdf webx.pdf -fo inter.fo 最终生成了名为webx.pdf的pdf文件
+
+== 设置FOP支持中文 
+
+使用FOP默认的配置处理含有中文的文档是，中文都会变成### :(，原因是FOP默认不支持中文字体，需要自己配置一下。
+
+找到自己系统中的字体目录，Mac下为/Library/Fonts，里面存在Microsoft/SimHei.ttf字体文件，下面一该字体为例生成一个FOP字体矩阵配置。 
+
+=== 生成字体矩阵
+
+进入到fop安装目录，执行
+
+	$ java -cp build/fop.jar:`echo lib/*.jar |tr ' ' ':'` org.apache.fop.fonts.apps.TTFReader \
+	-ttcanme "SimHei" /Library/Fonts/Microsoft/SimHei.ttf conf/simhei.xml
+
+会在conf目录下生成simhei.xml字体矩阵文件
+
+=== 修改fop配置文件conf/fop.xconf，加入如下配置
+
+----
+<renderer mime="application/pdf">
+<filterList>
+……
+</filterList>
+<fonts>
+	<font metrics-url="file:///Users/jiangbo/tools/fop-1.0/conf/simhei.xml" kerning="yes" embed-url="file:///Library/Fonts/Microsoft/SimHei.ttf">
+		<font-triplet name="SimHei" style="normal" weight="bold"/>
+		<font-triplet name="SimHei" style="normal" weight="bold"/>
+	</font>
+	<!--<directory recursive="true">/Library/Fonts/</directory>-->
+	<!-- <auto-detect/>-->
+</fonts>
+…… 
+----
+
+=== 撰写docbook样式表，docbook.xsl
+
+默认转换时使用的是docbook-xsl-1.76.1/fo/docbook.xsl样式表，该样式表中不包括中文字体，需要自定义一个样式表docbook.xsl
+
+----
+<?xml version='1.0'?>
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:exsl="http://exslt.org/common"
+                xmlns:fo="http://www.w3.org/1999/XSL/Format"
+                xmlns:ng="http://docbook.org/docbook-ng"
+                xmlns:db="http://docbook.org/ns/docbook"
+                exclude-result-prefixes="db ng exsl"
+                version='1.0'>
+<xsl:import href="/Users/jiangbo/tools/docbook-xsl-1.76.1/fo/docbook.xsl"/>
+<xsl:param name="body.font.family">SimHei</xsl:param>
+<xsl:param name="monospace.font.family">SimHei</xsl:param>
+<xsl:param name="title.font.family">SimHei</xsl:param>
+</xsl:stylesheet> 
+----
+
+=== 使用新样式表进行转换
+
+	$ xsltproc -o inter.fo docbook.xsl webx.xml
+
+	$ ~/tools/fop-1.0/fop -c  ~/tools/fop-1.0/conf/fop.xconf -pdf webx.pdf -fo inter.fo

@@ -1,9 +1,12 @@
-Title: linux ssh 无密码登陆
-Date: 2010-12-28 14:56
-Author: scsidisk
-Category: CentOS
-Tags: CentOS, Linux, SSH
-Slug: linux-ssh-%e6%97%a0%e5%af%86%e7%a0%81%e7%99%bb%e9%99%86
+---
+layout: post
+title: linux ssh 无密码登陆
+date: 2010-12-28 14:56
+author: scsidisk
+category: CentOS
+tags: CentOS, Linux, SSH
+Slug: 2010-12-28-linux_ssh_login_no_password
+---
 
 ssh 无需密码登陆
 

@@ -1,9 +1,12 @@
-Title: 在Linux中用mail命令发送带附件的邮件
-Date: 2010-12-28 13:51
-Author: scsidisk
-Category: CentOS
-Tags: CentOS, Linux
+---
+layout: post
+title: 在Linux中用mail命令发送带附件的邮件
+date: 2010-12-28 13:51
+author: scsidisk
+category: CentOS
+tags: CentOS, Linux
 Slug: in_linux_you_can_use_the_mail_command_to_send_mail_with_attachments
+---
 
 > 1、用uuencode 将附件编码为文本形式
 >

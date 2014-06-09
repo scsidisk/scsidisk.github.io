@@ -1,9 +1,12 @@
-Title: ps：查看进程
-Date: 2010-12-28 13:53
-Author: scsidisk
-Category: CentOS
-Tags: CentOS, Linux, Shell, 命令
+---
+layout: post
+title: ps：查看进程
+date: 2010-12-28 13:53
+author: scsidisk
+category: CentOS
+tags: CentOS, Linux, Shell, 命令
 Slug: ps_view_the_process
+---
 
 作用：ps命令主要用于查看系统中进程的状态。
 

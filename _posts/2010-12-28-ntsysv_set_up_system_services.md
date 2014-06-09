@@ -1,9 +1,12 @@
-Title: ntsysv：设置系统服务
-Date: 2010-12-28 13:53
-Author: scsidisk
-Category: CentOS
-Tags: CentOS, Linux, Shell, 命令
+---
+layout: post
+title: ntsysv：设置系统服务
+date: 2010-12-28 13:53
+author: scsidisk
+category: CentOS
+tags: CentOS, Linux, Shell, 命令
 Slug: ntsysv_set_up_system_services
+---
 
 作用：ntsysv是Red
 Hat公司遵循GPL规则所开发的程序，它具有交互式操作界面，可以轻易地利用方向键和空格键等，开启、关闭操作系统在每个执行等级中所要执行的系统服务。

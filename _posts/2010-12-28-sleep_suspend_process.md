@@ -1,9 +1,12 @@
-Title: sleep：暂停进程
-Date: 2010-12-28 13:53
-Author: scsidisk
-Category: MacOSX
-Tags: CentOS, Shell, 命令
+---
+layout: post
+title: sleep：暂停进程
+date: 2010-12-28 13:53
+author: scsidisk
+category: MacOSX
+tags: CentOS, Shell, 命令
 Slug: sleep_suspend_process
+---
 
 作用：sleep命令的功能是使进程暂停执行一段时间。
 

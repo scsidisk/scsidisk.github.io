@@ -1,9 +1,12 @@
-Title: 使ssh不用输入密码
-Date: 2010-12-28 15:22
-Author: scsidisk
-Category: CentOS
-Tags: CentOS, Linux, Shell
+---
+layout: post
+title: 使ssh不用输入密码
+date: 2010-12-28 15:22
+author: scsidisk
+category: CentOS
+tags: CentOS, Linux, Shell
 Slug: the_use_of_ssh_do_not_have_to_enter_the_password
+---
 
 <div class="t_msgfontfix">
 <table cellspacing="0" cellpadding="0">

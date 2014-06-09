@@ -1,10 +1,10 @@
 ---
 layout: post
-Title: Github Markdown 语法说明 (简体中文版)。
-Date: 2010-12-28 14:54
-Author: scsidisk
-Category: Markdown
-Tags: Markdown
+title: Github Markdown 语法说明 (简体中文版)。
+date: 2010-12-28 14:54
+author: scsidisk
+category: Markdown
+tags: Markdown
 Slug: github_markdown_syntax
 ---
 

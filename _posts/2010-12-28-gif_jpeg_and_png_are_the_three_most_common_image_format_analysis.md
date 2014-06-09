@@ -1,10 +1,10 @@
 ---
 layout: post
-Title: GIF、JPEG 和 PNG 是三种最常见的图片格式分析。
-Date: 2010-12-28 14:54
-Author: scsidisk
-Category: CentOS
-Tags: gif, jpeg, png
+title: GIF、JPEG 和 PNG 是三种最常见的图片格式分析。
+date: 2010-12-28 14:54
+author: scsidisk
+category: CentOS
+tags: gif, jpeg, png
 Slug: gif_jpeg_and_png_are_the_three_most_common_image_format_analysis
 ---
 

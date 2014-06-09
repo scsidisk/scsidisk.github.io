@@ -1,9 +1,12 @@
-Title: kill：杀掉进程
-Date: 2010-12-28 13:52
-Author: scsidisk
-Category: CentOS
-Tags: CentOS, Linux, Shell, 命令
+---
+layout: post
+title: kill：杀掉进程
+date: 2010-12-28 13:52
+author: scsidisk
+category: CentOS
+tags: CentOS, Linux, Shell, 命令
 Slug: kill_kill_the_process
+---
 
 作用：kill命令终止一个进程。
 

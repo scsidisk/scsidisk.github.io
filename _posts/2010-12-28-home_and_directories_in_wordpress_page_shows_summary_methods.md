@@ -1,8 +1,11 @@
-Title: 在WordPress首页和目录页显示摘要的方法
-Date: 2010-12-28 14:54
-Author: scsidisk
-Category: Other
+---
+layout: post
+title: 在WordPress首页和目录页显示摘要的方法
+date: 2010-12-28 14:54
+author: scsidisk
+category: Other
 Slug: home_and_directories_in_wordpress_page_shows_summary_methods
+---
 
 在WordPress系统中，默认的首页和目录页使用的书全文输出，这对于文章内容较长的博客来说很不方面，下面我介绍一个方法，可以简单的实现在WordPress首页和目录页显示摘要而非全文。
 

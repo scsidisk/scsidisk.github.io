@@ -1,0 +1,85 @@
+= MNPP  Mac + Nginx + Percona + PHP or Python
+scsidisk
+2013-05-10 13:25:56
+:layout: post
+:category: MacOSX
+:tags: Nginx, PHP, Python
+
+A high performance web server in a one-click installer.
+
+== Contributors
+
+**This project is currently maintained by the following people:**    
+
+- https://github.com/jyr[Jair Gaxiola] (Core developer)    
+- http://cesarsalazar.mx/[César Salazar]   
+- http://www.hackerhub.com[HackerHub]
+
+**Pull requests authors**
+
+- https://github.com/hmert[hmert]
+- https://github.com/francescolaffi[francescolaffi] 
+- https://github.com/gnuget[gnuget]
+
+== Features
+
+* Start / stop services global
+* Start / stop services individually
+* Open the default page MNPP
+* Set preferences - start  / stop global services
+
+== Arch
+
+* x86_64
+
+== Set environment
+
+    $ sudo sh /Applications/MNPP/init/environment.sh
+    $ source /Users/youruser/.bash_profile
+
+
+== Runs from console
+
+Start    
+
+    $ sudo mnpp --php[Version] --start
+
+Start only one service    
+
+    $ sudo mnpp --start [service]
+
+For php    
+
+    $ sudo mnpp --start php[Version]
+
+----
+version: 52 | 53    
+service: nginx | percona | uwsgi
+----
+
+Stop    
+
+    $ sudo mnpp --php[Version] --stop
+
+Stop only one service    
+
+    $ sudo mnpp --stop [service]
+
+For php    
+
+    $ sudo mnpp --stop php[Version]
+
+----
+version: 52 | 53    
+service: nginx | percona | uwsgi
+----
+
+== Percona account
+
+User is root without password the same for phpmyadmin
+
+
+
+
+
+

@@ -1,9 +1,12 @@
-Title: nohup：用户退出系统之后继续工作
-Date: 2010-12-28 14:54
-Author: scsidisk
-Category: CentOS
-Tags: CentOS, Shell, 命令
+---
+layout: post
+title: nohup：用户退出系统之后继续工作
+date: 2010-12-28 14:54
+author: scsidisk
+category: CentOS
+tags: CentOS, Shell, 命令
 Slug: nohup_continue_working_after_the_user_exits_the_system
+---
 
 作用：nohup命令确保执行程序能在用户退出系统之后继续工作。
 

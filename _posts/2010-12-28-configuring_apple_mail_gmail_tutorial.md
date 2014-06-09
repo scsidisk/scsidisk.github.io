@@ -1,10 +1,10 @@
 ---
 layout: post
-Title: Apple Mail配置GMail教程
-Date: 2010-12-28 14:54
-Author: scsidisk
-Category: MacOSX
-Tags: Mac
+title: Apple Mail配置GMail教程
+date: 2010-12-28 14:54
+author: scsidisk
+category: MacOSX
+tags: Mac
 Slug: configuring_apple_mail_gmail_tutorial
 ---
 

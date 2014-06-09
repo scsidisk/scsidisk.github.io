@@ -1,9 +1,12 @@
-Title: top：显示进程
-Date: 2010-12-28 13:53
-Author: scsidisk
-Category: CentOS
-Tags: CentOS, Linux, Shell, 命令
+---
+layout: post
+title: top：显示进程
+date: 2010-12-28 13:53
+author: scsidisk
+category: CentOS
+tags: CentOS, Linux, Shell, 命令
 Slug: top_display_process
+---
 
 作用：top命令用来显示系统当前的进程状况。
 

@@ -1,10 +1,10 @@
 ---
 layout: post
-Title: "configure: error: Cannot find `ldap.h`"
-Date: 2010-12-28 14:56
-Author: scsidisk
-Category: CentOS
-Tags: CentOS
+title: "configure: error: Cannot find `ldap.h`"
+date: 2010-12-28 14:56
+author: scsidisk
+category: CentOS
+tags: CentOS
 Slug: configure-error-cannot-find-ldap-h
 ---
 

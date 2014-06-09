@@ -1,10 +1,10 @@
 ---
 layout: post
-Title: 为Apache配置mod_deflat压缩输出[转]
-Date: 2010-12-28 14:55
-Author: scsidisk
-Category: Apache
-Tags: Apache, mod_deflat
+title: 为Apache配置mod_deflat压缩输出[转]
+date: 2010-12-28 14:55
+author: scsidisk
+category: Apache
+tags: Apache, mod_deflat
 Slug: for_the_apache_configuration_mod_deflat_compressed_output_rpm
 ---
 

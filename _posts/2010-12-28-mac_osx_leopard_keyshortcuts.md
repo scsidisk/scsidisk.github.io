@@ -1,9 +1,12 @@
-Title: Mac OSX Leopard 快捷键大全
-Date: 2010-12-28 14:55
-Author: scsidisk
-Category: MacOSX
-Tags: Leopard, Mac, Snow Leopard
-Slug: mac-osx-leopard-%e5%bf%ab%e6%8d%b7%e9%94%ae%e5%a4%a7%e5%85%a8
+---
+layout: post
+title: Mac OSX Leopard 快捷键大全
+date: 2010-12-28 14:55
+author: scsidisk
+category: MacOSX
+tags: Leopard, Mac, Snow Leopard
+Slug: 2010-12-28-mac_osx_leopard_keyshortcuts
+---
 
 <span style="font-size: x-large;"><span style="font-size: 18px;">全局</span></span>
 

@@ -1,9 +1,12 @@
-Title: 交互式shell编程利器expect
-Date: 2010-12-28 15:22
-Author: scsidisk
-Category: CentOS
-Tags: CentOS, Linux, Shell
+---
+layout: post
+title: 交互式shell编程利器expect
+date: 2010-12-28 15:22
+author: scsidisk
+category: CentOS
+tags: CentOS, Linux, Shell
 Slug: interactive_shell_programming_tool_expect
+---
 
 <div class="post-content">
 手里有几台Linux服务器需要经常添加用户，每次都要登录到相应的机器上去添加，特别麻烦。于是想，可不可以在一台机器上写一个脚本来远程管理其它服务器呢？

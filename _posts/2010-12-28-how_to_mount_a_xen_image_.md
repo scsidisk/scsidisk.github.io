@@ -1,9 +1,12 @@
-Title: How to mount a xen image ?
-Date: 2010-12-28 13:49
-Author: scsidisk
-Category: CentOS
-Tags: CentOS, Linux, Shell
+---
+layout: post
+title: How to mount a xen image ?
+date: 2010-12-28 13:49
+author: scsidisk
+category: CentOS
+tags: CentOS, Linux, Shell
 Slug: how_to_mount_a_xen_image_
+---
 
 How to mount a xen image ?  
 1. First you need to find out the partitions and the startsector of

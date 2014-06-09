@@ -1,9 +1,12 @@
-Title: SQL_CALC_FOUND_ROWS真的很慢么？
-Date: 2010-12-28 13:52
-Author: scsidisk
-Category: MySQL
-Tags: MySQL
+---
+layout: post
+title: SQL_CALC_FOUND_ROWS真的很慢么？
+date: 2010-12-28 13:52
+author: scsidisk
+category: MySQL
+tags: MySQL
 Slug: sql_calc_found_rows_really_slow_it
+---
 
 作者：老王
 

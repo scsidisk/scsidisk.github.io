@@ -1,9 +1,12 @@
-Title: Linux下执行程序时发生错误: cannot restore segment prot after reloc: Permission denied
-Date: 2010-12-28 14:57
-Author: scsidisk
-Category: CentOS
-Tags: CentOS, Linux, Shell
-Slug: linux%e4%b8%8b%e6%89%a7%e8%a1%8c%e7%a8%8b%e5%ba%8f%e6%97%b6%e5%8f%91%e7%94%9f%e9%94%99%e8%af%af-cannot-restore-segment-prot-after-reloc-permission-denied
+---
+layout: post
+title: Linux下执行程序时发生错误 cannot restore segment prot after relocPermission denied
+date: 2010-12-28 14:57
+author: scsidisk
+category: CentOS
+tags: CentOS, Linux, Shell
+Slug: 2010-12-28-linux_error_runtime_cannot_restore_segment_prot_after_reloc
+---
 
 <span style="font-family: 'STHeiti Light';">　　</span>
 <span style="font-family: 'STHeiti Light';">原来这是<span style="font: 12.0px Monaco;">SELinux</span>搞的鬼，解决办法有两个</span>

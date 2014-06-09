@@ -1,10 +1,10 @@
 ---
 layout: post
-Title: vim多行注释/删除注释
-Date: 2010-12-28 13:51
-Author: scsidisk
-Category: Vim
-Tags: CentOS, Linux, Shell, Vim
+title: vim多行注释/删除注释
+date: 2010-12-28 13:51
+author: scsidisk
+category: Vim
+tags: CentOS, Linux, Shell, Vim
 ---
 
 按键操作：

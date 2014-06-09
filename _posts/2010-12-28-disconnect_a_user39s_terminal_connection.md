@@ -1,10 +1,10 @@
 ---
 layout: post
-Title: 断开某个用户的终端连接
-Date: 2010-12-28 14:54
-Author: scsidisk
-Category: CentOS
-Tags: CentOS, 命令
+title: 断开某个用户的终端连接
+date: 2010-12-28 14:54
+author: scsidisk
+category: CentOS
+tags: CentOS, 命令
 Slug: disconnect_a_user39s_terminal_connection
 ---
 

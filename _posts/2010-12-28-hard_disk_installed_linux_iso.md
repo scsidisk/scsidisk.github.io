@@ -1,10 +1,10 @@
 ---
 layout: post
-Title: 硬盘安装 Linux ISO
-Date: 2010-12-28 14:54
-Author: scsidisk
-Category: CentOS
-Tags: CentOS
+title: 硬盘安装 Linux ISO
+date: 2010-12-28 14:54
+author: scsidisk
+category: CentOS
+tags: CentOS
 Slug: hard_disk_installed_linux_iso
 ---
 

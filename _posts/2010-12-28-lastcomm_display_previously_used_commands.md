@@ -1,9 +1,12 @@
-Title: lastcomm：显示以前使用过的命令的信息
-Date: 2010-12-28 13:53
-Author: scsidisk
-Category: CentOS
-Tags: CentOS, Linux, Shell, 命令
+---
+layout: post
+title: lastcomm：显示以前使用过的命令的信息
+date: 2010-12-28 13:53
+author: scsidisk
+category: CentOS
+tags: CentOS, Linux, Shell, 命令
 Slug: lastcomm_display_previously_used_commands
+---
 
 作用：accton用来启动进程记录，这样就会把所有的命令都记录到一个指定的文件中，而lastcomm就是用来查看这个文件的，以方便系统管理。
 

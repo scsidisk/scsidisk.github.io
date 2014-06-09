@@ -1,9 +1,12 @@
-Title: 在apache配置文件中设置php上传临时目录
-Date: 2010-12-28 14:57
-Author: scsidisk
-Category: Apache
-Tags: Apache, PHP, upload
+---
+layout: post
+title: 在apache配置文件中设置php上传临时目录
+date: 2010-12-28 14:57
+author: scsidisk
+category: Apache
+tags: Apache, PHP, upload
 Slug: set_php_uploaded_in_the_apache_configuration_file_to_the_temporary_directory
+---
 
 在服务器上配置webmail(比如我最喜欢的SquirrelMail)时，出于服务器安全考虑，一般在apache配置文件中作
 

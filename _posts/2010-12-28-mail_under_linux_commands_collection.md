@@ -1,9 +1,12 @@
-Title: Linux下Mail命令收集
-Date: 2010-12-28 13:51
-Author: scsidisk
-Category: CentOS
-Tags: CentOS, Linux, Mail
+---
+layout: post
+title: Linux下Mail命令收集
+date: 2010-12-28 13:51
+author: scsidisk
+category: CentOS
+tags: CentOS, Linux, Mail
 Slug: mail_under_linux_commands_collection
+---
 
 系统收到邮件都会保存在“/var/spool/mail/[linux用户名]”文件中。在linux中输入mail，就进入了收件箱，并显示二十封邮件列表。  
 此时命令提示符为"&"  
@@ -89,7 +92,7 @@ From frank Thu Mar 25 11:00:25 1999/3/25
 Received: (fromfrank@localhost)  
 by xteam.xteamlinux.com(8.8.4/8.8.4)  
 id LAA05170 for frank;Thu 25 Mar 1999 11:00:25 GMT  
-Date: Thu,25 Mar 1999 11:00:25 GMT  
+date: Thu,25 Mar 1999 11:00:25 GMT  
 From:RHS Linux User  
 Message-Id:\<199903251142.LAA05170@xteam.xteamlinux.com\>  
 To:frank@xteam.xteamlinux.com  
