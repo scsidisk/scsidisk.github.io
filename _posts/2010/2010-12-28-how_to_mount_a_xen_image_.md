@@ -36,6 +36,4 @@ partition offset is: 63x512=32256
 4. Finally, to mount the xen image, use:  
 mount -o loop,offset=32256 test.img /foldername
 
-<div class="posttagsblock">
-</div>
 
