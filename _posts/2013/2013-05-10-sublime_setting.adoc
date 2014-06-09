@@ -5,6 +5,13 @@ date: 2013-05-10 13:25:57
 author: scsidisk
 category: Sublime
 tags: Mac, Sublime
+asciidoc: asciidoctor
+asciidoc_ext: asciidoc,adoc,ad,asc
+asciidoctor:
+  attributes:
+    - hardbreaks!
+    - source-highlighter=coderay
+    - coderay-css=style
 ---
 
 = sublime配置全攻略
