@@ -15,7 +15,7 @@ category: MacOSX
 升级或重新安装系统以后 brew 安装的工具需要升级或重新安装:
 
 ```
-brew uninstall \$PACKAGE && brew install \$PACKAGE
+brew uninstall $PACKAGE && brew install $PACKAGE
 ```
 
 ####3. 安装 GCC 4.2
@@ -25,7 +25,7 @@ brew uninstall \$PACKAGE && brew install \$PACKAGE
 
 ```
 brew tap homebrew/versions && brew install apple-gcc42
-\#\# 如果出现不能创建连接问题需要如下操作
+## 如果出现不能创建连接问题需要如下操作
 brew link --force apple-gcc42
-ln -nsf \$(which gcc-4.2) /usr/bin/gcc-4.2
+ln -nsf $(which gcc-4.2) /usr/bin/gcc-4.2
 ```

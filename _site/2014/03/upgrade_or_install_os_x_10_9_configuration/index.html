@@ -39,7 +39,7 @@
 
 <p>升级或重新安装系统以后 brew 安装的工具需要升级或重新安装:</p>
 
-<pre><code>brew uninstall \$PACKAGE &amp;&amp; brew install \$PACKAGE
+<pre><code>brew uninstall $PACKAGE &amp;&amp; brew install $PACKAGE
 </code></pre>
 
 <h4>3. 安装 GCC 4.2</h4>
@@ -48,9 +48,9 @@
 可能会出现一些错误. 重新安装 GCC 4.2 步骤如下:</p>
 
 <pre><code>brew tap homebrew/versions &amp;&amp; brew install apple-gcc42
-\#\# 如果出现不能创建连接问题需要如下操作
+## 如果出现不能创建连接问题需要如下操作
 brew link --force apple-gcc42
-ln -nsf \$(which gcc-4.2) /usr/bin/gcc-4.2
+ln -nsf $(which gcc-4.2) /usr/bin/gcc-4.2
 </code></pre>
 
 </section>
@@ -124,7 +124,7 @@ $(function(){
       </div>
 
     <footer>
-        <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> | Copyright 2008 - 2014 by <a href="http://scsidisk.github.io">scsidisk</a> | <span class="label label-info">2014-06-09 14:49:52 CST</span></small></p>
+        <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> | Copyright 2008 - 2014 by <a href="http://scsidisk.github.io">scsidisk</a> | <span class="label label-info">2014-06-09 18:56:36 CST</span></small></p>
     </footer>
 
     </div>

@@ -5,7 +5,7 @@ author: scsidisk
 highlighter: true
 paginate: 24
 disqus_shortname: scsidiskgithubio
-layout: post
+sitename: ScsiDisk's Blog
 
 asciidoc: asciidoctor
 asciidoc_ext: asciidoc,adoc,ad,asc

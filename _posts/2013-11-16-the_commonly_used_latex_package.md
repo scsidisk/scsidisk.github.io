@@ -6,7 +6,6 @@ author: scsidisk
 category: LaTex
 ---
   
-常用的latex宏包  
   
 CJK 中文支持，现不推荐这种方式  
 CJKfntef CJK 下的中文下划线、浪线、加点等标记。xeCJK 沿用  
