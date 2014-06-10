@@ -7,9 +7,6 @@ category: Markdown
 tags: Markdown, Mou
 ---
 
-Mou Markdown 语法参考
-====================
-
 Part Ⅰ. 标准 Markdown 语法
 -------------------------
 
