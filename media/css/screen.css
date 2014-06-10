@@ -82,7 +82,7 @@ h1 {
     font-size: 28px;
     line-height: 28px;
     margin: 0 0 28px 0;
-	background-color: #000;
+	background-color: #ff9900;
 	color: #fff;
 	display: inline-block;
 	padding: 12px;
@@ -258,4 +258,8 @@ table tr td,table tr th {
     border: 1px solid rgba(50,118,177,0.167);
     vertical-align: middle;
     padding: 8px;
+}
+
+#tag_cloud {
+    margin-left: 30px;
 }

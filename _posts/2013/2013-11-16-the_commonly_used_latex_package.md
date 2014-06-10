@@ -3,7 +3,8 @@ layout: post
 title: 常用的latex宏包
 date: 2013-11-16 21:43
 author: scsidisk
-category: LaTex
+category: Tex
+tags: Tex, LaTex
 ---
   
   

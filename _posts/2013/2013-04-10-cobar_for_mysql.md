@@ -3,7 +3,7 @@ layout: post
 title: Cobar for MySQL
 date: 2013-04-10
 author: scsidisk
-category: Database
+category: MySQL
 tags: Cobar, MySQL
 ---
 
