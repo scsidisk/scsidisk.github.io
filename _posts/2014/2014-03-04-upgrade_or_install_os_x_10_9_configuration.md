@@ -29,3 +29,21 @@ brew tap homebrew/versions && brew install apple-gcc42
 brew link --force apple-gcc42
 ln -nsf $(which gcc-4.2) /usr/bin/gcc-4.2
 ```
+
+或者使用下面的批处理文件（注意备份数据文件）
+
+```
+#!/bin/sh
+
+pkgs=`brew list`
+
+for pkg in ${pkgs[*]}
+do
+   echo "reinstall ${pkg} ===================="
+   #brew uninstall ${pkg}
+   brew remove --force ${pkg}
+   brew install ${pkg}
+   cd ..
+   echo "\n"
+done
+```
