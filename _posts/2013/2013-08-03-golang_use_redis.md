@@ -1,6 +1,6 @@
 ---
 layout: post
-title: go 使用 redis
+title: golang 使用 redis
 date: 2013-10-20 11:02
 author: scsidisk
 category: Golang
