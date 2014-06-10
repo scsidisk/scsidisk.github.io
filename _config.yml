@@ -2,7 +2,9 @@ markdown: rdiscount
 permalink: /:year/:month/:title/
 url: http://scsidisk.github.io
 author: scsidisk
-highlighter: true
+highlighter: pygments
+# pygments: true
+markdown: redcarpet
 paginate: 24
 disqus_shortname: scsidiskgithubio
 sitename: ScsiDisk's Blog
