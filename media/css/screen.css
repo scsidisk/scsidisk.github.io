@@ -250,3 +250,12 @@ footer a:hover {
     text-decoration: none;
 }
 
+table {
+    margin: 10px 0;
+}
+
+table tr td,table tr th {
+    border: 1px solid rgba(50,118,177,0.167);
+    vertical-align: middle;
+    padding: 8px;
+}

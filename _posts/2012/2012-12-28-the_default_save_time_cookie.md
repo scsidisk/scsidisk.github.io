@@ -1,7 +1,7 @@
 ---
 layout: post
 title: $_COOKIE 默认保存时间
-date: 2010-12-28 15:23
+date: 2012-12-28 15:23
 author: scsidisk
 category: PHP
 tags: Cookie, PHP
