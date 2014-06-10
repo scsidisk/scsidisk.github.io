@@ -70,3 +70,5 @@ markdown: redcarpet
 redcarpet: 
     extensions: ["fenced_code_blocks", "tables", "highlight", "with_toc_data", "strikethrough", "underline"]
 ```
+
+转自：http://havee.me/internet/2013-10/use-table-with-redcarpet-and-markdown-in-jekyll.html
