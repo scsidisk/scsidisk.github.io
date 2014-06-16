@@ -4,7 +4,8 @@
 */
 
 @font-face{
-    font: 12px/162% Arial,Helvetica,sans-serif;
+    /*font: 12px/162% Arial,Helvetica,sans-serif;*/
+    font: 13px Helvetica, arial, freesans, clean, sans-serif;
 }
 
 html, body, div, span, applet, object, iframe,
@@ -100,7 +101,7 @@ section>h3 {
 }
 p, ul, ol, dl {
     line-height: 24px;
-    margin: 0 0 24px 0;
+    margin: 0 0 10px 0;
 }
 p.intro {
     font-size: 24px;
@@ -109,6 +110,7 @@ p.intro {
 ul {
     list-style-type: square;
     padding-left: 12px;
+    margin-left: 20px;
 }
 ol {
     list-style-type: decimal;
@@ -118,13 +120,22 @@ dt {
     font-weight: 700;
 }
 pre {
-    border-left: 6px solid #edebea;
+/*    border-left: 6px solid #edebea;
     overflow: auto;
     font-family: monospace;
     font-size: 14px;
     padding: 12px;
     margin: 0 0 24px;
-	background-color: #f3f3f3;
+	background-color: #f3f3f3;*/
+background-color: #f8f8f8;
+border: 1px solid #ddd;
+font-size: 13px;
+line-height: 19px;
+overflow: auto;
+padding: 6px 10px;
+border-radius: 3px;
+word-wrap: normal;
+margin: 15px 0;
 }
 p code {
     font-family: monospace;

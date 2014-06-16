@@ -26,7 +26,7 @@ Slug: github_markdown_syntax
   [GitCafe]: http://gitcafe.com/riku/Markdown-Syntax-CN/
 
 Markdown 语法说明 (简体中文版) / ([点击查看快速入门](./basic.html))
-================
+-------------------
 
 *   [概述](#overview)
     *   [宗旨](#philosophy)
