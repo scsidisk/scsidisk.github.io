@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="scsidisk" />
+    <title>自动ssh登录的几种方法 | scsidisk</title>
+    <link href="/feed/" rel="alternate" title="scsidisk" type="application/atom+xml" />
+    <link rel="stylesheet" href="/media/css/highlight.css">
+    <link href='/media/webfonts/ss-social.css' rel='stylesheet'>
+    <link href='/media/webfonts/ss-standard.css' rel='stylesheet'>
+    <link href="/media/css/screen.css" rel="stylesheet">
+
+    <script type="text/javascript" src="/media/js/jquery-1.7.1.min.js"></script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="main" role="main">
+        <header>
+        <div class="buttons">
+          <a href="/" class="ss-icon" title="Go to homepage">home</a>
+          <a href="/categories" class="ss-icon" title="Category" >list</a>
+          <a href="/tags" class="ss-icon" title="Tag Cloud" >tags</a>
+          <a href="/guestbook" class="ss-icon" title="Guest Book" >talk</a>
+          <a href="/about" class="ss-icon" title="About" >user</a>
+          <a href="/feed" class="ss-icon" title="Subscribe by RSS" >rss</a>
+        </div>
+        <h1>ScsiDisk's Blog</h1>
+        </header>
+        <hr>
+        <article class="content">
+        <h2>自动ssh登录的几种方法</h2>
+
+<section class="post">
+<p>​1. 自动ssh/scp方法==</p>
+
+<p>A为本地主机(即用于控制其他主机的机器) ;<br>
+B为远程主机(即被控制的机器Server), 假如ip为192.168.60.110;</p>
+
+<p>A和B的系统都是Linux</p>
+
+<p>在A上运行命令:<br>
+# ssh-keygen -t rsa (连续三次回车,即在本地生成了公钥和私钥,不设置密码)</p>
+
+<p># ssh root@192.168.60.110 “mkdir .ssh” (需要输入密码)</p>
+
+<p># scp ~/.ssh/id_rsa.pub root@192.168.60.110:.ssh/id_rsa.pub
+(需要输入密码)</p>
+
+<p>在B上的命令:<br>
+# touch /root/.ssh/authorized_keys (如果已经存在这个文件, 跳过这条)</p>
+
+<p># cat /root/.ssh/id_rsa.pub &gt;&gt; /root/.ssh/authorized_keys
+(将id_rsa.pub的内容追加到authorized_keys 中)</p>
+
+<p>回到A机器:<br>
+# ssh root@192.168.60.110 (不需要密码, 登录成功)</p>
+
+<p>​2. 控制n个机器如上所述自动登录<br>
+那就需要n对钥匙(密钥和公钥), ssh-keygen 命令可以随意更改钥匙对的名字,
+比如:</p>
+
+<p># ssh-keygen -t rsa</p>
+
+<p>Generating public/private rsa key pair.</p>
+
+<p>Enter file in which to save the key (/root/.ssh/id_rsa):
+/root/.ssh/id_rsa_192.168.60.110</p>
+
+<p>这样私钥和公钥的名字分别就是: id_rsa_192.168.60.110和
+id_rsa_192.168.60.110.pub;然后将 id_rsa_192.168.60.110.pub
+文件的内容, 追加到sever的 ~/.ssh/authorized_keys文件中,最后,
+在本地用ssh命令的 -i 参数指定本地密钥, 并登录:<br>
+# ssh -i /root/.ssh/id_rsa_192.168.60.110 someone@192.168.60.110</p>
+
+<p>scp也是一样的<br>
+# scp -i /root/.ssh/id_rsa_192.168.60.110 filename
+someone@192.168.60.110:/home/someone</p>
+
+<p>在文件.bashrc中加下两行，每次做同样的操作就不用敲入这样长的命令了：<br>
+alias sshcell=&#39;ssh -i /root/.ssh/id_rsa_192.168.60.110
+someone@192.168.60.110&#39;</p>
+
+<p>alias scpcell=&#39;scp -i /root/.ssh/id_rsa_192.168.60.110 filename
+someone@192.168.60.110:/home/someone&#39;</p>
+
+<p>这样，直接键入一下指令实现ssh和scp自动登录：<br>
+# sshcell</p>
+
+<p># scpcell</p>
+
+<p>​3. 自动ssh/scp脚本<br>
+如果需要从A，到B，然后才能够到C，那么需要ssh和scp两次，是比较麻烦的。</p>
+
+<p>ssh自动登录：</p>
+
+<p>#!/usr/bin/expect -f<br>
+set timeout 30</p>
+
+<p>spawn ssh weiqiong@B</p>
+
+<p>expect “password:”</p>
+
+<p>send “pppppp/r”</p>
+
+<p>expect “]*”</p>
+
+<p>send “ssh weiqiong@C/r”</p>
+
+<p>expect “password:”</p>
+
+<p>send “ppppp</p>
+
+<div class="posttagsblock">
+</div>
+
+</section>
+<section class="meta">
+<span class="author">
+  <a href="http://scsidisk.github.io">scsidisk</a>
+</span>
+<span class="time">
+  /
+  <time datetime="2010-12-28">2010-12-28</time>
+</span>
+<br />
+<span class="license">
+  Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA</a>
+</span>
+
+<span class="categories">
+  in categories
+  
+  <a href="/categories/#centos" title="centos">centos</a>&nbsp;
+  
+</span>
+
+
+<span class="tags">
+  tagged with
+  
+  <a href="/tags/#CentOS," title="CentOS,">CentOS,</a>&nbsp;
+  
+  <a href="/tags/#SSH" title="SSH">SSH</a>&nbsp;
+  
+</span>
+
+</section>
+<section class="comment">
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'scsidiskgithubio'; // required: replace example with your forum shortname
+    var disqus_url = 'http://scsidisk.github.io/2010/12/several_methods_of_automatic_ssh_login/';
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+<script type="text/javascript">
+$(function(){
+  $(document).keydown(function(e) {
+    var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow and J
+            
+        url = 'http://scsidisk.github.io/2010/12/linux_ssh_login_no_password/';
+        
+        }
+        else if (e.which == 39 || e.which == 75) {  // Right arrow and K
+            
+        url = 'http://scsidisk.github.io/2010/12/ubuntucentos_network_setting/';
+        
+        }
+        if (url) {
+            window.location = url;
+        }
+  });
+})
+</script>
+
+
+        </article>
+      </div>
+
+    <footer>
+        <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> | Copyright 2008 - 2014 by <a href="http://scsidisk.github.io">scsidisk</a> | <span class="label label-info">2014-06-16 20:56:29 CST</span></small></p>
+    </footer>
+
+    </div>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-51832101-1', 'scsidisk.github.io');
+      ga('send', 'pageview');
+
+    </script>
+    <script type="text/javascript">
+      // var _gaq = _gaq || [];
+      // _gaq.push(['_setAccount', '');
+      // _gaq.push(['_trackPageview']);
+      // (function() {
+      //   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      //   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      //   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      // })();
+    </script>
+  </body>
+</html>

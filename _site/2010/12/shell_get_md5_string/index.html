@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="scsidisk" />
+    <title>shell下取得字符串的md5值 | scsidisk</title>
+    <link href="/feed/" rel="alternate" title="scsidisk" type="application/atom+xml" />
+    <link rel="stylesheet" href="/media/css/highlight.css">
+    <link href='/media/webfonts/ss-social.css' rel='stylesheet'>
+    <link href='/media/webfonts/ss-standard.css' rel='stylesheet'>
+    <link href="/media/css/screen.css" rel="stylesheet">
+
+    <script type="text/javascript" src="/media/js/jquery-1.7.1.min.js"></script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="main" role="main">
+        <header>
+        <div class="buttons">
+          <a href="/" class="ss-icon" title="Go to homepage">home</a>
+          <a href="/categories" class="ss-icon" title="Category" >list</a>
+          <a href="/tags" class="ss-icon" title="Tag Cloud" >tags</a>
+          <a href="/guestbook" class="ss-icon" title="Guest Book" >talk</a>
+          <a href="/about" class="ss-icon" title="About" >user</a>
+          <a href="/feed" class="ss-icon" title="Subscribe by RSS" >rss</a>
+        </div>
+        <h1>ScsiDisk's Blog</h1>
+        </header>
+        <hr>
+        <article class="content">
+        <h2>shell下取得字符串的md5值</h2>
+
+<section class="post">
+<p>shell下取得字符串的md5值</p>
+
+<p>echo 123|md5sum</p>
+
+<p>ba1f2511fc30423bdbb183fe33f3dd0f -</p>
+
+<p>php -r &quot;echo md5(&#39;123&#39;);&quot;</p>
+
+<p>202cb962ac59075b964b07152d234b70</p>
+
+<p>两者的md5值不一致，于是有很多有趣的解法：</p>
+
+<p>1 Mysql解法：</p>
+
+<p>mysql&gt; select md5(&#39;123&#39;);</p>
+
+<p>+----------------------------------+</p>
+
+<p>| md5(&#39;123&#39;) |</p>
+
+<p>+----------------------------------+</p>
+
+<p>| 202cb962ac59075b964b07152d234b70 |</p>
+
+<p>+----------------------------------+</p>
+
+<p>2 修正换行符法</p>
+
+<p>[root@fetion ~]# printf 123|md5sum</p>
+
+<p>202cb962ac59075b964b07152d234b70 -</p>
+
+<p>[root@fetion ~]# echo -n 123|md5sum</p>
+
+<p>202cb962ac59075b964b07152d234b70 -</p>
+
+<p>[root@fetion ~]# echo 123|tr -d &#39;/n&#39;|md5sum</p>
+
+<p>202cb962ac59075b964b07152d234b70 -</p>
+
+<p>小结一下：</p>
+
+<p>1 echo默认是带换行符做结尾的</p>
+
+<p>2 echo -n 可以去掉换行符</p>
+
+<p>3 printf是没有换行符结尾的</p>
+
+<p>4 tr可以删掉一个字符，如 tr -d &#39;/n&#39;</p>
+
+<p>5 php命令行执行一段程序是 php -r &quot;code&quot;</p>
+
+<div class="posttagsblock">
+[ ](http://technorati.com/tag/CentOS)
+
+</div>
+
+</section>
+<section class="meta">
+<span class="author">
+  <a href="http://scsidisk.github.io">scsidisk</a>
+</span>
+<span class="time">
+  /
+  <time datetime="2010-12-28">2010-12-28</time>
+</span>
+<br />
+<span class="license">
+  Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA</a>
+</span>
+
+<span class="categories">
+  in categories
+  
+  <a href="/categories/#centos" title="centos">centos</a>&nbsp;
+  
+</span>
+
+
+<span class="tags">
+  tagged with
+  
+  <a href="/tags/#CentOS," title="CentOS,">CentOS,</a>&nbsp;
+  
+  <a href="/tags/#Linux," title="Linux,">Linux,</a>&nbsp;
+  
+  <a href="/tags/#md5," title="md5,">md5,</a>&nbsp;
+  
+  <a href="/tags/#md5sum," title="md5sum,">md5sum,</a>&nbsp;
+  
+  <a href="/tags/#PHP," title="PHP,">PHP,</a>&nbsp;
+  
+  <a href="/tags/#Shell" title="Shell">Shell</a>&nbsp;
+  
+</span>
+
+</section>
+<section class="comment">
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'scsidiskgithubio'; // required: replace example with your forum shortname
+    var disqus_url = 'http://scsidisk.github.io/2010/12/shell_get_md5_string/';
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+<script type="text/javascript">
+$(function(){
+  $(document).keydown(function(e) {
+    var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow and J
+            
+        url = 'http://scsidisk.github.io/2010/12/shell_avgs/';
+        
+        }
+        else if (e.which == 39 || e.which == 75) {  // Right arrow and K
+            
+        url = 'http://scsidisk.github.io/2010/12/the_use_of_ssh_do_not_have_to_enter_the_password/';
+        
+        }
+        if (url) {
+            window.location = url;
+        }
+  });
+})
+</script>
+
+
+        </article>
+      </div>
+
+    <footer>
+        <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> | Copyright 2008 - 2014 by <a href="http://scsidisk.github.io">scsidisk</a> | <span class="label label-info">2014-06-16 20:56:29 CST</span></small></p>
+    </footer>
+
+    </div>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-51832101-1', 'scsidisk.github.io');
+      ga('send', 'pageview');
+
+    </script>
+    <script type="text/javascript">
+      // var _gaq = _gaq || [];
+      // _gaq.push(['_setAccount', '');
+      // _gaq.push(['_trackPageview']);
+      // (function() {
+      //   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      //   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      //   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      // })();
+    </script>
+  </body>
+</html>

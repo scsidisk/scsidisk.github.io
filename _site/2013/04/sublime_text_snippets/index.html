@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="scsidisk" />
+    <title>Sublime Text Snippets（代码片段）功能 | scsidisk</title>
+    <link href="/feed/" rel="alternate" title="scsidisk" type="application/atom+xml" />
+    <link rel="stylesheet" href="/media/css/highlight.css">
+    <link href='/media/webfonts/ss-social.css' rel='stylesheet'>
+    <link href='/media/webfonts/ss-standard.css' rel='stylesheet'>
+    <link href="/media/css/screen.css" rel="stylesheet">
+
+    <script type="text/javascript" src="/media/js/jquery-1.7.1.min.js"></script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="main" role="main">
+        <header>
+        <div class="buttons">
+          <a href="/" class="ss-icon" title="Go to homepage">home</a>
+          <a href="/categories" class="ss-icon" title="Category" >list</a>
+          <a href="/tags" class="ss-icon" title="Tag Cloud" >tags</a>
+          <a href="/guestbook" class="ss-icon" title="Guest Book" >talk</a>
+          <a href="/about" class="ss-icon" title="About" >user</a>
+          <a href="/feed" class="ss-icon" title="Subscribe by RSS" >rss</a>
+        </div>
+        <h1>ScsiDisk's Blog</h1>
+        </header>
+        <hr>
+        <article class="content">
+        <h2>Sublime Text Snippets（代码片段）功能</h2>
+
+<section class="post">
+<p>我们在编写代码的时候，总会遇到一些需要反复使用的代码片段。这时候就需要反复的复制和黏贴，大大影响效率。我们利用Sublime Text的snippet功能，就能很好的解决这一问题。通俗的讲，就是把我们常用的代码分别保存起啦，然后通过插件的形式来反复调用。</p>
+
+<p>创建方法：Tools &gt; New Snippet</p>
+
+<p>这时你会看到如下示例代码：</p>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;snippet&gt;</span>
+     <span class="nt">&lt;content&gt;</span><span class="cp">&lt;![CDATA[</span>
+<span class="cp">Hello, ${1:this} is a ${2:snippet}.</span>
+<span class="cp">]]&gt;</span><span class="nt">&lt;/content&gt;</span>
+     <span class="c">&lt;!-- Optional: Set a tabTrigger to define how to trigger the snippet --&gt;</span>
+     <span class="c">&lt;!-- &lt;tabTrigger&gt;hello&lt;/tabTrigger&gt; --&gt;</span>
+     <span class="c">&lt;!-- Optional: Set a scope to limit where the snippet will trigger --&gt;</span>
+     <span class="c">&lt;!-- &lt;scope&gt;source.python&lt;/scope&gt; --&gt;</span>
+<span class="nt">&lt;/snippet&gt;</span>
+</code></pre></div>
+<p>此时的你应该有点莫名，我们接着来看下完整的结构和说明：</p>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;snippet&gt;</span>
+    <span class="nt">&lt;content&gt;</span><span class="cp">&lt;![CDATA[ 你需要插入的代码片段${1:name} ]]&gt;</span><span class="nt">&lt;/content&gt;</span>
+    <span class="c">&lt;!-- 可选：快捷键，利用Tab自动补全代码的功能 --&gt;</span>
+    <span class="nt">&lt;tabTrigger&gt;</span>xyzzy<span class="nt">&lt;/tabTrigger&gt;</span>
+    <span class="c">&lt;!-- 可选：使用范围，不填写代表对所有文件有效。附：source.css和test.html分别对应不同文件。 --&gt;</span>
+    <span class="nt">&lt;scope&gt;</span>source.python<span class="nt">&lt;/scope&gt;</span>
+    <span class="c">&lt;!-- 可选：在snippet菜单中的显示说明（支持中文）。如果不定义，菜单则显示当前文件的文件名。 --&gt;</span>
+    <span class="nt">&lt;description&gt;</span>My Fancy Snippet<span class="nt">&lt;/description&gt;</span>
+<span class="nt">&lt;/snippet&gt;</span>
+</code></pre></div>
+<p>${1:name}表示代码插入后，光标所停留的位置，可同时插入多个。其中:name为自定义参数（可选）。</p>
+
+<p>${2}表示代码插入后，按Tab键，光标会根据顺序跳转到相应位置（以此类推）。</p>
+
+<p>现在，你应该有了个大致的了解。那我们就开始自己动手编写一个实例：</p>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;snippet&gt;</span>
+     <span class="nt">&lt;content&gt;</span>
+     <span class="cp">&lt;![CDATA[</span>
+<span class="cp">     &lt;footer&gt;</span>
+<span class="cp">          &lt;p&gt;Copyright © 2008-2012 ${1:bluesdream}.com&lt;/p&gt;</span>
+<span class="cp">          &lt;p&gt;增值电信业务经营许可证 沪B2-${2} &lt;a href=&quot;#&quot;&gt;沪ICP备号${3}&lt;/a&gt;&lt;/p&gt;</span>
+<span class="cp">     &lt;/footer&gt;</span>
+<span class="cp">     ]]&gt;</span>
+     <span class="nt">&lt;/content&gt;</span>
+     <span class="nt">&lt;tabTrigger&gt;</span>cft<span class="nt">&lt;/tabTrigger&gt;</span>
+     <span class="nt">&lt;description&gt;</span>custom-footer<span class="nt">&lt;/description&gt;</span>
+     <span class="nt">&lt;scope&gt;</span>text.html<span class="nt">&lt;/scope&gt;</span>
+<span class="nt">&lt;/snippet&gt;</span>
+</code></pre></div>
+<p>创建完毕以后，保存在\Packages\User目录下（例 X:\Sublime Text 2.0\Data\Packages\User），文件命名为cft-code，后缀名.sublime-snippet。</p>
+
+<p>此时我们打开一个html文件，输入cft，再按Tab键，刚才我们所编写的代码段，就插入了进来。并且此时的光标停留在我们所标记的${1}位置处，如果我们再按下Tab，那么光标就跳转到${2}的位置。由于我们在scope中定义了仅在html文件中使用，所以此时如果我们打开的是css或其他格式的文件，那将无法插入代码段。</p>
+
+<p>补充：除了利用快捷键Tab出代码之外，我们还能通过菜单来加载，打开Tools &gt; Snippet，选择Snippet: custom-footer。如果你没有定义description，那此时便会看到以我们文件名为命名的Snippet: cft-code选项。</p>
+
+<p>更多说明可查看：<a href="http://docs.sublimetext.info/en/latest/extensibility/snippets.html">帮助文档（英）</a></p>
+
+<p>转自：http://www.bluesdream.com/blog/sublime-text-snippets-function.html</p>
+
+</section>
+<section class="meta">
+<span class="author">
+  <a href="http://scsidisk.github.io">scsidisk</a>
+</span>
+<span class="time">
+  /
+  <time datetime="2013-04-02">2013-04-02</time>
+</span>
+<br />
+<span class="license">
+  Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA</a>
+</span>
+
+<span class="categories">
+  in categories
+  
+  <a href="/categories/#sublime" title="sublime">sublime</a>&nbsp;
+  
+</span>
+
+
+<span class="tags">
+  tagged with
+  
+  <a href="/tags/#Sublime" title="Sublime">Sublime</a>&nbsp;
+  
+  <a href="/tags/#Snippets" title="Snippets">Snippets</a>&nbsp;
+  
+</span>
+
+</section>
+<section class="comment">
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'scsidiskgithubio'; // required: replace example with your forum shortname
+    var disqus_url = 'http://scsidisk.github.io/2013/04/sublime_text_snippets/';
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+<script type="text/javascript">
+$(function(){
+  $(document).keydown(function(e) {
+    var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow and J
+            
+        url = 'http://scsidisk.github.io/2013/03/travel_app_will_to_go/';
+        
+        }
+        else if (e.which == 39 || e.which == 75) {  // Right arrow and K
+            
+        url = 'http://scsidisk.github.io/2013/04/cobar_for_mysql/';
+        
+        }
+        if (url) {
+            window.location = url;
+        }
+  });
+})
+</script>
+
+
+        </article>
+      </div>
+
+    <footer>
+        <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> | Copyright 2008 - 2014 by <a href="http://scsidisk.github.io">scsidisk</a> | <span class="label label-info">2014-06-16 20:56:29 CST</span></small></p>
+    </footer>
+
+    </div>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-51832101-1', 'scsidisk.github.io');
+      ga('send', 'pageview');
+
+    </script>
+    <script type="text/javascript">
+      // var _gaq = _gaq || [];
+      // _gaq.push(['_setAccount', '');
+      // _gaq.push(['_trackPageview']);
+      // (function() {
+      //   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      //   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      //   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      // })();
+    </script>
+  </body>
+</html>

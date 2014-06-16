@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="scsidisk" />
+    <title>如何使用 Homebrew 安装指定版本的工具？ | scsidisk</title>
+    <link href="/feed/" rel="alternate" title="scsidisk" type="application/atom+xml" />
+    <link rel="stylesheet" href="/media/css/highlight.css">
+    <link href='/media/webfonts/ss-social.css' rel='stylesheet'>
+    <link href='/media/webfonts/ss-standard.css' rel='stylesheet'>
+    <link href="/media/css/screen.css" rel="stylesheet">
+
+    <script type="text/javascript" src="/media/js/jquery-1.7.1.min.js"></script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="main" role="main">
+        <header>
+        <div class="buttons">
+          <a href="/" class="ss-icon" title="Go to homepage">home</a>
+          <a href="/categories" class="ss-icon" title="Category" >list</a>
+          <a href="/tags" class="ss-icon" title="Tag Cloud" >tags</a>
+          <a href="/guestbook" class="ss-icon" title="Guest Book" >talk</a>
+          <a href="/about" class="ss-icon" title="About" >user</a>
+          <a href="/feed" class="ss-icon" title="Subscribe by RSS" >rss</a>
+        </div>
+        <h1>ScsiDisk's Blog</h1>
+        </header>
+        <hr>
+        <article class="content">
+        <h2>如何使用 Homebrew 安装指定版本的工具？</h2>
+
+<section class="post">
+<p>Homebrew 是一个 Mac 下的安装管理 Unix 工具的工具。安装好之后，在命令行下使用 brew install FORMULANAME就可以安装 FORMULANAME 对应的工具，它会处理好依赖关系，非常方便。默认情况下，安装最新版本。</p>
+
+<p>但是在某些情况下，我们可能需要安装“旧”版本的工具，或者说安装指定/特定版本的工具，该怎么办呢？还好，Homebrew 已经提供了这类的支持。</p>
+
+<p>今天安装 gsl 这个 rubygem ，编译本地库时失败了。我机器的环境是：</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">gsl-1.15
+ruby-1.9.3p125
+</code></pre></div>
+<p>其中 gsl 是使用 brew install gsl 安装的，安装了最新的1.15版本。执行 gem install gsl 时的一条错误信息是：</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">conflicting types for ‘gsl_matrix_complex_equal’
+</code></pre></div>
+<p>于是顺着这条错误信息 Google ，发现很多人都遇到这个问题了。有人说，应该安装 gsl-1.14 而不是 gsl-1.15 。而最新的 gem 版本为 1.14.7 。看来很可能是版本不兼容。</p>
+
+<p>所以我需要给 gsl 降级。 由于 gsl 是通过 Homebrew 安装的，所以需要找到安装特定版本工具的方法。于是在 Stackoverflow 上找到了方法。其实很简单：</p>
+
+<ol>
+<li>查看 brew 支持哪些版本的 gsl</li>
+</ol>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>brew versions gsl
+1.15     git checkout 164c57f /usr/local/Library/Formula/gsl.rb
+1.14     git checkout 83ed494 /usr/local/Library/Formula/gsl.rb
+1.13     git checkout b0b2584 /usr/local/Library/Formula/gsl.rb
+</code></pre></div>
+<p>非常幸运，1.14 包括在内。</p>
+
+<ol>
+<li>进入 brew 所在的git仓库</li>
+</ol>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">cd</span> <span class="sb">`</span>brew --prefix<span class="sb">`</span>
+</code></pre></div>
+<ol>
+<li>复制粘贴刚才 brew versions sql 命令的提示。执行</li>
+</ol>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>git checkout 83ed494 /usr/local/Library/Formula/gsl.rb
+</code></pre></div>
+<ol>
+<li>此时安装使用 brew install gsl 会提示错误</li>
+</ol>
+<div class="highlight"><pre><code class="language-text" data-lang="text">Error: gsl-1.15 already installed
+To install this version, first `brew unlink gsl&#39;
+</code></pre></div>
+<p>因此需要先取消之前的链接，执行</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>brew unlink gsl
+</code></pre></div>
+<p>提示</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">Unlinking /usr/local/Cellar/gsl/1.15... 16 links removed
+</code></pre></div>
+<ol>
+<li>安装成功</li>
+</ol>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>brew install gsl
+</code></pre></div>
+</section>
+<section class="meta">
+<span class="author">
+  <a href="http://scsidisk.github.io">scsidisk</a>
+</span>
+<span class="time">
+  /
+  <time datetime="2013-05-10">2013-05-10</time>
+</span>
+<br />
+<span class="license">
+  Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA</a>
+</span>
+
+<span class="categories">
+  in categories
+  
+  <a href="/categories/#macosx" title="macosx">macosx</a>&nbsp;
+  
+</span>
+
+
+<span class="tags">
+  tagged with
+  
+  <a href="/tags/#Mac," title="Mac,">Mac,</a>&nbsp;
+  
+  <a href="/tags/#Brew," title="Brew,">Brew,</a>&nbsp;
+  
+  <a href="/tags/#Homebrew" title="Homebrew">Homebrew</a>&nbsp;
+  
+</span>
+
+</section>
+<section class="comment">
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'scsidiskgithubio'; // required: replace example with your forum shortname
+    var disqus_url = 'http://scsidisk.github.io/2013/05/use_homebrew_to_install_the_specified_version_of_the_tool/';
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+<script type="text/javascript">
+$(function(){
+  $(document).keydown(function(e) {
+    var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow and J
+            
+        url = 'http://scsidisk.github.io/2013/05/setting_toolchains_of_docbook_on_mac/';
+        
+        }
+        else if (e.which == 39 || e.which == 75) {  // Right arrow and K
+            
+        url = 'http://scsidisk.github.io/2013/05/sublime_setting/';
+        
+        }
+        if (url) {
+            window.location = url;
+        }
+  });
+})
+</script>
+
+
+        </article>
+      </div>
+
+    <footer>
+        <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> | Copyright 2008 - 2014 by <a href="http://scsidisk.github.io">scsidisk</a> | <span class="label label-info">2014-06-16 20:56:29 CST</span></small></p>
+    </footer>
+
+    </div>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-51832101-1', 'scsidisk.github.io');
+      ga('send', 'pageview');
+
+    </script>
+    <script type="text/javascript">
+      // var _gaq = _gaq || [];
+      // _gaq.push(['_setAccount', '');
+      // _gaq.push(['_trackPageview']);
+      // (function() {
+      //   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      //   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      //   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      // })();
+    </script>
+  </body>
+</html>

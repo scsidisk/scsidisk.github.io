@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="scsidisk" />
+    <title>PHP Filter 简介 | scsidisk</title>
+    <link href="/feed/" rel="alternate" title="scsidisk" type="application/atom+xml" />
+    <link rel="stylesheet" href="/media/css/highlight.css">
+    <link href='/media/webfonts/ss-social.css' rel='stylesheet'>
+    <link href='/media/webfonts/ss-standard.css' rel='stylesheet'>
+    <link href="/media/css/screen.css" rel="stylesheet">
+
+    <script type="text/javascript" src="/media/js/jquery-1.7.1.min.js"></script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="main" role="main">
+        <header>
+        <div class="buttons">
+          <a href="/" class="ss-icon" title="Go to homepage">home</a>
+          <a href="/categories" class="ss-icon" title="Category" >list</a>
+          <a href="/tags" class="ss-icon" title="Tag Cloud" >tags</a>
+          <a href="/guestbook" class="ss-icon" title="Guest Book" >talk</a>
+          <a href="/about" class="ss-icon" title="About" >user</a>
+          <a href="/feed" class="ss-icon" title="Subscribe by RSS" >rss</a>
+        </div>
+        <h1>ScsiDisk's Blog</h1>
+        </header>
+        <hr>
+        <article class="content">
+        <h2>PHP Filter 简介</h2>
+
+<section class="post">
+<p>PHP 过滤器用于对来自非安全来源的数据（比如用户输入）进行验证和过滤。</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">filter_has_var()     检查是否存在指定输入类型的变量。
+filter_id()     返回指定过滤器的 ID 号。
+filter_input()     从脚本外部获取输入，并进行过滤。
+filter_input_array()     从脚本外部获取多项输入，并进行过滤。
+filter_list()     返回包含所有得到支持的过滤器的一个数组。
+filter_var_array()     获取多项变量，并进行过滤。
+filter_var()     获取一个变量，并进行过滤。。
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">FILTER_CALLBACK     调用用户自定义函数来过滤数据。
+FILTER_SANITIZE_STRING     去除标签，去除或编码特殊字符。
+FILTER_SANITIZE_STRIPPED     &quot;string&quot; 过滤器的别名。
+FILTER_SANITIZE_ENCODED     URL-encode 字符串，去除或编码特殊字符。
+FILTER_SANITIZE_SPECIAL_CHARS     HTML 转义字符 &#39;&quot;&lt;&gt;&amp; 以及 ASCII 值小于 32 的字符。
+FILTER_SANITIZE_EMAIL     删除所有字符，除了字母、数字以及 !#$%&amp;&#39;*+-/=?^_`{|}~@.[]
+FILTER_SANITIZE_URL     删除所有字符，除了字母、数字以及 $-_.+!*&#39;(),{}|\\^~[]`&lt;&gt;#%&quot;;/?:@&amp;=
+FILTER_SANITIZE_NUMBER_INT     删除所有字符，除了数字和 +-
+FILTER_SANITIZE_NUMBER_FLOAT     删除所有字符，除了数字、+- 以及 .,eE。
+FILTER_SANITIZE_MAGIC_QUOTES     应用 addslashes()。
+FILTER_UNSAFE_RAW     不进行任何过滤，去除或编码特殊字符。
+FILTER_VALIDATE_INT     在指定的范围以整数验证值。
+FILTER_VALIDATE_BOOLEAN     如果是 &quot;1&quot;, &quot;true&quot;, &quot;on&quot; 以及 &quot;yes&quot;，则返回 true，
+                        如果是 &quot;0&quot;, &quot;false&quot;, &quot;off&quot;, &quot;no&quot; 以及 &quot;&quot;，则返回 false。否则返回 NULL。
+FILTER_VALIDATE_FLOAT     以浮点数验证值。
+FILTER_VALIDATE_REGEXP     根据 regexp，兼容 Perl 的正则表达式来验证值。
+FILTER_VALIDATE_URL     把值作为 URL 来验证。
+FILTER_VALIDATE_EMAIL     把值作为 e-mail 来验证。
+FILTER_VALIDATE_IP     把值作为 IP 地址来验证
+</code></pre></div>
+<h3 id="语法">语法</h3>
+<div class="highlight"><pre><code class="language-text" data-lang="text">filter_input(input_type, variable, filter, options)
+</code></pre></div>
+<table><thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>input_type</td>
+<td>必需。规定输入类型。参见上面的列表中可能的类型。</td>
+</tr>
+<tr>
+<td>variable</td>
+<td>规定要过滤的变量。</td>
+</tr>
+<tr>
+<td>filter</td>
+<td>可选。规定要使用的过滤器的 ID。默认是 FILTER<u>SANITIZE</u>STRING。<br /> 请参见完整的 PHP Filter 函数参考手册，获得可能的过滤器。<br /> 过滤器 ID 可以是 ID 名称 （比如 FILTER<u>VALIDATE</u>EMAIL），<br /> 或 ID 号（比如 274）。</td>
+</tr>
+<tr>
+<td>options</td>
+<td>规定包含标志/选项的数组。检查每个过滤器可能的标志和选项。</td>
+</tr>
+</tbody></table>
+
+<h3 id="例子">例子</h3>
+
+<p>在本例中，我们使用 filter_input() 函数来过滤一个 POST 变量。所接受的 POST 变量是合法的 e-mail 地址。</p>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">filter_input</span><span class="p">(</span><span class="nx">INPUT_POST</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="nx">FILTER_VALIDATE_EMAIL</span><span class="p">))</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">&quot;E-Mail is not valid&quot;</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">&quot;E-Mail is valid&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</code></pre></div>
+</section>
+<section class="meta">
+<span class="author">
+  <a href="http://scsidisk.github.io">scsidisk</a>
+</span>
+<span class="time">
+  /
+  <time datetime="2012-05-14">2012-05-14</time>
+</span>
+<br />
+<span class="license">
+  Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA</a>
+</span>
+
+<span class="categories">
+  in categories
+  
+  <a href="/categories/#php" title="php">php</a>&nbsp;
+  
+</span>
+
+
+<span class="tags">
+  tagged with
+  
+  <a href="/tags/#PHP," title="PHP,">PHP,</a>&nbsp;
+  
+  <a href="/tags/#Filter" title="Filter">Filter</a>&nbsp;
+  
+</span>
+
+</section>
+<section class="comment">
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'scsidiskgithubio'; // required: replace example with your forum shortname
+    var disqus_url = 'http://scsidisk.github.io/2012/05/php_filter/';
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+<script type="text/javascript">
+$(function(){
+  $(document).keydown(function(e) {
+    var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow and J
+            
+        url = 'http://scsidisk.github.io/2011/02/my_chrome_plugins/';
+        
+        }
+        else if (e.which == 39 || e.which == 75) {  // Right arrow and K
+            
+        url = 'http://scsidisk.github.io/2012/06/css_simplified/';
+        
+        }
+        if (url) {
+            window.location = url;
+        }
+  });
+})
+</script>
+
+
+        </article>
+      </div>
+
+    <footer>
+        <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> | Copyright 2008 - 2014 by <a href="http://scsidisk.github.io">scsidisk</a> | <span class="label label-info">2014-06-16 20:56:29 CST</span></small></p>
+    </footer>
+
+    </div>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-51832101-1', 'scsidisk.github.io');
+      ga('send', 'pageview');
+
+    </script>
+    <script type="text/javascript">
+      // var _gaq = _gaq || [];
+      // _gaq.push(['_setAccount', '');
+      // _gaq.push(['_trackPageview']);
+      // (function() {
+      //   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      //   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      //   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      // })();
+    </script>
+  </body>
+</html>

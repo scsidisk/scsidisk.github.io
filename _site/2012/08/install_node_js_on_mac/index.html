@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="scsidisk" />
+    <title>如何在 Mac OSX Lion 上設定 node.js 的開發環境 | scsidisk</title>
+    <link href="/feed/" rel="alternate" title="scsidisk" type="application/atom+xml" />
+    <link rel="stylesheet" href="/media/css/highlight.css">
+    <link href='/media/webfonts/ss-social.css' rel='stylesheet'>
+    <link href='/media/webfonts/ss-standard.css' rel='stylesheet'>
+    <link href="/media/css/screen.css" rel="stylesheet">
+
+    <script type="text/javascript" src="/media/js/jquery-1.7.1.min.js"></script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="main" role="main">
+        <header>
+        <div class="buttons">
+          <a href="/" class="ss-icon" title="Go to homepage">home</a>
+          <a href="/categories" class="ss-icon" title="Category" >list</a>
+          <a href="/tags" class="ss-icon" title="Tag Cloud" >tags</a>
+          <a href="/guestbook" class="ss-icon" title="Guest Book" >talk</a>
+          <a href="/about" class="ss-icon" title="About" >user</a>
+          <a href="/feed" class="ss-icon" title="Subscribe by RSS" >rss</a>
+        </div>
+        <h1>ScsiDisk's Blog</h1>
+        </header>
+        <hr>
+        <article class="content">
+        <h2>如何在 Mac OSX Lion 上設定 node.js 的開發環境</h2>
+
+<section class="post">
+<h3 id="用-homebrew-來安裝及更新-node.js">用 Homebrew 來安裝及更新 node.js</h3>
+
+<p>要在 Mac 上建立一個 node.js 的開發環境有很多方法. 你可以直接下載原始碼自己編譯, 或者是用套件管理系統來幫你解決這些瑣碎的問題. 因為 node.js 還是一個很年輕的專案, 常常會有版本的更新. 手動安裝及更新實在是非常的累人. 若是使用 Homebrew 來幫你處理這些問題可以讓你把時間花在寫程式而不是設定環境上面. 如果你是使用 Ubuntu 的話可以參考這一篇文章.</p>
+
+<h3 id="安裝-xcode">安裝 Xcode</h3>
+
+<p>什麼? 我只不過是想寫 server side javascript 而已為什麼要安裝 4.3 GB 的Xcode 4? 嗯… 因為你需要 gcc 來編譯 node.js 和其他的套件. 所以還是乖乖裝吧…</p>
+
+<h3 id="安裝-homebrew">安裝 Homebrew</h3>
+
+<p>Homebrew 是我在 Mac 上最喜歡的套件管理系統. 他就像是 Ubuntu 上的 apt-get. 我們會需要他來幫我們安裝 node.js 以及 mongoDB. 如果你還沒聽過他的話現在趕快來試試看吧!</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">$ /usr/bin/ruby -e &quot;$(/usr/bin/curl -fsSL https://raw.github.com/mxcl/homebrew/master/Library/Contributions/install_homebrew.rb)&quot;
+</code></pre></div>
+<p>我發現用 nvm( node version management ) 來安裝 node 簡單多了, 他是一個像是 ruby rvm 的東西. 可以讓你切換 node 的版本以利在開發時切換版本. 還有 npm 在 node 0.6.3 之後已經直接包在 node 裡面不需另外安裝了. 所以基本上後面 安裝 npm 可以跳過不看.</p>
+
+<h3 id="安裝-node.js">安裝 node.js</h3>
+
+<p>用 Homebrew 來安裝 node.js 非常簡單. 只要下面兩行指令就搞定了.</p>
+
+<p>我比较喜欢使用 hrew 管理软件，所以其他安装方法忽略</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">$ brew update
+$ brew install node
+</code></pre></div>
+<h3 id="安裝-npm">安裝 npm</h3>
+
+<p>npm 是 node.js 最受歡迎的套件管理系統. 就像是 ruby 的 gem 以及 php 裡的 pear. </p>
+
+<p>現在上面已經有幾千個現成套件了. 包括 ORM, router, 以及第三方 api 的 wrapper 等等. 所以當你在寫新功能之前先上 
+npm 找找是不是已經有現成的模組可用吧.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">$ curl http://npmjs.org/install.sh | sudo sh
+</code></pre></div>
+<h3 id="安裝-mongodb">安裝 mongodb</h3>
+
+<p>mongoDB 是我首選的 NoSQL 資料庫. 雖然他不是裡面最快的但卻是最好上手以及使用的一個. </p>
+
+<p>尤其是對習慣關聯式資料庫的人來說更是如此. 但是千萬不要用設計關聯式資料庫資料結構的思維來設計你的 NoSQL 
+資料結構, 不然你的 node.js 程式跑起來還是快不到哪去的. 記得在安裝之後好好看一下他寫的非常詳盡的文件.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">$ brew install mongodb
+# create db directory
+$ mkdir /usr/local/db
+</code></pre></div>
+<h3 id="更新-node.js">更新 node.js</h3>
+
+<p>一樣用上面的指令就可以安裝新版本的 node 並且可以在版本中切換..</p>
+
+<h3 id="更新-mongodb">更新 mongoDB</h3>
+
+<p>用 Homebrew 來更新 mongoDB 非常的容易. 下面兩行指令就幫你搞定了.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">$ brew update
+$ brew upgrade
+</code></pre></div>
+<p>現在你已經設定好 node.js 的開發環境了. 跟著可以來看看如何使用 npm 以及一些基本的 javascript 和 node.js.</p>
+
+</section>
+<section class="meta">
+<span class="author">
+  <a href="http://scsidisk.github.io">scsidisk</a>
+</span>
+<span class="time">
+  /
+  <time datetime="2012-08-15">2012-08-15</time>
+</span>
+<br />
+<span class="license">
+  Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA</a>
+</span>
+
+<span class="categories">
+  in categories
+  
+  <a href="/categories/#node" title="node">node</a>&nbsp;
+  
+</span>
+
+
+<span class="tags">
+  tagged with
+  
+  <a href="/tags/#node" title="node">node</a>&nbsp;
+  
+  <a href="/tags/#node.js" title="node.js">node.js</a>&nbsp;
+  
+</span>
+
+</section>
+<section class="comment">
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'scsidiskgithubio'; // required: replace example with your forum shortname
+    var disqus_url = 'http://scsidisk.github.io/2012/08/install_node_js_on_mac/';
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+<script type="text/javascript">
+$(function(){
+  $(document).keydown(function(e) {
+    var url = false;
+        if (e.which == 37 || e.which == 74) {  // Left arrow and J
+            
+        url = 'http://scsidisk.github.io/2012/07/libmemcache/';
+        
+        }
+        else if (e.which == 39 || e.which == 75) {  // Right arrow and K
+            
+        url = 'http://scsidisk.github.io/2012/08/node_base_commands/';
+        
+        }
+        if (url) {
+            window.location = url;
+        }
+  });
+})
+</script>
+
+
+        </article>
+      </div>
+
+    <footer>
+        <p><small>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a> | Copyright 2008 - 2014 by <a href="http://scsidisk.github.io">scsidisk</a> | <span class="label label-info">2014-06-16 20:56:29 CST</span></small></p>
+    </footer>
+
+    </div>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-51832101-1', 'scsidisk.github.io');
+      ga('send', 'pageview');
+
+    </script>
+    <script type="text/javascript">
+      // var _gaq = _gaq || [];
+      // _gaq.push(['_setAccount', '');
+      // _gaq.push(['_trackPageview']);
+      // (function() {
+      //   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      //   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      //   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      // })();
+    </script>
+  </body>
+</html>
