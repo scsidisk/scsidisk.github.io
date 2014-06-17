@@ -114,6 +114,45 @@ windows下可以安装Tortoise和 Tortoisesvn的客户端。然后在sublime中�
 
 我们建立html文件时，做有些相同的代码。 这时候我们喜欢能有一个代码模板， 不能写重复相同的代码， gits插件能实现代码模板的功能。 它能见我们自己创建的代码模板，代码片段保持在github中的gist下。 http://lucifr.com/2012/03/07/sub ... al-snippet-manager/ 这里介绍了详细的用法。
 
+=== TrailingSpacer
+
+高亮显示多余的空格和Tab
+
+在github上下载的插件缺少了一个设置快捷键的文件，可以新建一个名字和后缀为Default (Windows).sublime-keymap的文件，添加以下代码，即可设置“删除多余空格”和“是否开启TrailingSpacer ”的快捷键了。
+
+
+----
+[
+    { "keys": ["ctrl+alt+d"], "command": "delete_trailing_spaces" },
+    { "keys": ["ctrl+alt+o"], "command": "toggle_trailing_spaces" }
+]
+----
+
+=== Alignment 等号对齐
+
+按Ctrl+Alt+A，可以将凌乱的代码以等号为准左右对其，适合有代码洁癖的朋友。
+
+.Default (OSX).sublime-keymap
+----
+{ "keys": ["super+ctrl+a"], "command": "alignment" }
+----
+
+=== gbk4subl 支持GBK编码
+
+让sublime text 3支持GBK编码的插件
+
+=== SideBarEnhancements
+
+侧边栏增强插件
+
+=== CSScomb js
+
+属性排序
+
+=== ColorPicker
+
+调色盘,快捷键(osx) cmd+shift+c
+
 === 代码注释格式化
 
 additional PHP snippet插件能提示phpdocument格式的代码
