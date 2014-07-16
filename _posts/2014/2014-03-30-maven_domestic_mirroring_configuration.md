@@ -34,12 +34,12 @@ $ sudo vim /etc/maven/settings.xml
 在<mirrors>标签中增加以下内容：
 
 ```xml
-<mirror>
-  <id>nexus-osc</id>
-  <mirrorOf>*</mirrorOf>
-  <name>Nexus osc</name>
-  <url>http://maven.oschina.net/content/groups/public/</url>
-</mirror>
+    <mirror>
+        <id>nexus-osc</id>
+        <mirrorOf>*</mirrorOf>
+        <name>Nexus osc</name>
+        <url>http://maven.oschina.net/content/groups/public/</url>
+    </mirror>
 ```
 
 在<profiles>标签中增加以下内容：
