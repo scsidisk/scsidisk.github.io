@@ -80,8 +80,8 @@ http://maven.oschina.net/help.html
 maven 目标和 ant 的 target 差不多。在命令行中执行下面的命令来建立我们的 hello world 项目
  
 ```
-~$ mvn archetype:generate -DgroupId=com.mycompany.helloworld -DartifactId=helloworld -Dpackage=com.mycompany.helloworld -Dversion=1.0-SNAPSHOT
-~$ mvn archetype:generate -DgroupId=com.xiaomib2c.hbaseTest -DartifactId=hbaseTest -Dpackage=com.xiaomib2c.hbaseTest -Dversion=1.0-SNAPSHOT
+$  mvn archetype:generate -DgroupId=com.mycompany.helloworld -DartifactId=helloworld -Dpackage=com.mycompany.helloworld -Dversion=1.0-SNAPSHOT
+$  mvn archetype:generate -DgroupId=com.xiaomib2c.hbaseTest -DartifactId=hbaseTest -Dpackage=com.xiaomib2c.hbaseTest -Dversion=1.0-SNAPSHOT
 或者
 mvn archetype:create -DgroupId=oschina -DartifactId=simple -DpackageName=net.oschina.simple  -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false
 ```
@@ -180,8 +180,8 @@ Maven 已经为我们建立了一个 App.java 文件：
  正是我们需要的 Hello World 代码。所以我们可以构建和运行这个程序了。用下面简单的命令构建：
 
 ```
-~$cd helloworld
-~$mvn package 
+$ cd helloworld
+$ mvn package 
 ```
 
 当你第一次运行 maven 的时候，它会从网上的 maven 库 (repository) 下载需要的程序，存放在你电脑的本地库 (local repository) 中，所以这个时候你需要有 Internet 连接。Maven 默认的本地库是 ~/.m2/repository/ ，在 Windows 下是 %USER_HOME%\.m2\repository\ 。
@@ -191,7 +191,7 @@ Maven 已经为我们建立了一个 App.java 文件：
  为了验证我们的程序能运行，执行下面的命令：
 
 ```
- ~$java -cp target/helloworld-1.0-SNAPSHOT.jar com.mycompany.helloworld.App
+ $ java -cp target/helloworld-1.0-SNAPSHOT.jar com.mycompany.helloworld.App
 ```
  
 运行成功！！
