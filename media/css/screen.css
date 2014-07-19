@@ -74,14 +74,22 @@ body>div {
     box-shadow: 0 0 10px 0 #cfcfcf;
     border-top: 6px solid #ff9900;
 }
+#sitename {
+    font-size: 28px;
+    line-height: 28px;
+    margin: 0 0 28px 0;
+    background-color: #ff9900;
+    color: #fff;
+    display: inline-block;
+    padding: 12px;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight:bold;
+}
 h1 {
     font-size: 28px;
     line-height: 28px;
     margin: 0 0 28px 0;
-	background-color: #ff9900;
-	color: #fff;
-	display: inline-block;
-	padding: 12px;
 }
 h2 {
     font-size: 26px;
@@ -114,7 +122,7 @@ ul {
 }
 ol {
     list-style-type: decimal;
-    padding-left: 12px;
+    padding-left: 20px;
 }
 dt {
     font-weight: 700;
