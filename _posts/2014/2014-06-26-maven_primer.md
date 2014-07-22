@@ -84,6 +84,8 @@ $  mvn archetype:generate -DgroupId=com.mycompany.helloworld -DartifactId=hellow
 $  mvn archetype:generate -DgroupId=com.xiaomib2c.hbaseTest -DartifactId=hbaseTest -Dpackage=com.xiaomib2c.hbaseTest -Dversion=1.0-SNAPSHOT
 或者
 mvn archetype:create -DgroupId=oschina -DartifactId=simple -DpackageName=net.oschina.simple  -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false
+或参考maven手册
+mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
 ```
 
 archetype:generate 目标会列出一系列的 archetype 让你选择。 Archetype 可以理解成项目的模型。 Maven 为我们提供了很多种的项目模型，包括从简单的 Swing 到复杂的 Web 应用。我们选择默认的是编号 #16.
@@ -184,6 +186,16 @@ $ cd helloworld
 $ mvn package 
 ```
 
+maven 将执行以下步骤
+
+1. validate
+2. generate-sources
+3. process-sources
+4. generate-resources
+5. process-resources
+6. compile
+
+
 当你第一次运行 maven 的时候，它会从网上的 maven 库 (repository) 下载需要的程序，存放在你电脑的本地库 (local repository) 中，所以这个时候你需要有 Internet 连接。Maven 默认的本地库是 ~/.m2/repository/ ，在 Windows 下是 %USER_HOME%\.m2\repository\ 。
 
 如果构建没有错误的话, maven 在 helloworld 下面建立了一个新的目录 target/ ，构建打包后的 jar 文件 helloworld-1.0-SNAPSHOT.jar 就存放在这个目录下。编译后的 class 文件放在 target/classes/ 目录下面，测试 class 文件放在 target/test-classes/ 目录下面。
@@ -195,6 +207,31 @@ $ mvn package
 ```
  
 运行成功！！
+
+
+### Maven 的动作
+
+- validate: 验证项目是正确的和所有必需的信息是可用的
+- compile: 编译项目的源代码
+- test: 使用合适的单元测试框架测试编译完成的源代码。本测试不需要代码打包或解包。
+- package: 把编译的代码合并成发行的格式，如JAR.
+- integration-test: 处理并部署包到测试环境进行测试
+- verify: 运行检查以验证该包有效和符合质量标准
+- install: 安装包到本地仓库，其他项目可以用作本地依赖
+- deploy: 在集成和发布环境完成，复制最后包到远程仓库分享给其他的开发者和项目.
+
+还有两个动作
+
+- clean: 清除以前构建的结果
+- site: 生成项目的文档站点
+
+生成站点
+
+```
+mvn site
+```
+
+这个动作会基于 pom 信息生成一个站点，你可以在 target/site 下面看到该文档。
 
 ### 生成 Eclipse 项目
 
