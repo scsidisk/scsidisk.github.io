@@ -124,7 +124,7 @@ Maven有好几个插件能帮助用户完成上述任务，不过用起来最方
 
 在pom中 `<build><plugins>` 中添加 assembly 插件
 
-```
+```xml
 <plugin>
     <artifactId>maven-assembly-plugin</artifactId>
     <version>2.4</version>
@@ -144,7 +144,7 @@ Maven有好几个插件能帮助用户完成上述任务，不过用起来最方
 
 如果允许跳过的测试，需要在 `<build><plugins>` 中添加
 
-```
+```xml
 <plugin>
     <groupId>org.apache.maven.plugins</groupId>
     <artifactId>maven-surefire-plugin</artifactId>
@@ -164,7 +164,7 @@ Maven有好几个插件能帮助用户完成上述任务，不过用起来最方
 
 下面的配置只要执行 mvn package 即可
 
-```
+```xml
 <plugin>
     <artifactId>maven-assembly-plugin</artifactId>
     <configuration>
@@ -260,7 +260,7 @@ fileSets允许用户通过文件或目录的粒度来控制打包。这里的第
 
 最后，我们需要配置maven-assembly-plugin使用打包描述文件，并绑定生命周期阶段使其自动执行打包操作：
 
-```
+```xml
   <plugin>
     <groupId>org.apache.maven.plugins</groupId>
     <artifactId>maven-assembly-plugin</artifactId>
