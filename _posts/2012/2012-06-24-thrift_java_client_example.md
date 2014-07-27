@@ -37,6 +37,35 @@ http://thrift.apache.org/static/files/thrift-20070401.pdf
 </dependency>
 ```
 
+也可参考下面信息添加依赖
+
+```xml
+<dependency>
+  <groupId>org.apache.thrift</groupId>
+  <artifactId>libthrift</artifactId>
+  <version>0.9.1</version>
+</dependency>
+<dependency>
+  <groupId>org.slf4j</groupId>
+  <artifactId>slf4j-api</artifactId>
+  <version>1.7.7</version>
+</dependency>
+<dependency>
+  <groupId>org.slf4j</groupId>
+  <artifactId>jcl-over-slf4j</artifactId>
+  <version>1.7.7</version>
+  <scope>runtime</scope>
+</dependency>
+
+<dependency>
+  <groupId>org.slf4j</groupId>
+  <artifactId>slf4j-log4j12</artifactId>
+  <version>1.5.8</version>
+</dependency>
+```
+
+如果提示找不到jar包，需要手动添加jar包到 Class Path
+
 2.如果自己编译lib包，把下载的压缩包解压到X:盘，然后在X:\thrift-0.8.0\lib\java 目录下运行ant进行自动编译，会在X:\thrift-0.8.0\lib\java\build\ 目录下看到编译好的lib包：libthrift-0.8.0.jar
 
 ## 三、基本概念
