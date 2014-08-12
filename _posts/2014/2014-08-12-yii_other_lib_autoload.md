@@ -24,7 +24,7 @@ PHPExcel_Shared_ZipStreamWrapper::register();
 Yii::registerAutoloader(array('PHPExcel_Autoloader','Register'),true);  
 ```
 
-## 2、按照下面的代码修改PHPExcel代码目录里的Autoloader.php文件
+## 2、修改Autoloader.php文件中的Register方法
 
 ```
 public static function Register() {  
@@ -46,7 +46,7 @@ public static function Register() {
 }    //    function Register()  
 ```
 
-## 3、在需要使用PHPExcel时使用以下代码
+## 3、在需要使用进行设置
 
 ```
 $filePath = '/home/public_html/sqt/protected/data/queueSql/company.xls';  
@@ -57,7 +57,7 @@ spl_autoload_register(array('YiiBase', 'autoload'));
 $PHPExcel = PHPExcel_IOFactory::load( $filePath);  
 ```
 
-## 4、只要设置Yii::$enableIncludePath为false，第三方类库就有了执行自己的autoload方法的机会
+## 4、设置enableIncludePath
 
 ```
 Yii::$enableIncludePath = false;    
