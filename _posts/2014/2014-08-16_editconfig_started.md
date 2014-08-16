@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 统一编辑器配置
-date: 2014-08-18
+date: 2014-08-16
 author: scsidisk
 category: IT
 tags: IT
