@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 免费的电子邮件证书：Comodo Free Email Certificate
+title: Mac 上面使用免费的电子邮件证书
 date: 2014-08-17
 author: scsidisk
 category: MacOSX
