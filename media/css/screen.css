@@ -5,7 +5,8 @@
 
 @font-face{
     /*font: 12px/162% Arial,Helvetica,sans-serif;*/
-    font: 13px Helvetica, arial, freesans, clean, sans-serif;
+    /*font: 13px Helvetica, arial, freesans, clean, sans-serif;*/
+    font: 13px "Microsoft JhengHei","微軟正黑體",Optima,Segoe,"Segoe UI",Candara,Calibri
 }
 
 html, body, div, span, applet, object, iframe,
@@ -58,6 +59,7 @@ body{
     margin-left:auto;
     margin-right:auto;
     /*font-family:MuseoSans,Trebuchet,"Trebuchet MS",Tahoma,"Lucida Grande","Lucida Sans Unicode","Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei",Verdana,sans-serif;*/
+    font-family:"Microsoft JhengHei","微軟正黑體",Optima,Segoe,"Segoe UI",Candara,Calibri;
     color:#000000;
     background-color:#ffffff;
 }
