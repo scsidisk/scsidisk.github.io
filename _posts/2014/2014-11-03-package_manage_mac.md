@@ -7,7 +7,7 @@ category: MacOSX
 tags: MacOSX
 ---
 
-### Python PyPI (pip)
+### 1. Python PyPI (pip)
 
 添加豆瓣源
 
@@ -18,7 +18,7 @@ $ vim ~/.pip/pip.conf
 index-url = http://pypi.douban.com/simple 
 ```
 
-### Node NPM
+### 2. Node NPM
 
 使用cnpmjs
 
@@ -28,7 +28,7 @@ vim ~/.npmrc
 registry = http://registry.cnpmjs.org
 ```
 
-### Ruby Gem
+### 3. Ruby Gem
 
 使用淘宝源
 
