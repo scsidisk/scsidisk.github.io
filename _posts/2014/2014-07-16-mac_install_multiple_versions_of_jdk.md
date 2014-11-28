@@ -34,6 +34,8 @@ $ curl -L -s get.jenv.io | bash
 ```
 $ mkdir -p $HOME/.jenv/candidates/java
 $ ln -s /Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/home $HOME/.jenv/candidates/java/1.7.0_51
+### osx10.10上面安装1.6以后的路径问题
+ln -s /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/ $HOME/.jenv/candidates/java/1.6.0
 $ jenv default java 1.7.0_51
 ```
 
