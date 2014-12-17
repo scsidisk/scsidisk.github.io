@@ -252,4 +252,6 @@ export HADOOP_OPTS="-Djava.security.krb5.realm=OX.AC.UK -Djava.security.krb5.kdc
 
 （意思是设置启动hadoop时设定相关的JVM参数）
 
+转自：http://www.wangyuxiong.com/archives/52025
+
 ~~~EOF~~~
