@@ -10,7 +10,7 @@ tags: Maven, Java
 ### Maven 是做什么用的？
 
 Maven 是一个项目管理和构建自动化工具。使用惯例优于配置的原则 。它要求在没有定制之前，所有的项目都有如下的结构：
- 
+
 | 目录 | 目的 |
 |------|------|
 | ${basedir} | 存放 pom.xml和所有的子目录 |
@@ -37,12 +37,12 @@ Maven 官网的下载链接是 : http://maven.apache.org/download.html 。
 3、将 M2 环境变量加入 Path 的最后，如：;%M2%;。
 ```
 
-下载Maven并解压到你选择的安装目录，例如在windows下的C:\maven，或者Linux下的/usr/local/maven。然后添加系统变量$M2]\_HOME和M2\_HOME/bin到你的系统路径。在终端或者命令提示里输入以下指令:   
+下载Maven并解压到你选择的安装目录，例如在windows下的C:\maven，或者Linux下的/usr/local/maven。然后添加系统变量$M2]\_HOME和M2\_HOME/bin到你的系统路径。在终端或者命令提示里输入以下指令:
 
-安装完成后，在命令行运行下面的命令：  
+安装完成后，在命令行运行下面的命令：
 
 ```
-$ mvn -v 
+$ mvn -v
 Apache Maven 3.0.3 (r1075438; 2011-03-01 01:31:09+0800)
 Maven home: /home/limin/bin/maven3
 Java version: 1.6.0_24, vendor: Sun Microsystems Inc.
@@ -51,11 +51,11 @@ Default locale: en_US, platform encoding: UTF-8
 OS name: "linux", version: "2.6.35-28-generic-pae", arch: "i386", family: "unix"
 ```
 
-如果你看到类似上面的输出的话，就说明安装成功了。 
+如果你看到类似上面的输出的话，就说明安装成功了。
 
 ### 安装所需插件
 
-在终端或者命令提示里输入以下指令: 
+在终端或者命令提示里输入以下指令:
 
 ```
 mvn
@@ -73,15 +73,16 @@ http://maven.oschina.net/help.html
 
 接下来我们用 maven 来建立最著名的“Hello World!”程序 :)
 
-注意：如果你是第一次运行 maven，你需要 Internet 连接，因为 maven 需要从网上下载需要的插件。    
+注意：如果你是第一次运行 maven，你需要 Internet 连接，因为 maven 需要从网上下载需要的插件。
 
 我们要做的第一步是建立一个 maven 项目。在 maven 中，我们是执行 maven 目标 (goal) 来做事情的。
 
 maven 目标和 ant 的 target 差不多。在命令行中执行下面的命令来建立我们的 hello world 项目
- 
+
 ```
-$  mvn archetype:generate -DgroupId=com.mycompany.helloworld -DartifactId=helloworld -Dpackage=com.mycompany.helloworld -Dversion=1.0-SNAPSHOT
-$  mvn archetype:generate -DgroupId=com.xiaomib2c.hbaseTest -DartifactId=hbaseTest -Dpackage=com.xiaomib2c.hbaseTest -Dversion=1.0-SNAPSHOT
+$ mvn archetype:generate -DgroupId=com.mycompany.helloworld -DartifactId=helloworld -Dpackage=com.mycompany.helloworld -Dversion=1.0-SNAPSHOT
+$ mvn archetype:generate -DgroupId=com.xiaomib2c.hbaseTest -DartifactId=hbaseTest -Dpackage=com.xiaomib2c.hbaseTest -Dversion=1.0-SNAPSHOT
+$ mvn archetype:generate -DgroupId=com.xiaomib2c.statMonitor -DartifactId=statMonitor -Dpackage=com.xiaomib2c.stat -Dversion=1.0-SNAPSHOT
 或者
 mvn archetype:create -DgroupId=oschina -DartifactId=simple -DpackageName=net.oschina.simple  -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false
 或参考maven手册
@@ -164,26 +165,26 @@ maven 的 archetype 插件建立了一个 helloworld 目录，这个名字来自
 Maven 已经为我们建立了一个 App.java 文件：
 
 ```java
-    package com.mycompany.helloworld;   
-      
-    /**  
-     * Hello world!  
-     *  
-     */   
-    public class App {   
+    package com.mycompany.helloworld;
 
-      
-        public static void main( String[] args ) {   
-            System.out.println( "Hello World!" );   
-        }   
-    }  
+    /**
+     * Hello world!
+     *
+     */
+    public class App {
+
+
+        public static void main( String[] args ) {
+            System.out.println( "Hello World!" );
+        }
+    }
 ```
 
  正是我们需要的 Hello World 代码。所以我们可以构建和运行这个程序了。用下面简单的命令构建：
 
 ```
 $ cd helloworld
-$ mvn package 
+$ mvn package
 ```
 
 maven 将执行以下步骤
@@ -205,7 +206,7 @@ maven 将执行以下步骤
 ```
  $ java -cp target/helloworld-1.0-SNAPSHOT.jar com.mycompany.helloworld.App
 ```
- 
+
 运行成功！！
 
 
@@ -252,7 +253,7 @@ mvn eclipse:eclipse
     <defaultGoal>compile</defaultGoal>
 </build>
 ```
- 
+
 或者使用 mvn compile 命令
 
 ### 其他命令
