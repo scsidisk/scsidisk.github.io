@@ -27,7 +27,7 @@ tags: MacOSX Mail
 
 完成后会收到邮件，打开主题为：Your certificate is ready for collection!的电子邮件。下载证书得到 CollectCCC.p7s
 
-双击后弹出签名，输入密码后添加的密钥串中。
+双击后弹出签名，输入密码后添加的密钥串("登录")中。
 
 安装证书后最好将证书备份，防止丢失！
 
