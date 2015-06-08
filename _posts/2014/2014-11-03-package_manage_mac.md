@@ -41,6 +41,17 @@ $ gem sources -a http://ruby.taobao.org/
 
 尝试国内两个源以后，有时候会慢或找不到包。可以试用下面的源。
 
+使用 Composer 需要提升速度问题：
+
+- 升级PHP 版本到5.4以上
+- 删除文件夹Vender（或者重命名），之后执行， 直接下载zip压缩包
+
+```
+php composer.phar install --prefer-dist
+```
+
+-  在composer.json文件中直接生命具体的bundle版本
+
 ```
 $ composer config -g -e
 添加
