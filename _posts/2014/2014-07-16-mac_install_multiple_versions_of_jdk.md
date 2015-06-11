@@ -31,6 +31,12 @@ $ curl -L -s get.jenv.io | bash
 
 如果机器上面还没有 Java SDK, 请从官网下载 http://www.oracle.com/technetwork/java/javase/downloads/index.html 并安装. 
 
+Mac OSX Yosimate 以后集成 jdk8 , 下面给出 JDK6， JDK7下载地址
+
+JDK6: http://supportdownload.apple.com/download.info.apple.com/Apple_Support_Area/Apple_Software_Updates/Mac_OS_X/downloads/031-03190.20140529.Pp3r4/JavaForOSX2014-001.dmg
+
+JDK7: http://download.oracle.com/otn-pub/java/jdk/7u79-b15/jdk-7u79-macosx-x64.dmg
+
 ```
 $ mkdir -p $HOME/.jenv/candidates/java
 $ ln -s /Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/home $HOME/.jenv/candidates/java/1.7.0_51
