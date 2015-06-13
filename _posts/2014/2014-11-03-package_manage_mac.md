@@ -50,7 +50,7 @@ $ gem sources -a http://ruby.taobao.org/
 php composer.phar install --prefer-dist
 ```
 
--  在composer.json文件中直接生命具体的bundle版本
+- 在composer.json文件中直接声明具体的bundle版本
 
 ```
 $ composer config -g -e
