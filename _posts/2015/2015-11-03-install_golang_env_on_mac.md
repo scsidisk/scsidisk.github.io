@@ -3,7 +3,7 @@ layout: post
 title: Mac 安装 Golang 开发环境
 date: 2015-11-03
 author: scsidisk
-category: MacOSX
+category: Golang
 tags: Mac Sublime Go Golang
 ---
 
