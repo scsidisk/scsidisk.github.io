@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 在 Mac OSX 上使用 NativeScript
+title: 在 Mac 上使用 NativeScript
 date: 2015-06-15 12:55:55
 author: scsidisk
 category: MacOSX
