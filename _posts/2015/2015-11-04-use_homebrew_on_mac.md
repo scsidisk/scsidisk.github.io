@@ -1,5 +1,12 @@
-Homebrew 的使用
-==============
+---
+layout: post
+title: Homebrew 的使用
+date: 2015-11-04
+author: scsidisk
+category: MacOSX
+tags: Mac Brew Homebrew
+---
+
 
 ### 安装
 
@@ -35,6 +42,8 @@ Homebrew 的使用
 
 
 访问 https://github.com/settings/tokens/new?scopes=&description=Homebrew，点击 Generate token
+
+如果没有 github 账户，请自己申请。
 
 复制刚生成的token，添加到 `~/.bash_profile`
 
