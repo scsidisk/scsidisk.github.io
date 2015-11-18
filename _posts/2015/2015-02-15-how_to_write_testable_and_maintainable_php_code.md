@@ -4,14 +4,8 @@ title: 如何编写可测试和可维护的php代码
 date: 2015-02-15
 author: scsidisk
 category: PHP
-tags: [PHP, PHPUnit]
+tags: PHP, PHPUnit
 ---
-
-
-
-============================
-
-
 
 框架提供了一个工具可以快速的开发应用，框架允许你快速的创建功能，但是通常你会获得技术债务。当可维护性不是作为开发人员的主要目的，技术债务就产生了。由于缺少单元测试和构架，未来的修改和调试就变得非常昂贵了。
 
@@ -28,7 +22,6 @@ tags: [PHP, PHPUnit]
 让我们从一段故意设计，但是非常典型的代码开始。在很多框架中，这可能是一个模型类:
 
 ```php
-<?php
 class User
 {
     public function getCurrentUser()
@@ -58,7 +51,6 @@ class User
 这里我们为上面的功能尝试创建一个单元测试。
 
 ```php
-<?php
 class UserModelTest extends PHPUnit_Framework_TestCase
 {
     public function testGetUser()
@@ -88,7 +80,6 @@ class UserModelTest extends PHPUnit_Framework_TestCase
 在这个简单的环境中检索当前用户信息的功能是不必要的，这是一个人为设计的例子，但本着DRY原则精神，我首先选择先优化“getUser”方法，使其更通用。
 
 ```php
-<?php
 class User
 {
     public function getUser($user_id)
@@ -115,7 +106,6 @@ class User
 我们通过引入“依赖注入”来改善情况。我们的模型类看起来可能是这样的，当我们传入数据库连接到这个类：
 
 ```php
-<?php
 class User
 {
 
@@ -150,7 +140,6 @@ class User
 让我们看看单元测试可能的样子：
 
 ```php
-<?php
 
 use Mockery as m;
 use Fideloper\User;
@@ -222,7 +211,6 @@ class SecondUserTest extends PHPUnit_Framework_TestCase
 为了进一步改进，我们定义和实现了一个接口，考虑下面的代码：
 
 ```php
-<?php
 interface UserRepositoryInterface
 {
     public function getUser($user_id);
@@ -296,7 +284,6 @@ class User
 同样，我们简化了单元测试。
 
 ```php
-<?php
  
 use Mockery as m;
 use Fideloper\User;
@@ -346,7 +333,6 @@ class ThirdUserTest extends PHPUnit_Framework_TestCase {
 考虑下我们当前代码的用法：
 
 ```php
-<?php
 // In some controller
 $user = new User( new MysqlUser( App:db->getConnection("mysql") ) );
 $user_id = App::session("user->id");
@@ -359,7 +345,6 @@ $currentUser = $user->getUser($user_id);
 一个容器仅仅包含一个对象或功能。它很像你应用中的注册表。我们可以通过容器（使用所有需要的依赖）自动初始化一个User对象。下面，我使用了[Pimple](http://pimple.sensiolabs.org/)，一个流行的容器类。
 
 ```php
-<?php
 // Somewhere in a configuration file
 $container = new Pimple();
 $container["user"] = function() {
@@ -409,7 +394,6 @@ $currentUser = $container['user']->getUser( App::session('user_id') );
 安装
 
 ```php
-<?php
 $ php composer.phar install --dev
 ```
 
