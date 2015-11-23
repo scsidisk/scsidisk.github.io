@@ -1,21 +1,44 @@
-# markdown: rdiscount
-permalink: /:year/:month/:title/
-url: http://scsidisk.github.io
-author: scsidisk
-highlighter: pygments
-# pygments: true
-markdown: redcarpet
-redcarpet: 
-    extensions: ["fenced_code_blocks", "tables", "highlight", "with_toc_data", "strikethrough", "underline"]
-paginate: 24
+permalink: /:year/:month/:day/:title/
+
+# 站点设置
+title: "Scsidisk's Blog"
+email: scsidisk@gmail.com
+description: "scsidisk 的博客"
+keywords: "scsidisk"
+
+# 用户信息设置
+weibo_username: Scsidisk
+github_username: scsidisk
+
+# Markdown设置
+kramdown:
+  input:  GFM
+  use_coderay: true
+  coderay:
+    coderay_line_numbers:  nil
+
+
+
+# 地址设置
+baseurl: ""
+url: "http://127.0.0.1:4000"
+
+
+# 分页设置
+paginate: 10
+paginate_path: "page/:num"
+
+#scss设置
+sass:
+    sass_dir: /assets/stylesheet
+    style: :compressed
+
+# url: http://scsidisk.github.io
 disqus_shortname: scsidiskgithubio
-sitename: ScsiDisk's Blog
 
-asciidoc: asciidoctor
-asciidoc_ext: asciidoc,adoc,ad,asc
-asciidoctor:
-  attributes:
-    - hardbreaks!
-    - source-highlighter=coderay
-    - coderay-css=style
 
+# duoshuo设置
+# duoshuo_shortname:
+
+# 百度统计设置
+# baidu_analysis:

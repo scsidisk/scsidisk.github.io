@@ -1,11 +1,16 @@
 ---
 layout: default
 ---
-
-<section class="post">
-{{ content }}
-</section>
-{% if page.comments %}
-{% include comments.md %}
-{% endif %}
-
+<div class="container">
+    <div id="post-content" class="panel panel-pithy post">
+      <div class="panel-heading">
+        <h3 class="title">
+          <i class="fa fa-bookmark-o"></i>{{page.title}}
+        </h3>
+      </div>
+      <div class="panel-body">
+        {{content}}
+      </div>
+    </div>
+    {% include comment.html%}
+</div>
