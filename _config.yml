@@ -1,4 +1,4 @@
-permalink: /:year/:month/:title/
+permalink: /:year/:month/:day/:title/
 
 # 站点设置
 title: "Scsidisk's Blog"
