@@ -172,7 +172,7 @@ FAQ
 
     $ curl -k 'http://localhost:8081/MoviesApp.android.bundle?platform=android' > android/app/src/main/assets/MoviesApp.android.bundle
 
-### ANDROID_HOME设置不正确
+### ANDROID_HOME 设置不正确
 
 > **A problem occurred configuring project ':app'.
     failed to find target with hash string 'android-23' in: /Users/zbmobi/DevelopTools/Android/sdk**
@@ -180,7 +180,7 @@ FAQ
 ### compiletargetSdkVersion 版本号不一致
 
 > ***A problem occurred configuring project ':app'.
- failed to find Build Tools revision 23.0.1***
+    failed to find Build Tools revision 23.0.1***
 
 解决办法: 查看build-tools目录，修改compileSdkVersion和targetSdkVersion的对应版本号
 
@@ -194,6 +194,21 @@ FAQ
 
     $ sudo ln -s /usr/lib/libSystem.B.dylib /usr/local/lib/libgcc_s.10.5.dylib
     $ sudo ln -s /usr/lib/libSystem.B.dylib /usr/local/lib/libgcc_s.10.4.dylib
+
+### 找不到 'android-23'
+
+sdk 问题，重新安装上面的sdk相应的项目，正确设置 `ANDROID_HOME`, 可以解决。或者使用下面的方法(未验证)。
+
+    1. 處理方式，更新 android sdk
+    2. 執行 `android update sdk --no-ui`
+    3. 執行 `android update sdk -u -a`
+
+### 找不到 device 裝置
+
+    1. 使用模拟器，安裝 `genymotion`
+    2. 使用实机，数据线连接手机
+    3. 执行 `adb devices` 查看设备列表
+
 
 参考
 ----
