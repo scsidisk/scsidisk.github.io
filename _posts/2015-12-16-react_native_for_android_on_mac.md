@@ -11,6 +11,8 @@ tags: [ReactNative, Android]
 -------
 
 - OS X
+- Android 4.4.4
+- MIUI7 开发版
 - Homebrew 命令, 参见 [](http://scsidisk.github.io/2015/11/use_homebrew_on_mac/)
 - Node.js 4或更高，如果用node5，最好使用npm2
     - `brew install node`
@@ -77,7 +79,7 @@ Gradle中配置的API Level 必须在sdk已安装的版本一致
 
 * `compileSdkVersion` SDK的版本号，也就是API Level，例如API-19、API-20、API-21等等
 * `buildToolsVersion` 构建工具的版本，包括打包工具aapt、dx等等。位于 `sdk_path/build-tools/XX.XX.XX`
-*  `targetSdkVersion` 在编译程序是指定一个API Level，我一般配置为跟 compileSdkVersion一致。
+* `targetSdkVersion` 在编译程序是指定一个API Level，我一般配置为跟 compileSdkVersion一致。
 
 ### 2. 创建assets目录
 
@@ -208,6 +210,10 @@ sdk 问题，重新安装上面的sdk相应的项目，正确设置 `ANDROID_HOM
     1. 使用模拟器，安裝 `genymotion`
     2. 使用实机，数据线连接手机
     3. 执行 `adb devices` 查看设备列表
+
+### `adb reverse` 调试
+
+如果不是 `Android 5.0+ (API 21)` ，那么就没办法通过 `adb reverse` 进行调试，需要通过 WiFi 来连接上你的开发者服务器
 
 
 参考
