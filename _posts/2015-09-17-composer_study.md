@@ -1,9 +1,13 @@
-2015年PHP最常用的类库
-===================
+---
+layout: post
+title: 2015年PHP最常用的类库
+date: 2015-09-17
+author: scsidisk
+category: PHP
+tags: [composer]
+---
 
 composer分析
-
-2015-09-17
 
 转自: http://oabeta.com/popular-library-in-php-develop-2015/
 
