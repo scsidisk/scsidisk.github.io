@@ -39,7 +39,11 @@ $ gem sources -a http://ruby.taobao.org/
 
 ### 4. PHP Composer
 
-尝试国内两个源以后，有时候会慢或找不到包。可以试用下面的源。
+- 国内镜像
+
+    composer config -g repositories.packagist composer http://packagist.phpcomposer.com
+
+如果感觉速度不好, 可以使用下面的方法。
 
 使用 Composer 需要提升速度问题：
 
