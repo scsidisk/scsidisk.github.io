@@ -13,7 +13,17 @@
           {% for category in site.categories %}
           <li>
               <a class="catelink" href="{{site.baseurl}}/category/#{{category.first}}" data-target-cate="#{{category.first}}">
-                  {{ category.first }}&nbsp;<span class="count">[{{ category.last.size }}]</span>
+                  {% case category.first %}
+                  {% when 'macosx' %}
+                    Mac OS X
+                  {% when 'reactnative' %}
+                    React Native
+                  {% when 'it' or 'java' or 'php' %}
+                    {{ category.first | upcase}}
+                  {% else %}
+                    {{ category.first | capitalize}}
+                  {% endcase %}
+                  &nbsp;<span class="count">[{{ category.last.size }}]</span>
               </a>
           </li>
 
