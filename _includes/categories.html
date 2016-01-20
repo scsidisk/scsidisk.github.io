@@ -18,7 +18,7 @@
                     Mac OS X
                   {% when 'reactnative' %}
                     React Native
-                  {% when 'it' or 'java' or 'php' %}
+                  {% when 'it' or 'php' %}
                     {{ category.first | upcase}}
                   {% else %}
                     {{ category.first | capitalize}}
