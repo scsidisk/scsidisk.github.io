@@ -215,6 +215,97 @@ sdk 问题，重新安装上面的sdk相应的项目，正确设置 `ANDROID_HOM
 
 如果不是 `Android 5.0+ (API 21)` ，那么就没办法通过 `adb reverse` 进行调试，需要通过 WiFi 来连接上你的开发者服务器
 
+### app 名称修改
+
+    安卓版本的应用名在这里：
+
+    $ vim android/app/src/main/res/values/strings.xml
+    <string name="app_name">MyProject</string>
+
+MyProject改成你需要的名字就好了。
+
+图标在 `android\app\src\main\res` 文件夹下每个 mipmap 开头的文件夹下有一个不同尺寸的版本，可以自行输出，也可以使用 Android Studio 批量修改。
+
+修改完成后重新运行或打包即可。
+
+### React Native for Android 发布独立安装包
+
+React Native Android 开发的话，必须启动个 JS Server，然后要让手机连接这个 Server。
+
+如果要发布一个 React Native 写的 Android 应用，不可能要别人来连接这个 JS Server。可不可以不要连接这个 Server 就能运行呢？在网上找了一圈，发现资料很少，官方文档上也没有说支持。这篇文章就来讨论一种实现方案。
+
+第一次打开 React Native 应用的时候，会连接 JS Server 下载一个 ReactNativeDevBundle.js 文件，然后放到应用数据的 files 目录下，就能运行这个 JS 文件了。到这里我们也就找到解决方案了。
+
+只要我们把这个 ReactNativeDevBundle.js 文件提前打包到 APK 中，然后 APK 运行的时候，把这个文件释放到 files 目录中。
+
+我们可以把 ReactNativeDevBundle.js 先保存下来，放在 Android 工程的 assets 目录中，这会自动打包到 APK 中。在 APP 第一次运行的时候，把文件拷贝到目的位置，代码如下：
+
+
+    public class MainActivity extends Activity {
+
+        private static final String JSBUNDLE_FILE = "ReactNativeDevBundle.js";
+
+        private static void copyFile(InputStream in, OutputStream out) throws IOException {
+            byte[] buffer = new byte[1024];
+            int read;
+            while((read = in.read(buffer)) != -1){
+                out.write(buffer, 0, read);
+            }
+        }
+
+        private void prepareJSBundle() {
+            File targetFile = new File(getFilesDir(), JSBUNDLE_FILE);
+            if (!targetFile.exists()) {
+                try {
+                    OutputStream out = new FileOutputStream(targetFile);
+                    InputStream in = getAssets().open(JSBUNDLE_FILE);
+
+                    copyFile(in, out);
+                    out.close();
+                    in.close();
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            prepareJSBundle();
+            ...
+        }
+    }
+
+使用实例可以参考这里：[MainActivity.java](https://github.com/race604/ZhiHuDaily-React-Native/blob/master/android%2Fapp%2Fsrc%2Fmain%2Fjava%2Fcom%2Frace604%2Fzhihu%2Fdaily%2FMainActivity.java)。
+
+在 build.gradle 中添加一个 task，让它每次打包的是自动访问 http://localhost:8081/index.android.bundle?platform=android 下载文件到 app/src/main/assets/ 目录中，脚本如下：
+
+    final def TARGET_BUNDLE_DIR = 'app/src/main/assets/'
+    final def TARGET_BUNDLE_FILE = 'ReactNativeDevBundle.js'
+    final def DOWNLOAD_URL = 'http://localhost:8081/index.android.bundle?platform=android'
+
+    task downloadJSBundle << {
+        def dir = new File(TARGET_BUNDLE_DIR)
+        if (!dir.exists()) {
+            dir.mkdirs()
+        }
+        def f = new File(TARGET_BUNDLE_DIR + TARGET_BUNDLE_FILE)
+        if (f.exists()) {
+            f.delete()
+        }
+        new URL(DOWNLOAD_URL).withInputStream{ i -> f.withOutputStream{ it << i }}
+    }
+    // 保证每次编译之前，先下载 JS 文件
+    preBuild.dependsOn downloadJSBundle
+
+这样，每次打包的时候，都会先帮我们下载好 JS 文件到指定位置了。当然，打包的时候，你要保证你的 JS Server 是开着的。完整代码可以参考：[build.gradle](https://github.com/race604/ZhiHuDaily-React-Native/blob/master/android%2Fapp%2Fbuild.gradle)。
+
+到这里，我们就实现了一个可行的方案了，可以独立发布 APK 了。
+
+我这里只是一个简陋的解决方案，这里有些问题需要改进。首先，我们的 JS 文件都是明文的，基本上就是你的源代码，用在生产环境的话，做混淆是必须的。相信官方很快也会出标准的解决方案，毕竟 iOS 已经支持了。另外，如果要做在线更新的话，需要保证你更新 JS 的服务器的安全，因为这些 JS 代码可以直接运行到用户手机上。
 
 参考
 ----

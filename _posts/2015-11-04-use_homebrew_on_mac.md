@@ -12,6 +12,8 @@ tags: [Mac, Brew, Homebrew]
 
 参见 http://brew.sh
 
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
 ### 基本用法
 
 -   brew search formula \# 搜索软件包
