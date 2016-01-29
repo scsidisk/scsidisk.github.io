@@ -24,9 +24,9 @@ MAMP 套件包含 Apache，Nginx，PHP，MySQL，apc，phpmyadmin。
 
 为了执行 php 命令行可以把 PHP 命令放到 `/usr/local/bin`. 确认 `/usr/local/bin` 在环境变量的前面。
 
-    ln -s /Applications/MAMP/bin/php/php5.6.10/bin/php /usr/local/bin/php
-    ln -s /Applications/MAMP/bin/php/php5.6.10/bin/phpize /usr/local/bin/phpize
-    ln -s /Applications/MAMP/bin/php/php5.6.10/bin/php-config /usr/local/bin/php-config
+    ln -sfv /Applications/MAMP/bin/php/php5.6.10/bin/php /usr/local/bin/php
+    ln -sfv /Applications/MAMP/bin/php/php5.6.10/bin/phpize /usr/local/bin/phpize
+    ln -sfv /Applications/MAMP/bin/php/php5.6.10/bin/php-config /usr/local/bin/php-config
     # 检查是否环境正确认
     ls -l `which php`
 
