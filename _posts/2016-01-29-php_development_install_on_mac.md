@@ -1,6 +1,6 @@
 ---
 layout: post
-title: batch：PHP开发环境 - PHP MySQL Nginx 安装
+title: PHP开发环境 - PHP MySQL Nginx 安装
 date: 2016-01-29
 author: scsidisk
 category: PHP
