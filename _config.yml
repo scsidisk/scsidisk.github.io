@@ -13,7 +13,7 @@ github_username: scsidisk
 # Markdown设置
 kramdown:
   input:  GFM
-  use_coderay: true
+  #use_coderay: true
   coderay:
     coderay_line_numbers:  nil
 
@@ -25,6 +25,7 @@ url: "http://127.0.0.1:4000"
 
 
 # 分页设置
+gems: [jekyll-paginate]
 paginate: 10
 paginate_path: "page/:num"
 
