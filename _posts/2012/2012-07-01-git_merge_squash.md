@@ -3,7 +3,7 @@ layout: post
 title: git merge --squash介绍
 date: 2012-07-01
 author: scsidisk
-category: Git
+category: Development
 tags: [Git]
 ---
 

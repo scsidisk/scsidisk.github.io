@@ -3,7 +3,7 @@ layout: post
 title: Installing R on OS X
 date: 2013-12-03
 author: scsidisk
-category: R
+category: Development
 tags: [R, MacOSX, Brew]
 ---
 

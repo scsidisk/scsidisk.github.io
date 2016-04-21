@@ -3,7 +3,7 @@ layout: post
 title: Mac下面Nginx+Lua+Redis整合实现高性能API接口
 date: 2013-01-25
 author: scsidisk
-category: Lua
+category: Development
 tags: [Lua, Redis, Nginx, Mac]
 ---
 

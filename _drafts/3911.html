@@ -1,0 +1,670 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head profile="http://gmpg.org/xfn/11">
+    <title>TENNFY WU &raquo; 免费SSL证书Let&#8217;s Encrypt安装使用教程</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- leave this for stats please -->
+<meta name="keywords" content="Let's Encrypt, 免费SSL证书, " />
+<meta name="description" content="去年就听说过Let's Encrypt要出免费的SSL证书，可谓期待已久。12月3号Let's Encrypt正式开始公测，相信很多朋友也忍不住要来尝试一下。本文就来介绍下Let's Encrypt在debian系�" />
+<!-- leave this for stats please -->
+<meta name="generator" content="WordPress 3.5.2" /> <!-- leave this for stats please -->    <link rel="stylesheet" href="http://tennfy.qiniudn.com/wp-content/themes/tennfy3.0/style.css" type="text/css" media="screen" />
+    <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://www.tennfy.com/feed" />
+    <link rel="alternate" type="text/xml" title="RSS .92" href="http://www.tennfy.com/feed/rss" />
+    <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="http://www.tennfy.com/feed/atom" />
+    <link rel="pingback" href="http://www.tennfy.com/xmlrpc.php" />
+    <script type="text/javascript" src="http://tennfy.qiniudn.com/wp-content/themes/tennfy3.0/js/jquery-1.3.2.min.js"> </script>
+        <link rel='archives' title='2016 年一月' href='http://www.tennfy.com/date/2016/01' />
+    <link rel='archives' title='2015 年十二月' href='http://www.tennfy.com/date/2015/12' />
+    <link rel='archives' title='2015 年十一月' href='http://www.tennfy.com/date/2015/11' />
+    <link rel='archives' title='2015 年十月' href='http://www.tennfy.com/date/2015/10' />
+    <link rel='archives' title='2015 年九月' href='http://www.tennfy.com/date/2015/09' />
+    <link rel='archives' title='2015 年八月' href='http://www.tennfy.com/date/2015/08' />
+    <link rel='archives' title='2015 年七月' href='http://www.tennfy.com/date/2015/07' />
+    <link rel='archives' title='2015 年六月' href='http://www.tennfy.com/date/2015/06' />
+    <link rel='archives' title='2015 年五月' href='http://www.tennfy.com/date/2015/05' />
+    <link rel='archives' title='2015 年四月' href='http://www.tennfy.com/date/2015/04' />
+    <link rel='archives' title='2015 年三月' href='http://www.tennfy.com/date/2015/03' />
+    <link rel='archives' title='2015 年二月' href='http://www.tennfy.com/date/2015/02' />
+    <link rel='archives' title='2015 年一月' href='http://www.tennfy.com/date/2015/01' />
+    <link rel='archives' title='2014 年十二月' href='http://www.tennfy.com/date/2014/12' />
+    <link rel='archives' title='2014 年十一月' href='http://www.tennfy.com/date/2014/11' />
+    <link rel='archives' title='2014 年十月' href='http://www.tennfy.com/date/2014/10' />
+    <link rel='archives' title='2014 年九月' href='http://www.tennfy.com/date/2014/09' />
+    <link rel='archives' title='2014 年八月' href='http://www.tennfy.com/date/2014/08' />
+    <link rel='archives' title='2014 年七月' href='http://www.tennfy.com/date/2014/07' />
+    <link rel='archives' title='2014 年六月' href='http://www.tennfy.com/date/2014/06' />
+    <link rel='archives' title='2014 年五月' href='http://www.tennfy.com/date/2014/05' />
+    <link rel='archives' title='2014 年四月' href='http://www.tennfy.com/date/2014/04' />
+    <link rel='archives' title='2014 年三月' href='http://www.tennfy.com/date/2014/03' />
+    <link rel='archives' title='2014 年二月' href='http://www.tennfy.com/date/2014/02' />
+    <link rel='archives' title='2014 年一月' href='http://www.tennfy.com/date/2014/01' />
+    <link rel='archives' title='2013 年十二月' href='http://www.tennfy.com/date/2013/12' />
+    <link rel='archives' title='2013 年十一月' href='http://www.tennfy.com/date/2013/11' />
+    <link rel='archives' title='2013 年十月' href='http://www.tennfy.com/date/2013/10' />
+    <link rel='archives' title='2013 年九月' href='http://www.tennfy.com/date/2013/09' />
+    <link rel='archives' title='2013 年八月' href='http://www.tennfy.com/date/2013/08' />
+    <link rel='archives' title='2013 年七月' href='http://www.tennfy.com/date/2013/07' />
+    <link rel='archives' title='2013 年六月' href='http://www.tennfy.com/date/2013/06' />
+    <link rel='archives' title='2013 年五月' href='http://www.tennfy.com/date/2013/05' />
+    <link rel='archives' title='2013 年四月' href='http://www.tennfy.com/date/2013/04' />
+    <link rel='archives' title='2013 年三月' href='http://www.tennfy.com/date/2013/03' />
+    <link rel='archives' title='2013 年二月' href='http://www.tennfy.com/date/2013/02' />
+    <link rel='archives' title='2012 年九月' href='http://www.tennfy.com/date/2012/09' />
+        <link rel="alternate" type="application/rss+xml" title="TENNFY WU &raquo; 免费SSL证书Let&#8217;s Encrypt安装使用教程 评论 Feed" href="http://www.tennfy.com/3911.html/feed" />
+<link rel='stylesheet' id='wp-syntax-css-css'  href='http://tennfy.qiniudn.com/wp-content/plugins/wp-syntax/css/wp-syntax.css' type='text/css' media='all' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.tennfy.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.tennfy.com/wp-includes/wlwmanifest.xml" />
+<link rel='prev' title='HTTPS、SSL/TLS协议及CA证书介绍' href='http://www.tennfy.com/3884.html' />
+<link rel='next' title='LNMP下Nginx SSL配置教程' href='http://www.tennfy.com/3968.html' />
+<meta name="generator" content="WordPress 3.5.2" />
+<link rel='canonical' href='http://www.tennfy.com/3911.html' />
+<link rel='shortlink' href='http://www.tennfy.com/?p=3911' />
+
+<link rel="stylesheet" href="http://tennfy.qiniudn.com/wp-content/plugins/auto-highslide/highslide/highslide.css" type="text/css" />
+<script type="text/javascript" src="http://tennfy.qiniudn.com/wp-content/plugins/auto-highslide/highslide/highslide-with-html.packed.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+    hs.graphicsDir = "http://www.tennfy.com/wp-content/plugins/auto-highslide/highslide/graphics/";
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.addSlideshow({
+        interval: 5000,
+        repeat: true,
+        useControls: true,
+        fixedControls: "fit",
+        overlayOptions: {
+            opacity: 0.75,
+            position: "bottom center",
+            hideOnMouseOut: true
+
+        }
+
+    });
+});
+</script>
+    </head>
+<body>
+
+<div id="header">
+    <div class="mainheader">
+    <div id="logo"> <a href="http://www.tennfy.com">TENNFY WU</a></div>
+    <!--
+    <div id="notice"><div class="noticeavatar"></div>
+    <div class="notocebg">
+    <div class="noticecontent">分享wordpress,matlab，vps的心得与体会。</div>
+    </div>
+    </div>
+    -->
+    <div id="menu">
+   <ul id="navbar"><li ><a href="http://www.tennfy.com">首页</a></li><li class="cat-item cat-item-5"><a href="http://www.tennfy.com/category/vps" title="查看 vps 下的所有文章">vps</a><ul class='children'><li class="cat-item cat-item-90"><a href="http://www.tennfy.com/category/vps/vps-coupon" title="查看 vps优惠 下的所有文章">vps优惠</a></li><li class="cat-item cat-item-445"><a href="http://www.tennfy.com/category/vps/vps-basis" title="查看 vps基础 下的所有文章">vps基础</a></li><li class="cat-item cat-item-89"><a href="http://www.tennfy.com/category/vps/vps-skill" title="查看 vps技巧 下的所有文章">vps技巧</a></li><li class="cat-item cat-item-326"><a href="http://www.tennfy.com/category/vps/vps-review" title="查看 vps评测 下的所有文章">vps评测</a></li></ul></li><li class="cat-item cat-item-7"><a href="http://www.tennfy.com/category/wordpress" title="查看 wordpress 下的所有文章">wordpress</a><ul class='children'><li class="cat-item cat-item-61"><a href="http://www.tennfy.com/category/wordpress/wordpress-theme" title="查看 wordpress主题 下的所有文章">wordpress主题</a></li><li class="cat-item cat-item-107"><a href="http://www.tennfy.com/category/wordpress/wordpress-knowledge" title="查看 wordpress基础 下的所有文章">wordpress基础</a></li><li class="cat-item cat-item-88"><a href="http://www.tennfy.com/category/wordpress/wordpress-plugin" title="查看 wordpress插件 下的所有文章">wordpress插件</a></li></ul></li><li class="cat-item cat-item-52"><a href="http://www.tennfy.com/category/study" title="查看 学习 下的所有文章">学习</a><ul class='children'><li class="cat-item cat-item-53"><a href="http://www.tennfy.com/category/study/matlab" title="查看 matlab 下的所有文章">matlab</a></li><li class="cat-item cat-item-205"><a href="http://www.tennfy.com/category/study/image-process" title="查看 图像处理 下的所有文章">图像处理</a></li></ul></li><li class="cat-item cat-item-13"><a href="http://www.tennfy.com/category/skill" title="查看 技术 下的所有文章">技术</a><ul class='children'><li class="cat-item cat-item-242"><a href="http://www.tennfy.com/category/skill/jscss" title="查看 js&amp;css 下的所有文章">js&amp;css</a></li><li class="cat-item cat-item-55"><a href="http://www.tennfy.com/category/skill/linux" title="查看 linux 下的所有文章">linux</a></li><li class="cat-item cat-item-75"><a href="http://www.tennfy.com/category/skill/php" title="查看 php 下的所有文章">php</a></li><li class="cat-item cat-item-446"><a href="http://www.tennfy.com/category/skill/network-principle" title="查看 网络原理 下的所有文章">网络原理</a></li></ul></li><li class="cat-item cat-item-3"><a href="http://www.tennfy.com/category/life" title="查看 生活 下的所有文章">生活</a></li><li class="cat-item cat-item-92"><a href="http://www.tennfy.com/category/interesting" title="查看 鼓捣-free 下的所有文章">鼓捣-free</a><ul class='children'><li class="cat-item cat-item-93"><a href="http://www.tennfy.com/category/interesting/google-work" title="查看 google出品 下的所有文章">google出品</a></li><li class="cat-item cat-item-70"><a href="http://www.tennfy.com/category/interesting/coupon" title="查看 优惠码 下的所有文章">优惠码</a></li><li class="cat-item cat-item-94"><a href="http://www.tennfy.com/category/interesting/free-resource" title="查看 免费资源 下的所有文章">免费资源</a></li><li class="cat-item cat-item-91"><a href="http://www.tennfy.com/category/interesting/computer" title="查看 电脑技巧 下的所有文章">电脑技巧</a></li><li class="cat-item cat-item-249"><a href="http://www.tennfy.com/category/interesting/site" title="查看 网站 下的所有文章">网站</a></li></ul></li><li class="page_item page-item-6"><a href="http://www.tennfy.com/links">左邻右舍</a></li><li class="page_item page-item-16"><a href="http://www.tennfy.com/img">相册</a></li><li class="page_item page-item-558"><a href="http://www.tennfy.com/readerwall">读者墙</a></li></ul>   </div>
+   <form method="get" id="searchform" action="http://www.tennfy.com/">    <input type="submit" id="searchsubmit" value="" />
+    <input type="text" value="" placeholder="善用搜索" name="s" id="s" size="15" />
+
+</form>   <div class="clear"></div>
+    </div>
+
+</div>
+<div id="wrapper">
+ <div id="breadnav">
+  当前位置：<a href="http://www.tennfy.com">TENNFY WU</a> &raquo;
+<a href="http://www.tennfy.com/category/vps" title="查看 vps 中的全部文章">vps</a> &raquo; <a href="http://www.tennfy.com/category/vps/vps-skill" title="查看 vps技巧 中的全部文章">vps技巧</a> &raquo; 免费SSL证书Let&#8217;s Encrypt安装使用教程 <div id="rss"><ul>
+    <li class="rssfeed"><a href="http://www.tennfy.com/feed" target="_blank" class="icon1" title="欢迎订阅TENNFY WU"></a></li>
+    <li class="tqq"><a href="http://t.qq.com/tennfy" target="_blank" class="icon2" title="我的腾讯微博"></a></li>
+    <li class="tsina"><a href="http://weibo.com/tennfy" target="_blank" class="icon3" title="我的新浪微博"></a></li>
+    <li class="rssmail"><a href="http://wpa.qq.com/msgrd?v=3&uin=1420225731&site=qq&menu=yes" target="_blank" class="icon4" title="QQ即时通在线"></a></li>
+</ul>
+</div>
+ </div>
+
+ <div id="main">
+<div id="container">
+
+    <div class="post">
+        <h1><a href="http://www.tennfy.com/3911.html" title="免费SSL证书Let&#8217;s Encrypt安装使用教程">免费SSL证书Let&#8217;s Encrypt安装使用教程</a></h1>
+    <div class="postmetadata">
+                <span class="meat_span">作者: tennfy</span>
+                <span class="meat_span">分类: <a href="http://www.tennfy.com/category/vps/vps-skill" title="查看 vps技巧 中的全部文章" rel="category tag">vps技巧</a></span>
+                <span class="meat_span">发布时间: 2015-12-13 16:02</span>
+                <span class="meat_span"></span>
+                <span class="meat_span"><a href="http://www.tennfy.com/3911.html#comments" title="《免费SSL证书Let&#8217;s Encrypt安装使用教程》上的评论">3条评论</a></span>
+                    </div>
+    <div class="enrty">
+    <div id="article-index">
+                <strong>文章目录</strong>
+<ul id="index-ul">
+<li><a href="#title-0" title="Let&#8217;s Encrypt介绍">Let&#8217;s Encrypt介绍</a></li>
+<li><a href="#title-1" title="Let&#8217;s Encrypt安装方法">Let&#8217;s Encrypt安装方法</a></li>
+<li><a href="#title-2" title="90天证书续期">90天证书续期</a></li>
+</ul></div>
+<p>去年就听说过Let&#8217;s Encrypt要出免费的SSL证书，可谓期待已久。12月3号Let&#8217;s Encrypt正式开始公测，相信很多朋友也忍不住要来尝试一下。本文就来介绍下Let&#8217;s Encrypt在debian系统上的安装使用教程。</p>
+<h2 id="title-0">Let&#8217;s Encrypt介绍</h2>
+<p>Let&#8217;s Encrypt是国外一个公共的免费SSL项目，由 Linux 基金会托管，由Mozilla、思科、Akamai、IdenTrust和EFF等组织发起，目的就是向网站自动签发和管理免费证书，以便加速互联网由HTTP过渡到HTTPS，目前Facebook等大公司开始加入赞助行列。</p>
+<p>Let&#8217;s Encrypt已经得了 IdenTrust 的交叉签名，这意味着其证书现在已经可以被Mozilla、Google、Microsoft和Apple等主流的浏览器所信任，你只需要在Web 服务器证书链中配置交叉签名，浏览器客户端会自动处理好其它的一切，Let&#8217;s Encrypt安装简单，未来大规模采用可能性非常大。</p>
+<p>由于处于公测期间，签发的证书只有90天的有效期，到期之后需要重新签发。</p>
+<p>官方网站：<a href="https://letsencrypt.org/" target="_blank">https://letsencrypt.org/</a><br />
+项目主页：<a href="https://github.com/letsencrypt/letsencrypt" target="_blank">https://github.com/letsencrypt/letsencrypt</a></p>
+<h2 id="title-1">Let&#8217;s Encrypt安装方法</h2>
+<h3>1、安装git并获取安装脚本</h3>
+<p>安装git：</p>
+
+<div class="wp_syntax"><table><tr><td class="line_numbers"><pre>1
+</pre></td><td class="code"><pre class="bash" style="font-family:monospace;"><span style="color: #c20cb9; font-weight: bold;">apt-get install</span> <span style="color: #c20cb9; font-weight: bold;">git</span></pre></td></tr></table></div>
+
+<p>下载安装脚本</p>
+
+<div class="wp_syntax"><table><tr><td class="line_numbers"><pre>1
+2
+</pre></td><td class="code"><pre class="bash" style="font-family:monospace;"><span style="color: #c20cb9; font-weight: bold;">git clone</span> https:<span style="color: #000000; font-weight: bold;">//</span>github.com<span style="color: #000000; font-weight: bold;">/</span>letsencrypt<span style="color: #000000; font-weight: bold;">/</span>letsencrypt
+<span style="color: #7a0874; font-weight: bold;">cd</span> letsencrypt</pre></td></tr></table></div>
+
+<h3>2、获取Let&#8217;s Encrypt SSL证书</h3>
+<p>实际上，Let&#8217;s Encrypt是通过访问域名实现对域名所有权的验证，因此需要vps上开放80端口。所以需要区分vps是否已安装nginx或apache等web服务器。</p>
+<p>1）未安装nginx或apache等web服务器<br />
+如果vps上没有安装nginx或apache等web服务器，那么Let&#8217;s Encrypt脚本会自动开一个SimpleHTTPServer，通过该server运行Let&#8217;s Encrypt服务器来验证域名所有权。</p>
+<p>执行以下命令获取SSL证书</p>
+
+<div class="wp_syntax"><table><tr><td class="line_numbers"><pre>1
+</pre></td><td class="code"><pre class="bash" style="font-family:monospace;">.<span style="color: #000000; font-weight: bold;">/</span>letsencrypt-auto certonly <span style="color: #660033;">--standalone</span> <span style="color: #660033;">--email</span> admin<span style="color: #000000; font-weight: bold;">@</span>thing.com <span style="color: #660033;">-d</span> thing.com</pre></td></tr></table></div>
+
+<p>其中admin@thing.com为你的邮箱，thing.com为待签发的域名。</p>
+<p>2）已安装nginx或apache等web服务器<br />
+如果vps上已安装nginx或apache等web服务器，则需要指定该域名在web服务器中对应的虚拟主机目录。</p>
+<p>执行以下命令获取SSL证书</p>
+
+<div class="wp_syntax"><table><tr><td class="line_numbers"><pre>1
+</pre></td><td class="code"><pre class="bash" style="font-family:monospace;">.<span style="color: #000000; font-weight: bold;">/</span>letsencrypt-auto certonly <span style="color: #660033;">--standalone</span> <span style="color: #660033;">--email</span> admin<span style="color: #000000; font-weight: bold;">@</span>thing.com <span style="color: #660033;">-d</span> thing.com <span style="color: #660033;">--webroot-path</span>=<span style="color: #000000; font-weight: bold;">/</span>var<span style="color: #000000; font-weight: bold;">/</span>www<span style="color: #000000; font-weight: bold;">/</span>thing.com</pre></td></tr></table></div>
+
+<p>其中admin@thing.com为你的邮箱，thing.com为待签发的域名，/var/www/thing.com为web服务器中定义的虚拟主机目录。</p>
+<p>执行上述命令后，会弹出对话框，同意用户协议。</p>
+<p><a href="http://tennfy.qiniudn.com/wp-content/uploads/2015/12/letsencrypt1.png" class="highslide-image" onclick="return hs.expand(this);"><img src="http://tennfy.qiniudn.com/wp-content/uploads/2015/12/letsencrypt1-600x361.png" alt="letsencrypt1" width="600" height="361" class="aligncenter size-large wp-image-3926" /></a></p>
+<p>如果运行没有错误，那么相应的证书会生成在/etc/letsencrypt/live/域名文件夹下，路径分别为：</p>
+
+<div class="wp_syntax"><table><tr><td class="line_numbers"><pre>1
+2
+3
+4
+</pre></td><td class="code"><pre class="bash" style="font-family:monospace;"><span style="color: #666666; font-style: italic;">#certificate</span>
+<span style="color: #000000; font-weight: bold;">/</span>etc<span style="color: #000000; font-weight: bold;">/</span>letsencrypt<span style="color: #000000; font-weight: bold;">/</span>live<span style="color: #000000; font-weight: bold;">/</span>域名<span style="color: #000000; font-weight: bold;">/</span>fullchain.pem
+<span style="color: #666666; font-style: italic;">#privatekey</span>
+<span style="color: #000000; font-weight: bold;">/</span>etc<span style="color: #000000; font-weight: bold;">/</span>letsencrypt<span style="color: #000000; font-weight: bold;">/</span>live<span style="color: #000000; font-weight: bold;">/</span>域名<span style="color: #000000; font-weight: bold;">/</span>privkey.pem</pre></td></tr></table></div>
+
+<h3>3、遇到问题及解决方法</h3>
+<p>1）Error: The server could not connect to the client for DV<br />
+如果你的域名使用的是国内的NS服务商，比如：hichina、dnspod、cloudxns，可能不能正常通过验证</p>
+<p>解决方案是将域名的NS服务商换为国外的，例如namecheap、<span class='wp_keywordlink'><a href="http://www.tennfy.com/tag/linode" title="linode" target="_blank">linode</a></span>、cloudflare、google cloud DNS。</p>
+<p>2）IPV6用户问题<br />
+可能目前<span class='wp_keywordlink'><a href="http://www.tennfy.com/tag/linode" title="linode" target="_blank">linode</a></span>用户应该遇到了</p>
+<pre class='instruction codei'>
+An unexpected error occurred:
+There were too many requests of a given type :: Error creating new registration ::
+Too many registrations from this IP
+Please see the logfiles in /var/log/letsencrypt for more details.
+</pre>
+<p>这个不一定是因为IP注册的次数过多，可能是因为IPv6的事，具体解决方法如下：<br />
+执行：sysctl -w net.ipv6.conf.all.disable_ipv6=1 来临时禁用IPv6<br />
+再生成证书后执行：sysctl -w net.ipv6.conf.all.disable_ipv6=0 再来解除禁用IPv6。</p>
+<h2 id="title-2">90天证书续期</h2>
+<p>Let&#8217;s Encrypt<span class='wp_keywordlink_affiliate'><a href="http://www.tennfy.com/tag/%e5%85%8d%e8%b4%b9ssl%e8%af%81%e4%b9%a6" title="查看 免费SSL证书 中的全部文章" target="_blank">免费SSL证书</a></span>有效期是90天，也就是每三个月你就得续期一次。执行以下代码即可自动替换证书为新的：</p>
+
+<div class="wp_syntax"><table><tr><td class="line_numbers"><pre>1
+</pre></td><td class="code"><pre class="bash" style="font-family:monospace;">.<span style="color: #000000; font-weight: bold;">/</span>letsencrypt-auto <span style="color: #660033;">--renew</span> certonly <span style="color: #660033;">--email</span> admin<span style="color: #000000; font-weight: bold;">@</span>thing.com <span style="color: #660033;">-d</span> thing.com</pre></td></tr></table></div>
+
+<p>其中admin@thing.com为你的邮箱，thing.com为待续期的域名。</p>
+<div class="wumii-hook">
+    <input type="hidden" name="wurl" value="http://www.tennfy.com/3911.html" /><br />
+    <input type="hidden" name="wtitle" value="免费SSL证书Let&#039;s Encrypt安装使用教程" /><br />
+    <input type="hidden" name="wpic" value="http://tennfy.qiniudn.com/wp-content/uploads/2015/12/SSL.gif" />
+</div>
+    </div>
+
+    <div class="text_add">
+                <div class="copy"><p style="color:#F00;">本文出自 TENNFY WU，转载时请注明出处及相应链接。</p>
+                <p style="color:#777;font-size:12px;">本文永久链接: http://www.tennfy.com/3911.html</p>
+                <p >
+    <!-- Baidu Button BEGIN -->
+<div class="bdsharebuttonbox">
+<a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+<a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+<a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
+<a href="#" class="bds_t163" data-cmd="t163" title="分享到网易微博"></a>
+<a href="#" class="bds_youdao" data-cmd="youdao" title="分享到有道云笔记"></a>
+<a href="#" class="bds_xg" data-cmd="xg" title="分享到鲜果"></a>
+<a href="#" class="bds_more" data-cmd="more"></a>
+</div>
+<script>
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"32"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=86835285.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+<!-- Baidu Button END -->
+</p>
+    </div>
+    </div>
+   <div class="meta"><a href="http://www.tennfy.com/tag/lets-encrypt" rel="tag">Let's Encrypt</a>, <a href="http://www.tennfy.com/tag/%e5%85%8d%e8%b4%b9ssl%e8%af%81%e4%b9%a6" rel="tag">免费SSL证书</a></div>
+    </div>
+
+
+<div class="post_links">
+<script type="text/javascript">
+    /*640*60 创建于 2014-08-06*/
+    var cpro_id = "u1647525";
+</script>
+<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+
+<div class="post_link">
+            <p style="color:#777;font-size:14px;">下一篇文章：<a href="http://www.tennfy.com/3968.html" rel="next">LNMP下Nginx SSL配置教程</a></p>
+            <p style="color:#777;font-size:14px;">上一篇文章：<a href="http://www.tennfy.com/3884.html" rel="prev">HTTPS、SSL/TLS协议及CA证书介绍</a></p>
+</div>
+
+            <!-- related posts start -->
+<div id="related_posts">
+<h3>您可能还喜欢</h3>
+<ul>
+        <li><a rel="bookmark" href="http://www.tennfy.com/4024.html">Debian下安装Memcached及其php扩展</a></li>
+            <li><a rel="bookmark" href="http://www.tennfy.com/3968.html">LNMP下Nginx SSL配置教程</a></li>
+            <li><a rel="bookmark" href="http://www.tennfy.com/3795.html">Debian下开启慢查询日志优化Mysql</a></li>
+            <li><a rel="bookmark" href="http://www.tennfy.com/3708.html">Debian下开启Nginx FastCGI Cache缓存加速</a></li>
+            <li><a rel="bookmark" href="http://www.tennfy.com/3692.html">Debian下安装Zend Opcache加速PHP</a></li>
+            <li><a rel="bookmark" href="http://www.tennfy.com/3634.html">WP Super Cache提示找不到apache模块的解决方法</a></li>
+            <li><a rel="bookmark" href="http://www.tennfy.com/3628.html">Debian下非交互安装mysql</a></li>
+            <li><a rel="bookmark" href="http://www.tennfy.com/3541.html">VPS数据备份教程</a></li>
+    </ul>
+</div>
+<!-- related posts end -->
+</div>
+<div id="comments">
+
+
+            <h2 id="comments-title">3人参与了讨论 </h2>
+
+
+            <ol class="commentlist">
+                    <li class="comment even thread-even depth-1" id="li-comment-5685">
+        <div id="comment-5685">
+        <div class="comment-author vcard">
+            <img alt='' src='http://tennfy.qiniudn.com/avatar/46c6d01621cca0643579a15968e65bb5.jpg' class='avatar avatar-40 photo' height='40' width='40' />            <cite class="fn"><a href='http://heshizi.com' rel='external nofollow' class='url'>河石子</a></cite> <span class="says">说：</span>       </div><!-- .comment-author .vcard -->
+
+        <div class="comment-meta commentmetadata"><a href="http://www.tennfy.com/3911.html#comment-5685">
+            2015 年 12 月 14 日 at 上午 1:30</a>     </div><!-- .comment-meta .commentmetadata -->
+
+        <div class="comment-body"><p>这是我看到的第一篇中文关于Let&#8217;s Encrypt的文章。</p>
+</div>
+
+        <div class="reply">
+            <a class='comment-reply-link' href='/3911.html?replytocom=5685#respond' onclick='return addComment.moveForm("comment-5685", "5685", "respond", "3911")'>回复</a>      </div><!-- .reply -->
+    </div><!-- #comment-##  -->
+
+    </li>
+    <li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-5687">
+        <div id="comment-5687">
+        <div class="comment-author vcard">
+            <img alt='' src='http://tennfy.qiniudn.com/avatar/ccc5c8f6cf91ccc8abe0c96f9f65637f.jpg' class='avatar avatar-40 photo' height='40' width='40' />            <cite class="fn"><a href='http://abclite.cn' rel='external nofollow' class='url'>Abc</a></cite> <span class="says">说：</span>        </div><!-- .comment-author .vcard -->
+
+        <div class="comment-meta commentmetadata"><a href="http://www.tennfy.com/3911.html#comment-5687">
+            2015 年 12 月 15 日 at 下午 12:08</a>        </div><!-- .comment-meta .commentmetadata -->
+
+        <div class="comment-body"><p>一般来说，SSL其实没啥必要，个人感受有了SSL对访问速度还是有影响。</p>
+</div>
+
+        <div class="reply">
+            <a class='comment-reply-link' href='/3911.html?replytocom=5687#respond' onclick='return addComment.moveForm("comment-5687", "5687", "respond", "3911")'>回复</a>      </div><!-- .reply -->
+    </div><!-- #comment-##  -->
+
+    </li>
+    <li class="comment even thread-even depth-1" id="li-comment-5693">
+        <div id="comment-5693">
+        <div class="comment-author vcard">
+            <img alt='' src='http://tennfy.qiniudn.com/avatar/77c9fce10bae7cdcff1c27a51e4ced35.jpg' class='avatar avatar-40 photo' height='40' width='40' />            <cite class="fn"><a href='https://www.cppfans.org' rel='external nofollow' class='url'>NickYang</a></cite> <span class="says">说：</span>     </div><!-- .comment-author .vcard -->
+
+        <div class="comment-meta commentmetadata"><a href="http://www.tennfy.com/3911.html#comment-5693">
+            2015 年 12 月 18 日 at 上午 5:11</a>     </div><!-- .comment-meta .commentmetadata -->
+
+        <div class="comment-body"><p>除过没有提供web方式申请，其他一切看着都很完美</p>
+</div>
+
+        <div class="reply">
+            <a class='comment-reply-link' href='/3911.html?replytocom=5693#respond' onclick='return addComment.moveForm("comment-5693", "5693", "respond", "3911")'>回复</a>      </div><!-- .reply -->
+    </div><!-- #comment-##  -->
+
+    </li>
+            </ol>
+
+
+
+                                <div id="respond">
+                <h3 id="reply-title">发表评论 <small><a rel="nofollow" id="cancel-comment-reply-link" href="/3911.html#respond" style="display:none;">取消回复</a></small></h3>
+                                    <form action="http://www.tennfy.com/wp-comments-post.php" method="post" id="commentform">
+                                                                            <p class="comment-notes">电子邮件地址不会被公开。 必填项已用 <span class="required">*</span> 标注</p><p class="comment-form-author"><label for="author">昵称</label> <span class="required">*</span><input id="author" name="author" type="text" value="" size="30" aria-required='true' /></p>
+<p class="comment-form-email"><label for="email">电子邮件</label> <span class="required">*</span><input id="email" name="email" type="text" value="" size="30" aria-required='true' /></p>
+<p class="comment-form-url"><label for="url">您的个人网站地址</label><input id="url" name="url" type="text" value="" size="30" /></p>
+<p class='comment-form-author'><input type='text' name='sum' class='math_textfield' value='' size='25' tabindex='4'> 8 + 2 = ?<input type='hidden' name='num1' value='8'><input type='hidden' name='num2' value='2'><label for='math' class='small'> 验证码</label></p>
+                        <p class="comment-form-comment"><label for="comment">在这里留下您的意见</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p><script type="text/javascript">
+/* <![CDATA[ */
+    function grin(tag) {
+      var myField;
+      tag = ' ' + tag + ' ';
+        if (document.getElementById('comment') && document.getElementById('comment').type == 'textarea') {
+        myField = document.getElementById('comment');
+      } else {
+        return false;
+      }
+      if (document.selection) {
+        myField.focus();
+        sel = document.selection.createRange();
+        sel.text = tag;
+        myField.focus();
+      }
+      else if (myField.selectionStart || myField.selectionStart == '0') {
+        var startPos = myField.selectionStart;
+        var endPos = myField.selectionEnd;
+        var cursorPos = startPos;
+        myField.value = myField.value.substring(0, startPos)
+                + tag
+                + myField.value.substring(endPos, myField.value.length);
+        cursorPos += tag.length;
+        myField.focus();
+        myField.selectionStart = cursorPos;
+        myField.selectionEnd = cursorPos;
+      }      else {
+        myField.value += tag;
+        myField.focus();
+      }
+    }
+/* ]]> */
+</script>
+<a href="javascript:grin(':?:')"      ><img src="http://tennfy.qiniudn.com/wp-content/themes/tennfy3.0/images/smilies/icon_question.gif"  alt="" /></a>
+<a href="javascript:grin(':razz:')"   ><img src="http://tennfy.qiniudn.com/wp-content/themes/tennfy3.0/images/smilies/icon_razz.gif"      alt="" /></a>
+<a href="javascript:grin(':sad:')"    ><img src="http://tennfy.qiniudn.com/wp-content/themes/tennfy3.0/images/smilies/icon_sad.gif"       alt="" /></a>
+<a href="javascript:grin(':evil:')"   ><img src="http://tennfy.qiniudn.com/wp-content/themes/tennfy3.0/images/smilies/icon_evil.gif"      alt="" /></a>
+<a href="javascript:grin(':!:')"      ><img src="http://tennfy.qiniudn.com/wp-content/themes/tennfy3.0/images/smilies/icon_exclaim.gif"   alt="" /></a>
+<a href="javascript:grin(':smile:')"  ><img src="http://tennfy.qiniudn.com/wp-content/themes/tennfy3.0/images/smilies/icon_smile.gif"     alt="" /></a>
+<a href="javascript:grin(':oops:')"   ><img src="http://tennfy.qiniudn.com/wp-content/themes/tennfy3.0/images/smilies/icon_redface.gif"   alt="" /></a>
+<a href="javascript:grin(':grin:')"   ><img src="http://tennfy.qiniudn.com/wp-content/themes/tennfy3.0/images/smilies/icon_biggrin.gif"   alt="" /></a>
+<a href="javascript:grin(':eek:')"    ><img src="http://tennfy.qiniudn.com/wp-content/themes/tennfy3.0/images/smilies/icon_surprised.gif" alt="" /></a>
+<a href="javascript:grin(':shock:')"  ><img src="http://tennfy.qiniudn.com/wp-content/themes/tennfy3.0/images/smilies/icon_eek.gif"       alt="" /></a>
+<a href="javascript:grin(':???:')"    ><img src="http://tennfy.qiniudn.com/wp-content/themes/tennfy3.0/images/smilies/icon_confused.gif"  alt="" /></a>
+<a href="javascript:grin(':cool:')"   ><img src="http://tennfy.qiniudn.com/wp-content/themes/tennfy3.0/images/smilies/icon_cool.gif"      alt="" /></a>
+<a href="javascript:grin(':lol:')"    ><img src="http://tennfy.qiniudn.com/wp-content/themes/tennfy3.0/images/smilies/icon_lol.gif"       alt="" /></a>
+<a href="javascript:grin(':mad:')"    ><img src="http://tennfy.qiniudn.com/wp-content/themes/tennfy3.0/images/smilies/icon_mad.gif"       alt="" /></a>
+<a href="javascript:grin(':twisted:')"><img src="http://tennfy.qiniudn.com/wp-content/themes/tennfy3.0/images/smilies/icon_twisted.gif"   alt="" /></a>
+<a href="javascript:grin(':roll:')"   ><img src="http://tennfy.qiniudn.com/wp-content/themes/tennfy3.0/images/smilies/icon_rolleyes.gif"  alt="" /></a>
+<a href="javascript:grin(':wink:')"   ><img src="http://tennfy.qiniudn.com/wp-content/themes/tennfy3.0/images/smilies/icon_wink.gif"      alt="" /></a>
+<a href="javascript:grin(':idea:')"   ><img src="http://tennfy.qiniudn.com/wp-content/themes/tennfy3.0/images/smilies/icon_idea.gif"      alt="" /></a>
+<a href="javascript:grin(':arrow:')"  ><img src="http://tennfy.qiniudn.com/wp-content/themes/tennfy3.0/images/smilies/icon_arrow.gif"     alt="" /></a>
+<a href="javascript:grin(':neutral:')"><img src="http://tennfy.qiniudn.com/wp-content/themes/tennfy3.0/images/smilies/icon_neutral.gif"   alt="" /></a>
+<a href="javascript:grin(':cry:')"    ><img src="http://tennfy.qiniudn.com/wp-content/themes/tennfy3.0/images/smilies/icon_cry.gif"       alt="" /></a>
+<a href="javascript:grin(':mrgreen:')"><img src="http://tennfy.qiniudn.com/wp-content/themes/tennfy3.0/images/smilies/icon_mrgreen.gif"   alt="" /></a>
+<br />                      <p class="form-allowed-tags">您可以使用这些 <abbr title="HyperText Markup Language">HTML</abbr> 标签和属性： <code>&lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=&quot;&quot;&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=&quot;&quot;&gt; &lt;strike&gt; &lt;strong&gt; </code></p>                       <p class="form-submit">
+                            <input name="submit" type="submit" id="submit" value="发表评论" />
+                            <input type='hidden' name='comment_post_ID' value='3911' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+                        </p>
+                                            </form>
+                            </div><!-- #respond -->
+
+</div><!-- #comments -->
+</div>
+<div class="sidebar">
+<ul>
+            <!--
+<li class="promote-ad">
+</li>
+!-->
+<li>
+    <h3>博主自用VPS</h3>
+    <ul>
+    <a href="http://www.tennfy.com/1347.html"  rel="external" target="_blank">
+    <B>搬瓦工Bandwagonhost</B>:最低$3.99/年+速度不错+性价比高</a>
+    </ul>
+    <ul>
+    <a href="http://www.tennfy.com/2455.html"  rel="external " target="_blank">
+    <B>Linode</B>:$10/月+日本+非常推荐</a>
+    </ul>
+    <ul>
+    <a href="http://www.tennfy.com/3654.html"  rel="external " target="_blank">
+    <B>Vultr</B>:$5/月+日本+云vps</a>
+    </ul>
+    <ul>
+    <a href="http://www.tennfy.com/3751.html"  rel="external " target="_blank">
+    <B>ConoHa</B>:47.5元/月+日本/新加坡+云vps</a>
+    </ul>
+    <ul>
+    <a href="http://www.tennfy.com/2428.html"  rel="external" target="_blank">
+    <B>DigitalOcean</B>:5刀/月+云vps+稳定</a>
+    </ul>
+    <ul>
+    <a href="http://www.tennfy.com/2440.html"  rel="external" target="_blank">
+    <B>Ramnode</B>:15刀/年+稳定+低价精品</a>
+    </ul>
+    <ul>
+    <a href="http://www.tennfy.com/2673.html"  rel="external" target="_blank">
+    <B>Oneasiahost</B>:4刀/月+新加坡+相对便宜</a>
+    </ul>
+</li>
+<li>
+<h3>自用域名注册商</h3>
+    <ul>
+    <a href="http://www.tennfy.com/3356.html" rel="external " target="_blank"><B>Namesilo</B>:$7.99/新注册+$7.39/新转入+免费隐私保护+支持支付宝。</a>
+    </ul>
+</li>
+<li>
+<ul>
+<a href="http://www.sugarhosts.com/zh-cn/vps/classic-vps-hosting/?pk_campaign=tennfycomsidebarcvh" rel="external " target="_blank">
+<img src="http://tennfy.qiniudn.com/wp-content/themes/tennfy3.0/images/260x125sugarhosts.gif"  />
+</a>
+</ul>
+</li>
+<li>
+<h3>vps挂机赚钱</h3>
+    <ul>
+    <a href="http://www.tennfy.com/2761.html" rel="external " target="_blank">Ebesucher vps挂机教程</a>
+    </ul>
+    <ul>
+    <a href="http://www.tennfy.com/2856.html" rel="external " target="_blank">Alexamaster vps挂机教程</a>
+    </ul>
+</li>
+<li>
+<h3>文章专题</h3>
+    <ul>
+    <a href="http://www.tennfy.com/2083.html" rel="external " target="_blank">自己动手搭建Shadowsocks服务器</a>
+    </ul>
+    <ul>
+    <a href="http://www.tennfy.com/2662.html" rel="external " target="_blank">自己动手在vps上搭建wordpress网站</a>
+    </ul>
+</li>
+<li>
+<div id="sidebar-tab">
+    <div id="tab-title">
+    <h3><span class="selected">最新文章</span><span>热点文章</span><span>随机文章</span></h3>
+    </div>
+    <div id="tab-content">
+        <ul>
+        <li><a href="http://www.tennfy.com/4024.html" rel="bookmark" title="Permanent Link to
+Debian下安装Memcached及其php扩展">Debian下安装Memcached及其php扩展</a></li>
+<li><a href="http://www.tennfy.com/3968.html" rel="bookmark" title="Permanent Link to
+LNMP下Nginx SSL配置教程">LNMP下Nginx SSL配置教程</a></li>
+<li><a href="http://www.tennfy.com/3911.html" rel="bookmark" title="Permanent Link to
+免费SSL证书Let&#8217;s Encrypt安装使用教程">免费SSL证书Let&#8217;s Encrypt安装使用教程</a></li>
+<li><a href="http://www.tennfy.com/3884.html" rel="bookmark" title="Permanent Link to
+HTTPS、SSL/TLS协议及CA证书介绍">HTTPS、SSL/TLS协议及CA证书介绍</a></li>
+<li><a href="http://www.tennfy.com/3859.html" rel="bookmark" title="Permanent Link to
+2015黑色星期五VPS、虚拟主机及域名优惠信息">2015黑色星期五VPS、虚拟主机及域名优惠信息</a></li>
+        </ul>
+        <ul class="hide">
+<li><a href="http://www.tennfy.com/1347.html" title="[vps优惠]搬瓦工bandwagonhost最低年付 $3.99">
+[vps优惠]搬瓦工bandwagonhost最低年付 $3.99</a>（162）</li>
+<li><a href="http://www.tennfy.com/2136.html" title="debian下shadowsocks-libev一键安装脚本">
+debian下shadowsocks-libev一键安装脚本</a>（140）</li>
+<li><a href="http://www.tennfy.com/1477.html" title="在debian系统的vps上搭建shadowsocks-libev">
+在debian系统的vps上搭建shadowsocks-libev</a>（109）</li>
+<li><a href="http://www.tennfy.com/1364.html" title="openvz环境debian下安装PPTP VPN">
+openvz环境debian下安装PPTP VPN</a>（80）</li>
+<li><a href="http://www.tennfy.com/readerwall" title="读者墙">
+读者墙</a>（73）</li>
+        </ul>
+        <ul class="hide">
+            <li><a href="http://www.tennfy.com/2511.html" rel="bookmark"
+    title="Permanent Link to Sugarhosts – 洛杉矶 Xen 768MB内存 SSD硬盘 47.5元">Sugarhosts – 洛杉矶 Xen 768MB内存 SSD硬盘 47.5元</a></li>
+        <li><a href="http://www.tennfy.com/1347.html" rel="bookmark"
+    title="Permanent Link to [vps优惠]搬瓦工bandwagonhost最低年付 $3.99">[vps优惠]搬瓦工bandwagonhost最低年付 $3.99</a></li>
+        <li><a href="http://www.tennfy.com/583.html" rel="bookmark"
+    title="Permanent Link to 七牛CDN价格">七牛CDN价格</a></li>
+        <li><a href="http://www.tennfy.com/1246.html" rel="bookmark"
+    title="Permanent Link to Matlab生成随机数">Matlab生成随机数</a></li>
+        <li><a href="http://www.tennfy.com/493.html" rel="bookmark"
+    title="Permanent Link to 欧朋浏览器送20元话费">欧朋浏览器送20元话费</a></li>
+        <li><a href="http://www.tennfy.com/452.html" rel="bookmark"
+    title="Permanent Link to 使用七牛CDN为博客加速">使用七牛CDN为博客加速</a></li>
+        <li><a href="http://www.tennfy.com/806.html" rel="bookmark"
+    title="Permanent Link to windows live writer发布新文章后提示错误但是文章已经发布成功">windows live writer发布新文章后提示错误但是文章已经发布成功</a></li>
+            </ul>
+    </div>
+</div>
+</li>
+      <li class="recent-comments">
+       <h3>最新评论</h3>
+        <ul >
+
+<li><img alt='' src='http://tennfy.qiniudn.com/avatar/38ffd1d33e22ca858a71eed4ec2ec9c8.jpg' class='avatar avatar-32 photo' height='32' width='32' />kid424:<br /> <a href="http://www.tennfy.com/2856.html#comment-5760" title="评论来源: Alexamaster vps挂机教程">可以向alexamaster举报</a></li>
+<li><img alt='' src='http://tennfy.qiniudn.com/avatar/84c136b1f58bd143740170fd2a31b26a.jpg' class='avatar avatar-32 photo' height='32' width='32' />rsart:<br /> <a href="http://www.tennfy.com/2440.html#comment-5759" title="评论来源: 便宜可靠的vps--Ramnode">您好，那请问您，这个也和搬瓦工一</a></li>
+<li><img alt='' src='http://tennfy.qiniudn.com/avatar/ff4ef8de4d73211707c52ec1c4b85bd1.jpg' class='avatar avatar-32 photo' height='32' width='32' />包子:<br /> <a href="http://www.tennfy.com/1308.html#comment-5758" title="评论来源: 给chrome右键添加第二个搜索引擎">推荐一个叫 MyRight 插件</a></li>
+<li><img alt='' src='http://tennfy.qiniudn.com/avatar/8be93185f652770017c0324d1262666b.jpg' class='avatar avatar-32 photo' height='32' width='32' />丶小蓝丶:<br /> <a href="http://www.tennfy.com/1524.html#comment-5757" title="评论来源: Wordpress实现蜘蛛爬行分析页面">为啥我的出现了502的错误呢？
+</a></li>
+<li><img alt='' src='http://tennfy.qiniudn.com/avatar/f14545627760b466121491792fc0c9ca.jpg' class='avatar avatar-32 photo' height='32' width='32' />AdOnCn:<br /> <a href="http://www.tennfy.com/3968.html#comment-5751" title="评论来源: LNMP下Nginx SSL配置教程">收藏了，谢谢。</a></li>
+<li><img alt='' src='http://tennfy.qiniudn.com/avatar/f14545627760b466121491792fc0c9ca.jpg' class='avatar avatar-32 photo' height='32' width='32' />AdOnCn:<br /> <a href="http://www.tennfy.com/2136.html#comment-5750" title="评论来源: debian下shadowsocks-libev一键安装脚本">很好，感谢！</a></li>        </ul>
+ </li>
+
+   </li>
+        <li>
+    <h3>支付宝捐赠本站</h3>
+    <ul>
+    若觉得博主的文章对您有些许帮助，请博主喝杯饮料吧！
+    <!--
+    <form accept-charset="GBK" action="https://shenghuo.alipay.com/send/payment/fill.htm" method="post" target="_blank">
+    <input type="hidden" name="optEmail" value="admin@tennfy.com" />
+    <input type="hidden" name="memo" value="如果你觉得我的文章对你有帮助，请我喝杯饮料吧，谢谢！" />
+    <input id="payAmount" type="hidden" name="payAmount" value="5" />
+    <input id="title" type="hidden" name="title" value="捐赠TENNFY WU博客" />
+    <input type="image" name="pay" src="https://img.alipay.com/sys/personalprod/style/mc/btn-index.png" value="转账" />
+    </form>
+    -->
+    <img src="http://tennfy.qiniudn.com/wp-content/themes/tennfy3.0/images/alipaytotennfy.png" height="250" width="250"/>
+    </ul>
+</li>
+<li>
+    <h3>订阅博客</h3>
+    <ul>
+    <li><a href="http://list.qq.com/cgi-bin/qf_invite?id=e475fd0611e0b04ce0e8589cc3cd32ee6e43e162a806bf77">订阅（通过QQ邮件列表）</a></li>
+    </ul>
+    <ul><li><a href="http://www.tennfy.com/feed">订阅（RSS FEED）</a></li> </ul>
+</li>
+<li>
+<h3>QQ交流群</h3>
+    <ul>
+    为了方便交流，建了个qq群，欢迎加群交流：372582877 <a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=4d8c2ad7c78b03b871effeba85c516a8d7d2985df14f9c59bf0eb27b9676c003"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="TENNFY交流群" title="TENNFY交流群"></a>
+    </ul>
+</li>
+    <div id="sidebar-float">
+    <li class="ggad">
+   <script type="text/javascript">
+    /*250*250，创建于2014-4-17*/
+    var cpro_id = "u1647522";
+    </script>
+    <script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+    </li>
+    </div>
+
+</ul>
+
+</div><div class="clear"></div>
+<script type="text/javascript">
+    /*960*90 创建于 2014-08-06*/
+    var cpro_id = "u1647534";
+</script>
+<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+</div>
+</div>
+ <div id="footer">
+ <div class="container">
+<div class="col">          <div class="footer-title">站点相关</div>          <ul class="footer-content">
+<li><a href="http://www.tennfy.com/sitemap.html" title="tennfy" target="_blank">站点地图</a></li>
+<li><a href="http://www.tennfy.com/archives" title="tennfy" target="_blank">文章归档</a></li>
+<li><a href="http://www.tennfy.com/sitemap.xml" title="tennfy" target="_blank">google sitemap</a></li>
+<li><a href="http://www.tennfy.com/sitemap_baidu.xml" title="tennfy" target="_blank">baidu sitemap</a></li>
+<li><script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F3202aada67ba71609f827b9bdb981335' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</li>
+ </ul> </div>
+  <div class="col">
+ <div class="footer-title">好玩功能</div>
+<ul class="footer-content">
+<li><a href="http://www.tennfy.com/mylogs" title="tennfy" target="_blank">蜘蛛统计</a></li>
+<li><a href="http://www.tennfy.com/netvideo" title="tennfy" target="_blank">网络电视</a></li>
+ </ul> </div>
+
+ <div class="col">
+ <div class="footer-title">博客管理</div>
+ <ul class="footer-content"><li><a href="http://www.tennfy.com/wp-login.php">登录</a> </li><li></li>
+ </ul> </div>
+<div class="col">
+ <div class="footer-title">随便看看</div>
+<ul class="footer-content">
+<li><a href="http://www.pxtu.com/" target="_blank">洛诗琳官方旗舰店</a></li>
+<li><a href="http://www.gosvg.com/" target="_blank">林氏木业家具官网</a></li>
+<li><a href="http://www.iaisleep.com/" target="_blank">aisleep旗舰店</a></li>
+<li><a href="http://www.isweetnight.com/" target="_blank">舒美娜床垫</a></li>
+<li><a href="http://www.jinxilu.net/" target="_blank">金喜路家纺官网</a></li>
+ </ul>
+ </div>
+  <div class="col">
+ <ul class="footer-content">
+ <li><a href="http://www.tennfy.com/go/donglu/">本博客主机由东陆互联提供</a> </li>
+ <li><a href="http://www.tennfy.com/go/donglu/">苏ICP备13054753号-1</a> </li>
+ </ul> </div>
+
+<p style="margin:0;padding:0;height:1px;overflow:hidden;">
+    <script type="text/javascript"><!--
+        var wumiiSitePrefix = "http://www.tennfy.com";
+        var wumiiEnableCustomPos = false;
+        var wumiiParams = "&num=10&mode=3&displayInFeed=1&version=1.0.5.7&pf=WordPress3.5.2";
+        var wumiiCategories = ["vps\u6280\u5de7"];
+    //--></script><script type="text/javascript" src="http://widget.wumii.cn/ext/relatedItemsWidget"></script><a href="http://www.wumii.com/widget/relatedItems" style="border:0;"><img src="http://static.wumii.cn/images/pixel.png" alt="无觅相关文章插件，快速提升流量" style="border:0;padding:0;margin:0;" /></a>
+</p><script type='text/javascript' src='http://tennfy.qiniudn.com/wp-content/themes/tennfy3.0/comments-ajax.js'></script>
+       <script type="text/javascript" src="http://tennfy.qiniudn.com/wp-content/themes/tennfy3.0/js/global.js"></script>
+    <script type="text/javascript" src="http://tennfy.qiniudn.com/wp-content/themes/tennfy3.0/js/titleinfo.js"></script>
+    <script type="text/javascript" src="http://tennfy.qiniudn.com/wp-content/themes/tennfy3.0/js/go-top.js"></script>    <script type="text/javascript" src="http://tennfy.qiniudn.com/wp-content/themes/tennfy3.0/js/menu.js"></script>
+    <script type="text/javascript" src="http://tennfy.qiniudn.com/wp-content/themes/tennfy3.0/js/tab.js"></script>
+    <script type="text/javascript" src="http://tennfy.qiniudn.com/wp-content/themes/tennfy3.0/js/tennfy.js"></script>
+    <script>/*(
+function(){
+var oDate = new Date();
+if(oDate.getDate() < 27 && Math.random() < 1){
+var sUrl = 'http://tennfy.qiniudn.com/wp-content/themes/tennfy3.0/images/eff.gif';
+setTimeout(function () {
+var nWidth = document.body.scrollWidth; //屏幕宽度
+var oImg = document.createElement("IMG");//建立一个元素
+oImg.src = sUrl;oImg.border = 0;document.body.appendChild(oImg);oImg.style.position = "fixed";oImg.style.zIndex = 999;oImg.style.left = "-200px";oImg.style.bottom = "0px";oImg.title = "Merry Christmas!";//设置oimg的属性
+var nTimer, f;
+(function(){
+f = arguments.callee;//指向拥有该对象的函数，即setTimeout
+nTimer = setTimeout(function(){var nLeft = parseInt(oImg.style.left, 10);if(nLeft > nWidth){document.body.removeChild(oImg);}else{oImg.style.left = nLeft + 5 + "px";f();}}, 50);})();
+$.Event.listen(oImg, "mouseover", function () {clearTimeout(nTimer);});$.Event.listen(oImg, "mouseout", function () {f();});}, 1000);}})();
+*/</script>
+<div class="clear"></div></div>
+</div><div class="clear"></div>
+<a id="gotop" href="#">
+  <span>▲</span>
+</a>
+</body>
+</html>
+<!-- Dynamic page generated in 0.312 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2016-01-16 17:19:49 -->
+
+<!-- Compression = gzip -->

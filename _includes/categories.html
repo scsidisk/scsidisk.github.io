@@ -10,7 +10,8 @@
                   所有分类&nbsp;<span class="count">[{{ site.posts.size }}]</span>
               </a>
           </li>
-          {% for category in site.categories %}
+          {% assign categories = site.categories | sort %}
+          {% for category in categories %}
           <li>
               <a class="catelink" href="{{site.baseurl}}/category/#{{category.first}}" data-target-cate="#{{category.first}}">
                   {% case category.first %}

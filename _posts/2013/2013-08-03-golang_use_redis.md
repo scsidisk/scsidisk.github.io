@@ -3,7 +3,7 @@ layout: post
 title: golang 使用 redis
 date: 2013-10-20 11:02
 author: scsidisk
-category: Golang
+category: Development
 tags: [Go, Golang, Redis]
 ---
 

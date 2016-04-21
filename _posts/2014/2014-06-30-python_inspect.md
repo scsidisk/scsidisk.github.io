@@ -3,7 +3,7 @@ layout: post
 title: Python自省（反射）指南
 date: 2014-06-30
 author: scsidisk
-category: Python
+category: Development
 tags: [Python]
 ---
 
