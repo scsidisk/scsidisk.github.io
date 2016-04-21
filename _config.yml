@@ -30,6 +30,7 @@ kramdown:
 baseurl: ""
 url: "http://127.0.0.1:4000"
 
+highlighter: rouge
 
 # 分页设置
 paginate: 10
