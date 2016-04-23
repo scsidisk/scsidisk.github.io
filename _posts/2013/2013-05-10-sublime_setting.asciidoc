@@ -1,10 +1,10 @@
 ---
 layout: post
-title: sublime配置全攻略
+title: "sublime配置全攻略"
 date: 2013-05-10 13:25:57
 author: scsidisk
-category: Sublime
-tags: [Mac, Sublime]
+categories: Sublime
+tags: Mac, Sublime
 ---
 
 = sublime配置全攻略

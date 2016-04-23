@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Css选择器命名规则
+title: "Css选择器命名规则"
 date: 2012-06-26
 author: scsidisk
-category: 前端开发
-tags: [CSS]
+categories: 前端开发
+tags: CSS
 ---
 
 操作系统版本：Windows 7

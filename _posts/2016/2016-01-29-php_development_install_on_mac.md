@@ -1,10 +1,10 @@
 ---
 layout: post
-title: PHP开发环境 - PHP MySQL Nginx 安装
+title: "PHP开发环境 - PHP MySQL Nginx 安装"
 date: 2016-01-29
 author: scsidisk
-category: PHP
-tags: [PHP, Nginx, MySQL, MAMP, Memcache, Redis]
+categories: PHP
+tags: PHP, Nginx, MySQL, MAMP, Memcache, Redis
 ---
 
 在 Mac 上面进行 PHP 开发环境配置，不太麻烦。如果只是普通使用，可以安装 MAMP，也可以使用 brew 安装。当然也可以使用源码安装。

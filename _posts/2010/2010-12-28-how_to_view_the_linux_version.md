@@ -3,8 +3,8 @@ layout: post
 title: "如何查看linux版本"
 date: 2010-12-28 15:23
 author: scsidisk
-category: Linux
-tags: [CentOS, Linux, 版本]
+categories: Linux
+tags: CentOS, Linux, 版本
 Slug: how_to_view_the_linux_version
 ---
 

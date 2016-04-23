@@ -1,10 +1,10 @@
 ---
 layout: post
-title: 前端交互操作响应时间基本准则
+title: "前端交互操作响应时间基本准则"
 date: 2012-09-25
 author: scsidisk
-category: IT
-tags: [IT]
+categories: IT
+tags: IT
 ---
 
 在前端用户交互过程中，会存在等待服务器响应的事件间隔，这个时候对用户展示响应的提示能更加的友好。这样情况就需要考虑操作方式和网络情况。

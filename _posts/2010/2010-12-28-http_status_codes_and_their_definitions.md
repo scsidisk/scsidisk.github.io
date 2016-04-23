@@ -3,8 +3,8 @@ layout: post
 title: "HTTP状态代码及其定义"
 date: 2010-12-28 13:52
 author: scsidisk
-category: Linux
-tags: [Apache, HTTP, ngnix]
+categories: Linux
+tags: Apache, HTTP, ngnix
 Slug: http_status_codes_and_their_definitions
 ---
 

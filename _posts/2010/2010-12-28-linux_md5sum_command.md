@@ -3,8 +3,8 @@ layout: post
 title: "linux md5sum命令"
 date: 2010-12-28 15:22
 author: scsidisk
-category: Linux
-tags: [CentOS, Linux, md5, Shell]
+categories: Linux
+tags: CentOS, Linux, md5, Shell
 Slug: 2010-12-28-linux_md5sum_command
 ---
 

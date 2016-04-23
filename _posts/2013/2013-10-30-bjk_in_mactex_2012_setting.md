@@ -1,10 +1,10 @@
 ---
 layout: post
-title: MacTeX 2012 中 CJK 宏包的配置
+title: "MacTeX 2012 中 CJK 宏包的配置"
 date: 2013-10-30
 author: scsidisk
-category: 文档处理
-tags: [MacTeX, MacOSX, CJK, Tex]
+categories: 文档处理
+tags: MacTeX, MacOSX, CJK, Tex
 ---
 
 不知道出于什么原因，比较经典的 CJK 宏包在 MacTeX 2012 中基本被丢弃。但是，我们可能会有一些用 CJK 宏包写的相对古老的 GBK 文档。很明显，与其逐个修改 LaTeX 文档，倒不如修改 MacTeX 来得一劳永逸。下面就来谈谈如何让 CJK 宏包工作起来？

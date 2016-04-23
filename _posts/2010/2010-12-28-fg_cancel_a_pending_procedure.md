@@ -3,8 +3,8 @@ layout: post
 title: "fg：取消挂起程序"
 date: 2010-12-28 13:52
 author: scsidisk
-category: Linux
-tags: [CentOS, Linux, Shell, 命令]
+categories: Linux
+tags: CentOS, Linux, Shell, 命令
 Slug: fg_cancel_a_pending_procedure
 ---
 

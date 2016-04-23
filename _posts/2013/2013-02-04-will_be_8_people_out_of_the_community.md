@@ -1,10 +1,10 @@
 ---
 layout: post
-title: 将要被社会淘汰的8种人
+title: "将要被社会淘汰的8种人"
 date: 2013-02-04
 author: scsidisk
-category: IT
-tags: [IT]
+categories: IT
+tags: IT
 ---
 
 不景气的社会，一定会淘汰不争气的人。如何不被淘汰，只要你不在这八种人之内。如果你在这八种人之内，那就得引起注意了。

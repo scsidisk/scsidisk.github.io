@@ -3,8 +3,8 @@ layout: post
 title: "全新PHP Cookie设置方法揭秘"
 date: 2010-12-28 15:23
 author: scsidisk
-category: PHP
-tags: [Cookie, PHP]
+categories: PHP
+tags: Cookie, PHP
 Slug: the_new_php_cookie_method_to_set_the_secret
 ---
 

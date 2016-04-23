@@ -1,10 +1,10 @@
 ---
 layout: post
-title: 怎样在Excel中对数据进行分类汇总
+title: "怎样在Excel中对数据进行分类汇总"
 author: scsidisk
 date: 2013-05-10 13:25:59
-category: 文档处理
-tags: [AsciiDoc]
+categories: 文档处理
+tags: AsciiDoc
 ---
 
 文章来源：www.excel123.cn

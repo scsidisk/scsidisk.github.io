@@ -1,10 +1,10 @@
 ---
 layout: post
-title: 在 Mac OS X 中创建 RamDisk 用作缓存目录
+title: "在 Mac OS X 中创建 RamDisk 用作缓存目录"
 date: 2012-04-10
 author: Eyon
-category: MacOSX
-tags: [MacOSX]
+categories: MacOSX
+tags: MacOSX
 ---
 
 

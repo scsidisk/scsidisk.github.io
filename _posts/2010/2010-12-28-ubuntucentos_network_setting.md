@@ -3,8 +3,8 @@ layout: post
 title: "ubuntu/centos 上的双网卡设置"
 date: 2010-12-28 14:56
 author: scsidisk
-category: Linux
-tags: [CentOS, Linux]
+categories: Linux
+tags: CentOS, Linux
 Slug: 2010-12-28-ubuntucentos_network_setting
 ---
 

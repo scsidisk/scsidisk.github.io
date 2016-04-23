@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Mac OS X 上面的仿真终端
+title: "Mac OS X 上面的仿真终端"
 date: 2016-04-22
 author: scsidisk
-category: OSX
-tags: [SecureCRT, Zoc, SSH]
+categories: OSX
+tags: SecureCRT, Zoc, SSH
 ---
 
 在 Mac 上面使用 SSH 链接服务器, 很方便。但是如果管理机器很多，就比较麻烦。

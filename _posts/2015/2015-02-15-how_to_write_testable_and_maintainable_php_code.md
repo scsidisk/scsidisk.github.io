@@ -1,10 +1,10 @@
 ---
 layout: post
-title: 如何编写可测试和可维护的php代码
+title: "如何编写可测试和可维护的php代码"
 date: 2015-02-15
 author: scsidisk
-category: PHP
-tags: [PHP, PHPUnit]
+categories: PHP
+tags: PHP, PHPUnit
 ---
 
 框架提供了一个工具可以快速的开发应用，框架允许你快速的创建功能，但是通常你会获得技术债务。当可维护性不是作为开发人员的主要目的，技术债务就产生了。由于缺少单元测试和构架，未来的修改和调试就变得非常昂贵了。

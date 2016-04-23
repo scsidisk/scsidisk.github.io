@@ -3,8 +3,8 @@ layout: post
 title: "轻量标记语言的比较"
 date: 2010-12-28 14:55
 author: scsidisk
-category: 文档处理
-tags: [AsciiDoc, Mac]
+categories: 文档处理
+tags: AsciiDoc, Mac
 ---
 
 [TXT2TAGS](http://txt2tags.sourceforge.net/)

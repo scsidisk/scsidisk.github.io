@@ -1,10 +1,10 @@
 ---
 layout: post
-title: 几个常用的Linux操作系统监控脚本代码
+title: "几个常用的Linux操作系统监控脚本代码"
 date: 2013-04-10
 author: scsidisk
-category: Linux
-tags: [CentOS, Linux, Bash]
+categories: Linux
+tags: CentOS, Linux, Bash
 ---
 
 本文介绍了几个常用的Linux监控脚本，可以实现主机网卡流量、系统状况、主机磁盘空间、CPU和内存的使用情况等方面的自动监控与报警。根据自己的需求写出的shell脚本更能满足需求，更能细化主机监控的全面性

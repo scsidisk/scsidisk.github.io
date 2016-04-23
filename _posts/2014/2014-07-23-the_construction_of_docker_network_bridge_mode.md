@@ -1,9 +1,9 @@
 ---
 layout: post
-title: 桥接模式构建 docker 网络
+title: "桥接模式构建 docker 网络"
 date: 2014-07-23 07:31
 author: 智深
-category: Virtualization
+categories: Virtualization
 tags: 虚拟化 LXC Docker bridge
 ---
 
@@ -45,12 +45,12 @@ tags: 虚拟化 LXC Docker bridge
 6、创建 veth 设备，分配给容器，绑定到桥
 
      ip link add vetha type veth peer name vethb
-     brctl addif br100 vethb 
+     brctl addif br100 vethb
      ip link set vethb up
      ip link set vetha netns $pid
-     ip netns exec $pid ip link set dev vetha name eth0 
-     ip netns exec $pid ip link set eth0 up 
-     ip netns exec $pid ip addr add 192.168.58.121/24 dev eth0 
+     ip netns exec $pid ip link set dev vetha name eth0
+     ip netns exec $pid ip link set eth0 up
+     ip netns exec $pid ip addr add 192.168.58.121/24 dev eth0
      ip netns exec $pid ip route add default via 192.168.58.110
 
 7、绑定 eth2 到 桥
@@ -59,6 +59,6 @@ tags: 虚拟化 LXC Docker bridge
      ip addr del 192.168.58.101/24 dev eth2     # 删除 eth2 的 IP
      ip addr add 192.168.58.101/24 dev br100    # 把 eth2 的 IP 加到 桥中
 
-Complete！！！ 
+Complete！！！
 
 转自：http://my.oschina.net/astute/blog/293944

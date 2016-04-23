@@ -3,7 +3,7 @@ scsidisk
 2013-05-10 13:25:58
 :layout: post
 :category: MacOSX
-:tags: [SSH, Terminal]
+:tags: SSH, Terminal
 
 == 让终端支持中文文件名
 

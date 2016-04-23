@@ -3,8 +3,8 @@ layout: post
 title: "调优Apache, PHP"
 date: 2010-12-28 14:57
 author: scsidisk
-category: PHP
-tags: [Apache, PHP, 调优]
+categories: PHP
+tags: Apache, PHP, 调优
 ---
 
 Apache

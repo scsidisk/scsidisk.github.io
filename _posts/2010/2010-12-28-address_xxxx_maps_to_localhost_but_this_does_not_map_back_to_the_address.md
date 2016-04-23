@@ -3,8 +3,8 @@ layout: post
 title: "Address x.x.x.x maps to localhost, but this does not map back to the address"
 date: 2010-12-28 13:52
 author: scsidisk
-category: Linux
-tags: [CentOS, Linux, Shell]
+categories: Linux
+tags: CentOS, Linux, Shell
 ---
 
 ```

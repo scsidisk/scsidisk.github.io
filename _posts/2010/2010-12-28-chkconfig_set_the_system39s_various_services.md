@@ -3,8 +3,8 @@ layout: post
 title: "chkconfig：设置系统的各种服务"
 date: 2010-12-28 13:53
 author: scsidisk
-category: Linux
-tags: [CentOS, Shell, 命令]
+categories: Linux
+tags: CentOS, Shell, 命令
 ---
 
 作用：chkconfig命令检查、设置系统的各种服务。

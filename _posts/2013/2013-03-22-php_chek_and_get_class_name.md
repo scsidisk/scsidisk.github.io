@@ -1,10 +1,10 @@
 ---
 layout: post
-title: php获取/检查当前类名方法名
+title: "php获取/检查当前类名方法名"
 date: 2013-03-22 18:46
 author: scsidisk
-category: PHP
-tags: [PHP, Class, Function]
+categories: PHP
+tags: PHP, Class, Function
 ---
 
 ### 1. 使用函数检查

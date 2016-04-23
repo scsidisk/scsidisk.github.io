@@ -1,10 +1,10 @@
 ---
 layout: post
-title: PHP Filter 简介
+title: "PHP Filter 简介"
 date: 2012-05-14
 author: scsidisk
-category: PHP
-tags: [PHP, Filter]
+categories: PHP
+tags: PHP, Filter
 ---
 
 PHP 过滤器用于对来自非安全来源的数据（比如用户输入）进行验证和过滤。

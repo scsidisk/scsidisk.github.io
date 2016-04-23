@@ -1,10 +1,10 @@
 ---
 layout: post
-title: (原)让innodb表保存为单独的文件
+title: "(原)让innodb表保存为单独的文件"
 date: 2013-02-07
 author: scsidisk
-category: Database
-tags: [MySQL]
+categories: Database
+tags: MySQL
 ---
 
 mysql的Innodb引擎生成的表会在同一个文件中，如果想让不同的表保存为单独的文件，可以使用下面的方法。

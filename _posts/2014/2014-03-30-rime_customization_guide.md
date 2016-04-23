@@ -1,10 +1,10 @@
 ---
 layout: post
-title: 鼠鬚管输入法自定义
+title: "鼠鬚管输入法自定义"
 date: 2014-03-30
 author: scsidisk
-category: MacOSX
-tags: [MacOSX]
+categories: MacOSX
+tags: MacOSX
 ---
 
 ## 输入法外观

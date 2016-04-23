@@ -2,7 +2,7 @@
 简江
 :layout: post
 :category: Management
-:tags: [KPI, Management]
+:tags: KPI, Management
 
 天下网商特邀作者 简江（微信号：jianjiangvc）
 

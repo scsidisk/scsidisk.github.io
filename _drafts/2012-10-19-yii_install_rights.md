@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Yii安装rights
+title: "Yii安装rights"
 date: 2012-10-19
 author: scsidisk
 category: PHP
-tags: [Sphider, SCWS, PHP]
+tags: Sphider, SCWS, PHP
 ---
 
 ## 1. 安装rights

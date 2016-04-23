@@ -1,10 +1,10 @@
 ---
 layout: post
-title: 如何在 Mac OSX Lion 上設定 node.js 的開發環境
+title: "如何在 Mac OSX Lion 上設定 node.js 的開發環境"
 date: 2012-08-15
 author: scsidisk
-category: Node
-tags: [Node]
+categories: Node
+tags: Node
 ---
 
 ### 用 Homebrew 來安裝及更新 node.js

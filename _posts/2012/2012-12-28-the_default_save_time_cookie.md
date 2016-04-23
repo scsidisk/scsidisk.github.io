@@ -3,8 +3,8 @@ layout: post
 title: "$_COOKIE 默认保存时间"
 date: 2012-12-28 15:23
 author: scsidisk
-category: PHP
-tags: [Cookie, PHP]
+categories: PHP
+tags: Cookie, PHP
 ---
 
 刚才有同学在群里询问：$_COOKIE 的时间是多长，他指的是“我直接用

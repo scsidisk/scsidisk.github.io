@@ -1,10 +1,10 @@
 ---
 layout: post
-title: PHP curl 请求https资源的问题
+title: "PHP curl 请求https资源的问题"
 date: 2014-08-12
 author: scsidisk
-category: PHP
-tags: [PHP, Yii]
+categories: PHP
+tags: PHP, Yii
 ---
 
 今天使用 PHP 连接 CAS 进行登录验证。 一直不行，非常郁闷。

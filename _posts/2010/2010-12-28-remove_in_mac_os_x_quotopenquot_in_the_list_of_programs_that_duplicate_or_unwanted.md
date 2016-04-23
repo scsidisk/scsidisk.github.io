@@ -3,8 +3,8 @@ layout: post
 title: "删除 Mac OS X 中“打开方式”里重复或无用的程序列表"
 date: 2010-12-28 13:51
 author: scsidisk
-category: MacOSX
-tags: [MacOSX]
+categories: MacOSX
+tags: MacOSX
 Slug: remove_in_mac_os_x_quotopenquot_in_the_list_of_programs_that_duplicate_or_unwanted
 ---
 

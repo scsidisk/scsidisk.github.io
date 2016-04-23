@@ -3,8 +3,8 @@ layout: post
 title: "SQL_CALC_FOUND_ROWS真的很慢么？"
 date: 2010-12-28 13:52
 author: scsidisk
-category: Database
-tags: [MySQL]
+categories: Database
+tags: MySQL
 Slug: sql_calc_found_rows_really_slow_it
 ---
 

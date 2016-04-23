@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Linux screen 命令详解
+title: "Linux screen 命令详解"
 date: 2012-07-01
 author: scsidisk
-category: Linux
-tags: [Linux]
+categories: Linux
+tags: Linux
 ---
 
 ### 功能说明：

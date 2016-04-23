@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Yii Change jQuery Version and add JQuery-UI
+title: "Yii Change jQuery Version and add JQuery-UI"
 date: 2014-09-05
 author: Erkan Buelbuel
-category: PHP
-tags: [Yii]
+categories: PHP
+tags: Yii
 ---
 
 Just edit

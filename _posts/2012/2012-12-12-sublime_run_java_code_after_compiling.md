@@ -3,8 +3,8 @@ layout: post
 title: "Sublime run Java code after compiling"
 date: 2012-12-12
 author: scsidisk
-category: MacOSX
-tags: [Java, Sublime]
+categories: MacOSX
+tags: Java, Sublime
 ---
 
 

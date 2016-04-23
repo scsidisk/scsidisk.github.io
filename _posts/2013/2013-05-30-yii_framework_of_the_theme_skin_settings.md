@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Yii框架的主题、皮肤设置
+title: "Yii框架的主题、皮肤设置"
 date: 2013-05-30
 author: scsidisk
-category: PHP
-tags: [PHP, Yii]
+categories: PHP
+tags: PHP, Yii
 ---
 
 ## Theming(主题)

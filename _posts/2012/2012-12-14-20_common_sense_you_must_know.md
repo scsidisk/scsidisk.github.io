@@ -3,8 +3,8 @@ layout: post
 title: "作为软件工程师，你必须知道的20个常识"
 date: 2012-12-14
 author: scsidisk
-category: IT
-tags: [IT]
+categories: IT
+tags: IT
 ---
 
 1，针对面向对象的设计与分析：为了让软件有更好的可维护性，重用性以及快速开发，简短的OOAD与它的SOLID原则对于每一个软件工程师来说都是该牢记的。

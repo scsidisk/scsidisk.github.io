@@ -1,10 +1,10 @@
 ---
 layout: post
-title: libmemcache
+title: "libmemcache"
 date: 2012-07-01 12:55:55
 author: scsidisk
-category: Linux
-tags: [Memcache]
+categories: Linux
+tags: Memcache
 ---
 
 libmemcache

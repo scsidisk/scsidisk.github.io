@@ -79,7 +79,7 @@ Ionic 自动升级APP
         // 显示是否更新对话框
         function showUpdateConfirm() {
             var confirmPopup = $ionicPopup.confirm({
-                title: '版本升级',
+                title: "'版本升级',"
                 template: '1.xxxx;</br>2.xxxxxx;</br>3.xxxxxx;</br>4.xxxxxx', //从服务端获取更新的内容
                 cancelText: '取消',
                 okText: '升级'

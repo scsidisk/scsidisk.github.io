@@ -3,8 +3,8 @@ layout: post
 title: "Mac OS X 禁用 Dashboard"
 date: 2010-12-28 13:51
 author: scsidisk
-category: MacOSX
-tags: [Mac]
+categories: MacOSX
+tags: Mac
 Slug: mac_os_x_dashboard_disabled
 ---
 

@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  语义化版本号
+title: " 语义化版本号"
 date:   2016-01-18
 categories: IT
-tags: [项目管理]
+tags: 项目管理
 ---
 
 在软件开发过程中，版本号的规划和管理很重要，推荐大家使用 [语义化版本](http://semver.org/lang/zh-CN/).

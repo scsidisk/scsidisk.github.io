@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Javascript 中的false,零值,null,undefined和空字符串对象
+title: "Javascript 中的false,零值,null,undefined和空字符串对象"
 date: 2012-05-29
 author: scsidisk
-category: IT
-tags: [IT]
+categories: IT
+tags: IT
 ---
 
 在Javascript中，我们经常会接触到题目中提到的这5个比较特别的对象--false、0、空字符串、null和undefined。这几个对象很容易用错，因此在使用时必须得小心。

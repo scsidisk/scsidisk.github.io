@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Mac 上面使用免费的电子邮件证书
+title: "Mac 上面使用免费的电子邮件证书"
 date: 2014-08-17
 author: scsidisk
-category: MacOSX
-tags: [MacOSX, Mail]
+categories: MacOSX
+tags: MacOSX, Mail
 ---
 
 现在为了数字安全越来越多人使用数字证书发送Email，那有没有免费的电子邮件数字证书呢？Comodo提供免费的email数字证书,而且comodo是全球第二大证书机构，可以值得信赖！

@@ -3,8 +3,8 @@ layout: post
 title: "自动ssh登录的几种方法"
 date: 2010-12-28 14:56
 author: scsidisk
-category: Linux
-tags: [CentOS, SSH]
+categories: Linux
+tags: CentOS, SSH
 ---
 
 ​1. 自动ssh/scp方法==

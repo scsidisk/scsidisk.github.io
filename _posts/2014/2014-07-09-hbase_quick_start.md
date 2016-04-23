@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Habase 快速测试
+title: "Habase 快速测试"
 date: 2014-07-09
 author: scsidisk
-category: 大数据
-tags: [HBase]
+categories: 大数据
+tags: HBase
 ---
 
 本文使用单机模式，了解 HBase 的有关知识。

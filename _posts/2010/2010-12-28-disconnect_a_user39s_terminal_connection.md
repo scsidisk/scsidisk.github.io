@@ -3,8 +3,8 @@ layout: post
 title: "断开某个用户的终端连接"
 date: 2010-12-28 14:54
 author: scsidisk
-category: Linux
-tags: [CentOS, 命令]
+categories: Linux
+tags: CentOS, 命令
 Slug: disconnect_a_user39s_terminal_connection
 ---
 

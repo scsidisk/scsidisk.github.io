@@ -1,10 +1,10 @@
 ---
 layout: post
-title: 使用 Lua 脚本语言操作 Redis
+title: "使用 Lua 脚本语言操作 Redis"
 date: 2013-01-28
 author: scsidisk
-category: Development
-tags: [Lua, Redis, Nginx]
+categories: Development
+tags: Lua, Redis, Nginx
 ---
 
 使用 Lua 脚本语言操作 Redis。

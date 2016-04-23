@@ -3,8 +3,8 @@ layout: post
 title: "为Apache配置mod_deflat压缩输出[转]"
 date: 2010-12-28 14:55
 author: scsidisk
-category: Linux
-tags: [Apache, mod_deflat]
+categories: Linux
+tags: Apache, mod_deflat
 Slug: for_the_apache_configuration_mod_deflat_compressed_output_rpm
 ---
 

@@ -3,8 +3,8 @@ layout: post
 title: "有效防御PHP木马攻击的技巧"
 date: 2010-12-28 14:57
 author: scsidisk
-category: PHP
-tags: [Nginx, PHP, 木马]
+categories: PHP
+tags: Nginx, PHP, 木马
 ---
 
 1、防止跳出web目录

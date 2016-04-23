@@ -1,10 +1,10 @@
 ---
 layout: post
-title: CSS简写指南
+title: "CSS简写指南"
 date: 2012-06-26
 author: scsidisk
-category: 前端开发
-tags: [CSS]
+categories: 前端开发
+tags: CSS
 ---
 
 高效的css写法中的一条就是使用简写。通过简写可以让你的CSS文件更小，更易读。而了解CSS属性简写也是前端开发工程师的基本功之一。今天我们系统地总结一下CSS属性的缩写。

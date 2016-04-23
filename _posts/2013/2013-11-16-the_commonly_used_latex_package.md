@@ -1,10 +1,10 @@
 ---
 layout: post
-title: 常用的latex宏包
+title: "常用的latex宏包"
 date: 2013-11-16 21:43
 author: scsidisk
-category: 文档处理
-tags: [Tex, LaTex]
+categories: 文档处理
+tags: Tex, LaTex
 ---
 
 

@@ -3,8 +3,8 @@ layout: post
 title: "pgrep：查找匹配条件的进程"
 date: 2010-12-28 13:53
 author: scsidisk
-category: Linux
-tags: [CentOS, Linux, Shell]
+categories: Linux
+tags: CentOS, Linux, Shell
 Slug: pgrep_find_matching_criteria
 ---
 

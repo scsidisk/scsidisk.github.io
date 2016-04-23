@@ -3,8 +3,8 @@ layout: post
 title: "vmstat：报告虚拟内存统计信息"
 date: 2010-12-28 13:53
 author: scsidisk
-category: Linux
-tags: [CentOS, Linux, Shell, 命令]
+categories: Linux
+tags: CentOS, Linux, Shell, 命令
 ---
 
 作用：vmstat命令报告关于内核线程、虚拟内存、磁盘、陷阱和CPU活动的统计信息。由vmstat命令生成的报告可以用于平衡系统负载活动。系统范围内的这些统计信息（所有的处理器中）都计算出以百分比表示的平均值，或者计算其总和。

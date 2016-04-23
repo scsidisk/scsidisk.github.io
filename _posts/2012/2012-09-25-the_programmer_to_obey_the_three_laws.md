@@ -1,10 +1,10 @@
 ---
 layout: post
-title: 程序员遵守三大法则
+title: "程序员遵守三大法则"
 date: 2012-09-25
 author: scsidisk
-category: IT
-tags: [IT]
+categories: IT
+tags: IT
 ---
 
 忘记那里转过来的了，记录如下。

@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Kerberos for Mac OS X
+title: "Kerberos for Mac OS X"
 date: 2014-07-17
 author: scsidisk
-category: Java
-tags: [Java, kerberos]
+categories: Java
+tags: Java, kerberos
 ---
 
 在mac上面使用kerberos比较麻烦，mac本身已经安装了kerberos，但不好使，所以在网上查了一下，记录下面安装过程。

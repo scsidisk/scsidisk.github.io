@@ -3,8 +3,8 @@ layout: post
 title: "Nginx下虚拟主机环境变量的配置方法"
 date: 2012-10-31
 author: scsidisk
-category: Linux
-tags: [Nginx]
+categories: Linux
+tags: Nginx
 ---
 
 将在项目中使用的需要与服务器交互的参数用虚拟主机的环境变量来统一进行管理，这是我在新浪学到的第一个服务器管理技巧。这么做的好处是保证了项目代码的完全可移植性和并行开发时的一致性，避免了在本地开发提交代码时频繁地修改连接服务器参数。好的东西就一定要加以学习和推广，这也是我的口号"Do after learning"。于是我就想到了这个博客的服务器。

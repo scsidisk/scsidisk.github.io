@@ -3,8 +3,8 @@ layout: post
 title: "交互式shell编程利器expect"
 date: 2010-12-28 15:22
 author: scsidisk
-category: Linux
-tags: [CentOS, Linux, Shell]
+categories: Linux
+tags: CentOS, Linux, Shell
 Slug: interactive_shell_programming_tool_expect
 ---
 

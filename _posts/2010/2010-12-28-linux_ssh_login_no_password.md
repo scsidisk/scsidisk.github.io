@@ -3,8 +3,8 @@ layout: post
 title: "linux ssh 无密码登陆"
 date: 2010-12-28 14:56
 author: scsidisk
-category: Linux
-tags: [CentOS, Linux, SSH]
+categories: Linux
+tags: CentOS, Linux, SSH
 Slug: 2010-12-28-linux_ssh_login_no_password
 ---
 

@@ -3,8 +3,8 @@ layout: post
 title: "shell参数"
 date: 2010-12-28 15:22
 author: scsidisk
-category: Linux
-tags: [CentOS, Linux, Shell]
+categories: Linux
+tags: CentOS, Linux, Shell
 Slug: 2010-12-28-shell_avgs
 ---
 

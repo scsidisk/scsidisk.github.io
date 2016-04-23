@@ -1,10 +1,10 @@
 ---
 layout: post
-title: (原)使用mysql实现全局id
+title: "(原)使用mysql实现全局id"
 date: 2014-03-06
 author: scsidisk
-category: Database
-tags: [MySQL]
+categories: Database
+tags: MySQL
 ---
 
 mysql分表的时候经常需要全局id保证多个表中的数据使用不重复的编号。

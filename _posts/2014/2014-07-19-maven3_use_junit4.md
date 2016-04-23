@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Maven3中加入Junit4测试
+title: "Maven3中加入Junit4测试"
 date: 2014-07-19
 author: scsidisk
-category: Java
-tags: [Java, Maven, Junit]
+categories: Java
+tags: Java, Maven, Junit
 ---
 
 ## 环境

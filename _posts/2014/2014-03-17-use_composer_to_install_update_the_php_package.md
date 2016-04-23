@@ -1,10 +1,10 @@
 ---
 layout: post
-title: 使用composer安装/更新PHP包
+title: "使用composer安装/更新PHP包"
 date: 2014-03-17
 author: scsidisk
-category: PHP
-tags: [PHP]
+categories: PHP
+tags: PHP
 ---
 
 composer是PHP用来管理PHP依赖关系的工具.

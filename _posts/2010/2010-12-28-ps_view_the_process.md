@@ -3,8 +3,8 @@ layout: post
 title: "ps：查看进程"
 date: 2010-12-28 13:53
 author: scsidisk
-category: Linux
-tags: [CentOS, Linux, Shell, 命令]
+categories: Linux
+tags: CentOS, Linux, Shell, 命令
 Slug: ps_view_the_process
 ---
 

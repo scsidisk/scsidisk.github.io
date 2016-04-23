@@ -3,8 +3,8 @@ layout: post
 title: "命令行启动default browser，并指定URL"
 date: 2010-12-28 13:51
 author: scsidisk
-category: MacOSX
-tags: [Mac, Shell]
+categories: MacOSX
+tags: Mac, Shell
 Slug: command_line_to_start_default_browser_and_specify_the_url
 ---
 

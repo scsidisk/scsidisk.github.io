@@ -3,8 +3,8 @@ layout: post
 title: "vim多行注释/删除注释"
 date: 2010-12-28 13:51
 author: scsidisk
-category: VIM
-tags: [CentOS, Linux, Shell, Vim]
+categories: VIM
+tags: CentOS, Linux, Shell, Vim
 ---
 
 按键操作：

@@ -3,8 +3,8 @@ layout: post
 title: "batch：在系统负载水平允许的时候执行命令"
 date: 2010-12-28 13:52
 author: scsidisk
-category: Linux
-tags: [CentOS, Linux, Shell, 命令]
+categories: Linux
+tags: CentOS, Linux, Shell, 命令
 ---
 
 ###作用

@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Mac 命令行下编辑常用的快捷键
+title: "Mac 命令行下编辑常用的快捷键"
 date: 2013-12-15
 author: scsidisk
-category: MacOSX
-tags: [MacOSX]
+categories: MacOSX
+tags: MacOSX
 ---
 
 本文讲述了 Mac 命令行编辑快捷键的方法，希望对您有所帮助。

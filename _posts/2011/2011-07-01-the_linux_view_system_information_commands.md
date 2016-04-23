@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Linux 系统信息查看命令全集
+title: "Linux 系统信息查看命令全集"
 date: 2011-07-01
 author: scsidisk
-category: Linux
-tags: [Linux]
+categories: Linux
+tags: Linux
 ---
 
 ### 系统

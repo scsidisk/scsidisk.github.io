@@ -1,10 +1,10 @@
 ---
 layout: post
-title: mysql timestamp 类型自动更新
+title: "mysql timestamp 类型自动更新"
 date: 2013-01-04
 author: scsidisk
-category: Database
-tags: [MySQL, Timestamp]
+categories: Database
+tags: MySQL, Timestamp
 ---
 
 mysql创建表时，如果使用timestamp类型没有指定默认值，它会把第一个使用timestamp的字段默认值设定为CURRENT\_TIMESTAMP，如果后面还有其他字段使用timestamp，则指定为'0000-00-00 00:00:00'，同时Extra列中看到on update CURRENT\_TIMESTAMP，注意它会在更新操作时会把该字段时间设置为当前时间，即使你更新时没有指定要更新该字段。例子如下：

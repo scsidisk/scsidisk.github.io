@@ -3,8 +3,8 @@ layout: post
 title: "ntsysv：设置系统服务"
 date: 2010-12-28 13:53
 author: scsidisk
-category: Linux
-tags: [CentOS, Linux, Shell, 命令]
+categories: Linux
+tags: CentOS, Linux, Shell, 命令
 Slug: ntsysv_set_up_system_services
 ---
 

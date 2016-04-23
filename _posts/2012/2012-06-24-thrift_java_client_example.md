@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Thrift入门及Java实例演示
+title: "Thrift入门及Java实例演示"
 date: 2012-06-24
 author: Michael
-category: Java
-tags: [Java, Maven, Thrift]
+categories: Java
+tags: Java, Maven, Thrift
 ---
 
 ## 一、概述

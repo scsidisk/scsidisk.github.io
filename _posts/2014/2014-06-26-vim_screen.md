@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Vim的分屏功能
+title: "Vim的分屏功能"
 date: 2014-06-26
 author: 陈皓
-category: VIM
-tags: [VIM]
+categories: VIM
+tags: VIM
 ---
 
 ### 分屏启动Vim

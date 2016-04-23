@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Mou Markdown 语法参考
+title: "Mou Markdown 语法参考"
 date: 2014-06-05 12:55:55
 author: scsidisk
-category: 文档处理
-tags: [Markdown, Mou]
+categories: 文档处理
+tags: Markdown, Mou
 ---
 
 Part Ⅰ. 标准 Markdown 语法

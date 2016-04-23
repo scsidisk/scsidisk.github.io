@@ -1,10 +1,10 @@
 ---
 layout: post
-title: editconfig 统一编辑器配置
+title: "editconfig 统一编辑器配置"
 date: 2014-08-16
 author: scsidisk
-category: IT
-tags: [IT]
+categories: IT
+tags: IT
 ---
 
 在项目开发过程中，有的人喜欢用tab来缩进，有的人喜欢用空格。怎样保持缩进风格的一致，缩进大小，tab长度以及字符集等。

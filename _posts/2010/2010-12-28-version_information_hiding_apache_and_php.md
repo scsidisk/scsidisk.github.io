@@ -3,8 +3,8 @@ layout: post
 title: "隐藏apache和php的版本信息"
 date: 2010-12-28 14:56
 author: scsidisk
-category: Linux
-tags: [Apache]
+categories: Linux
+tags: Apache
 ---
 
 web server避免一些不必要的麻烦，可以把apache和php的版本信息不显示

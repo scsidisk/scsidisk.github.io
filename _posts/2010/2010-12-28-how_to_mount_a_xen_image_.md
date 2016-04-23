@@ -3,8 +3,8 @@ layout: post
 title: "How to mount a xen image ?"
 date: 2010-12-28 13:49
 author: scsidisk
-category: Linux
-tags: [CentOS, Linux, Shell]
+categories: Linux
+tags: CentOS, Linux, Shell
 Slug: how_to_mount_a_xen_image_
 ---
 

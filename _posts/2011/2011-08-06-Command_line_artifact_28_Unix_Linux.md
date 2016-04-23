@@ -1,10 +1,10 @@
 ---
 layout: post
-title: 28个Unix/Linux的命令行神器
+title: "28个Unix/Linux的命令行神器"
 date: 2011-08-06
 author: scsidisk
-category: Linux
-tags: [Linux]
+categories: Linux
+tags: Linux
 ---
 
 下面是Kristóf Kovács收集的28个Unix/Linux下的28个命令行下的工具，有一些是大家熟悉的，有一些是非常有用的，有一些是不为人知的。这些工具都非常不错，希望每个人都知道。本篇文章还在 Hacker News 上被讨论， 你可以过去看看。 我以作者的原文中加入了官网链接和一些说明。

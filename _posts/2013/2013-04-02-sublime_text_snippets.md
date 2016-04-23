@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Sublime Text Snippets（代码片段）功能
+title: "Sublime Text Snippets（代码片段）功能"
 date: 2013-04-02
 author: scsidisk
-category: MacOSX
-tags: [Sublime, Snippets]
+categories: MacOSX
+tags: Sublime, Snippets
 ---
 
 

@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Mac 安装 Golang 开发环境
+title: "Mac 安装 Golang 开发环境"
 date: 2015-11-03
 author: scsidisk
-category: Development
-tags: [Mac, Sublime, Go, Golang]
+categories: Development
+tags: Mac, Sublime, Go, Golang
 ---
 
 golang的官方网站是： https://golang.org/

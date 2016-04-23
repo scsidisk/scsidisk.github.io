@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Python自省（反射）指南
+title: "Python自省（反射）指南"
 date: 2014-06-30
 author: scsidisk
-category: Development
-tags: [Python]
+categories: Development
+tags: Python
 ---
 
 首先通过一个例子来看一下本文中可能用到的对象和相关概念。

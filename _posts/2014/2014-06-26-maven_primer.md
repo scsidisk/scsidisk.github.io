@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Maven 入门篇
+title: "Maven 入门篇"
 date: 2014-06-26
 author: George Ma
-category: Java
-tags: [Maven, Java]
+categories: Java
+tags: Maven, Java
 ---
 
 ### Maven 是做什么用的？

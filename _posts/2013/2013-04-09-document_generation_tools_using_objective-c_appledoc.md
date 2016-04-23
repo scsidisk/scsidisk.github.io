@@ -1,10 +1,10 @@
 ---
 layout: post
-title: 使用Objective-C的文档生成工具:Appledoc
+title: "使用Objective-C的文档生成工具:Appledoc"
 date: 2013-04-09
 author: scsidisk
-category: 移动开发
-tags: [ObjC]
+categories: 移动开发
+tags: ObjC
 ---
 
 ## 前言

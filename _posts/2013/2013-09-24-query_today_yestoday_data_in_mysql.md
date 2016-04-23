@@ -1,10 +1,10 @@
 ---
 layout: post
-title: mysql查询今天、昨天、7天、近30天、本月、上一月 数据
+title: "mysql查询今天、昨天、7天、近30天、本月、上一月 数据"
 date: 2013-10-20 11:02
 author: scsidisk
-category: Database
-tags: [MySQL]
+categories: Database
+tags: MySQL
 ---
 
 今天

@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Mac下面Nginx+Lua+Redis整合实现高性能API接口
+title: "Mac下面Nginx+Lua+Redis整合实现高性能API接口"
 date: 2013-01-25
 author: scsidisk
-category: Development
-tags: [Lua, Redis, Nginx, Mac]
+categories: Development
+tags: Lua, Redis, Nginx, Mac
 ---
 
 准备对陌陌的部分API进行加速，考虑使用Nginx+Lua实现

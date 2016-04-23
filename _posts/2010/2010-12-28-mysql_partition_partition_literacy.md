@@ -3,8 +3,8 @@ layout: post
 title: "MySQL Partition（分区）扫盲"
 date: 2010-12-28 13:52
 author: scsidisk
-category: Linux
-tags: [MySQL]
+categories: Linux
+tags: MySQL
 Slug: mysql_partition_partition_literacy
 ---
 

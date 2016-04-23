@@ -1,10 +1,10 @@
 ---
 layout: post
-title: 用Yeoman构建AngularJS项目
+title: "用Yeoman构建AngularJS项目"
 date: 2015-02-02
 author: scsidisk
-category: 前端开发
-tags: [Mac, AngularJS]
+categories: 前端开发
+tags: Mac, AngularJS
 ---
 
 这篇文章不是一篇翻译也不是一篇原创文章，类似于一篇学习笔记，主要是记录一些关键的过程，方便查阅加深理解和记忆。

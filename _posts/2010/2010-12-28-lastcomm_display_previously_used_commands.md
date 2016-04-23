@@ -3,8 +3,8 @@ layout: post
 title: "lastcomm：显示以前使用过的命令的信息"
 date: 2010-12-28 13:53
 author: scsidisk
-category: Linux
-tags: [CentOS, Linux, Shell, 命令]
+categories: Linux
+tags: CentOS, Linux, Shell, 命令
 Slug: lastcomm_display_previously_used_commands
 ---
 

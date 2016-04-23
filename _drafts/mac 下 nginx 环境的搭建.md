@@ -1,5 +1,5 @@
 ---
-title: mac 下 nginx 环境的搭建
+title: "mac 下 nginx 环境的搭建"
 tags: []
 notebook: Nginx
 ---

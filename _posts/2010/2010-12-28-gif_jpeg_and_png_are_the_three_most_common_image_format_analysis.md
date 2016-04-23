@@ -3,8 +3,8 @@ layout: post
 title: "GIF、JPEG 和 PNG 是三种最常见的图片格式分析。"
 date: 2010-12-28 14:54
 author: scsidisk
-category: Linux
-tags: [gif, jpeg, png]
+categories: Linux
+tags: gif, jpeg, png
 Slug: gif_jpeg_and_png_are_the_three_most_common_image_format_analysis
 ---
 

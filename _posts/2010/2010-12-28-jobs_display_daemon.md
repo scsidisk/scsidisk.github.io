@@ -3,8 +3,8 @@ layout: post
 title: "jobs：显示后台程序"
 date: 2010-12-28 13:53
 author: scsidisk
-category: Linux
-tags: [CentOS, Linux, Shell, 命令]
+categories: Linux
+tags: CentOS, Linux, Shell, 命令
 Slug: jobs_display_daemon
 ---
 

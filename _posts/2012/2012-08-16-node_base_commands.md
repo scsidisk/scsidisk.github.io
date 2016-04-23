@@ -1,10 +1,10 @@
 ---
 layout: post
-title: npm 基本指令
+title: "npm 基本指令"
 date: 2012-08-16
 author: scsidisk
-category: Node
-tags: [Node Node.js npm]
+categories: Node
+tags: Node Node.js npm
 ---
 
 當你設定好 node.js 的開發環境後, 是時候來把下面這些常用的 npm 指令給摸熟了.

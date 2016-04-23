@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Mac 上 Map/Reduce开发环境
+title: "Mac 上 Map/Reduce开发环境"
 date: 2013-07-13
 author: metaboy
-category: 大数据
-tags: [MacOSX,Hadoop,MapReduce]
+categories: 大数据
+tags: MacOSX,Hadoop,MapReduce
 ---
 
 最近，在Mac上折腾了下，想搭建一个hadoop的测试环境，用于写一些Map/Reduce的sample，下面就先将搭建环境的过程记录下来。

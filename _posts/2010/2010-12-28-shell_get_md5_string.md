@@ -3,8 +3,8 @@ layout: post
 title: "shell下取得字符串的md5值"
 date: 2010-12-28 15:22
 author: scsidisk
-category: Linux
-tags: [CentOS, Linux, md5, md5sum, PHP, Shell]
+categories: Linux
+tags: CentOS, Linux, md5, md5sum, PHP, Shell
 Slug: 2010-12-28-shell_get_md5_string
 ---
 

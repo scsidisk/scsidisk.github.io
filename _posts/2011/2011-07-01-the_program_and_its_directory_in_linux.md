@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Linux 中的程序及其目录
+title: "Linux 中的程序及其目录"
 date: 2011-07-01
 author: scsidisk
-category: Linux
-tags: [Linux]
+categories: Linux
+tags: Linux
 ---
 
 本文主要是说明 `bin`, `sbin`, `usr/bin`, `usr/sbin`, `usr/local/bin`, `usr/local/sbin`, `su`, `su-`等等的区别。

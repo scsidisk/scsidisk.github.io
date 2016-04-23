@@ -1,10 +1,10 @@
 ---
 layout: post
-title: YII Relation中非主键字段关联
+title: "YII Relation中非主键字段关联"
 date: 2014-09-16
 author: scsidisk
-category: PHP
-tags: [PHP, Yii]
+categories: PHP
+tags: PHP, Yii
 ---
 
 有两张表，设计结构如下：

@@ -3,8 +3,8 @@ layout: post
 title: "CentOS安装中文支持"
 date: 2010-12-28 13:51
 author: scsidisk
-category: Linux
-tags: [CentOS, Linux]
+categories: Linux
+tags: CentOS, Linux
 ---
 
 CentOS安装中文支持

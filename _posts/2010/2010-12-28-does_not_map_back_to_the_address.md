@@ -3,8 +3,8 @@ layout: post
 title: "does not map back to the address"
 date: 2010-12-28 13:51
 author: scsidisk
-category: Linux
-tags: [CentOS, Linux, Mac, Shell, SSH]
+categories: Linux
+tags: CentOS, Linux, Mac, Shell, SSH
 Slug: does_not_map_back_to_the_address
 ---
 

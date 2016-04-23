@@ -3,8 +3,8 @@ layout: post
 title: "MAC去掉/private/var/vm/sleepimage"
 date: 2010-12-28 14:54
 author: scsidisk
-category: MacOSX
-tags: [MacOSX]
+categories: MacOSX
+tags: MacOSX
 Slug: mac_remove__private__var__vm__sleepimage
 ---
 

@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Square 技术团队的 Vim 配置文件已开源
+title: "Square 技术团队的 Vim 配置文件已开源"
 date: 2013-10-20 11:32
 author: scsidisk
-category: VIM
-tags: [Linux, Mac, VIM]
+categories: VIM
+tags: Linux, Mac, VIM
 ---
 
 （译自知名移动支付公司Square官博8月28日的文章）Square 的工程师在使用很多种代码编辑器：Sublime、IntelliJ、Xcode 和 Vim。其中 Vim 是使用最多的，随着时间推移，在 Square 的 Vim 粉丝把配置、快捷方式和插件汇编成一个单独的仓库，我们亲切地称为 Maximum Awesome，并把它开源了。我们希望其他在用 OS X 的朋友能够在几分钟之内就能用上 Vim。

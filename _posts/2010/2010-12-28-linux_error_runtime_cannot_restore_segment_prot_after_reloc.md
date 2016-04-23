@@ -3,8 +3,8 @@ layout: post
 title: "Linux下执行程序时发生错误 cannot restore segment prot after relocPermission denied"
 date: 2010-12-28 14:57
 author: scsidisk
-category: Linux
-tags: [CentOS, Linux, Shell]
+categories: Linux
+tags: CentOS, Linux, Shell
 Slug: 2010-12-28-linux_error_runtime_cannot_restore_segment_prot_after_reloc
 ---
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: window 软件
+title: "window 软件"
 date: 2012-10-19
 author: scsidisk
 category: Windows
@@ -52,7 +52,7 @@ category: Windows
 - VMware\_Workstation\_7\_CN 虚拟机
 - ylpl\_VMware.Workstation\_v5.5.2\_small
 - everest3 系统信息查看
-- python-2.6.4 
+- python-2.6.4
 - wubi 五笔输入法
 - 易我磁盘医生注册版 文件恢复
 
@@ -65,7 +65,7 @@ category: Windows
 ## 浏览器
 
 - ChromeSetup 浏览器
-- Firefox Setup 3.5.5 
+- Firefox Setup 3.5.5
 - SafariSetup
 - Opera\_1010\_int\_Setup
 

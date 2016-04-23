@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Yii 中的 CSRF 验证
+title: "Yii 中的 CSRF 验证"
 date: 2013-07-03
 author: scsidisk
-category: PHP
-tags: [PHP, Yii]
+categories: PHP
+tags: PHP, Yii
 ---
 
 
@@ -87,7 +87,7 @@ Have fun with Yii! :)
 	<td width="10%"><?php echo $form->labelEx($model, 'sid')?></td>
 	<td width="90%"><div class="mm_div_left"><?php echo CHtml::activeDropDownList($model,
 		'fid',
-		Costcategory::getCategory(),
+		Costcategories::getCategory(),
 		array(
 			'empty'=>'请选择',
 			'ajax'=>array(
@@ -98,7 +98,7 @@ Have fun with Yii! :)
 			)
 		));
 	echo CHtml::activeDropDownList($model, 'sid',
-		Costcategory::getCategory($model->fid),
+		Costcategories::getCategory($model->fid),
 		array(
 			'empty'=>'请选择',
 		)

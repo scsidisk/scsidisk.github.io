@@ -1,10 +1,10 @@
 ---
 layout: post
-title: 数据库使用 UUID 做主键
+title: "数据库使用 UUID 做主键"
 date: 2012-08-09
 author: scsidisk
-category: Database
-tags: [MongoDB]
+categories: Database
+tags: MongoDB
 ---
 
 ### 关于UUID，GUID，OCMB

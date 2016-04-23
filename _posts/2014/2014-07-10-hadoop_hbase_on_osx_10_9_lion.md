@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Hadoop & Hbase on OSX Lion
+title: "Hadoop & Hbase on OSX Lion"
 date: 2014-07-10
 author: scsidisk
-category: 大数据
-tags: [HBase]
+categories: 大数据
+tags: HBase
 ---
 
 Hadoop & Hbase on OSX 10.8 Mountain Lion

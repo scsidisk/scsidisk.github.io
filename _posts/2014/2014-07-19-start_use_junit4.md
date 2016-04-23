@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Junit使用教程
+title: "Junit使用教程"
 date: 2014-07-19
 author: scsidisk
-category: Java
-tags: [Java, Maven, Junit]
+categories: Java
+tags: Java, Maven, Junit
 ---
 
 环境：

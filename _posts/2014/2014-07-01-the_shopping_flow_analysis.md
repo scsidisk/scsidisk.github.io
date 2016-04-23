@@ -1,10 +1,10 @@
 ---
 layout: post
-title: 网站购物流程分析与优化
+title: "网站购物流程分析与优化"
 date: 2014-07-01
 author: 数码林网站分析博客
-category: IT
-tags: [EC]
+categories: IT
+tags: EC
 ---
 
 相比网站其他环节的分析与优化，对网上支付流程的分析和优化所带来的收益要多很多。

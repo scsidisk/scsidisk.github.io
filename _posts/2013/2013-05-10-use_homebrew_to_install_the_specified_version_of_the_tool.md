@@ -1,10 +1,10 @@
 ---
-title: 如何使用 Homebrew 安装指定版本的工具？
+title: "如何使用 Homebrew 安装指定版本的工具？"
 layout: post
 author: scsidisk
 date: 2013-05-10 13:25:56
-category: MacOSX
-tags: [Mac, Brew, Homebrew]
+categories: MacOSX
+tags: Mac, Brew, Homebrew
 ---
 
 Homebrew 是一个 Mac 下的安装管理 Unix 工具的工具。安装好之后，在命令行下使用 brew install FORMULANAME就可以安装 FORMULANAME 对应的工具，它会处理好依赖关系，非常方便。默认情况下，安装最新版本。

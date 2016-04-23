@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Cobar for MySQL
+title: "Cobar for MySQL"
 date: 2013-04-10
 author: scsidisk
-category: Database
-tags: [Cobar, MySQL]
+categories: Database
+tags: Cobar, MySQL
 ---
 
 ### 1. Cobar是什么？

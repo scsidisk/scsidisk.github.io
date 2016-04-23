@@ -1,10 +1,10 @@
 ---
 layout: post
-title: 我安装的 Chrome 插件
+title: "我安装的 Chrome 插件"
 date: 2011-02-13 15:07
 author: scsidisk
-category: MacOSX
-tags: [Chrome]
+categories: MacOSX
+tags: Chrome
 ---
 
 我安装的插件很少，记录一下，以后重新安装系统回复比较方便。

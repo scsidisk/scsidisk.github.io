@@ -3,8 +3,8 @@ layout: post
 title: "在apache配置文件中设置php上传临时目录"
 date: 2010-12-28 14:57
 author: scsidisk
-category: Linux
-tags: [Apache, PHP, upload]
+categories: Linux
+tags: Apache, PHP, upload
 Slug: set_php_uploaded_in_the_apache_configuration_file_to_the_temporary_directory
 ---
 

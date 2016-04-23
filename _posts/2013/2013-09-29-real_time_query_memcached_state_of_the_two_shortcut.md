@@ -1,10 +1,10 @@
 ---
 layout: post
-title: 实时查询memcached状态的两个快捷命令
+title: "实时查询memcached状态的两个快捷命令"
 date: 2013-09-29 17:25
 author: scsidisk
-category: PHP
-tags: [Linux, memcache, PHP]
+categories: PHP
+tags: Linux, memcache, PHP
 ---
 
 查询实时的状态，类似于“top”命令。

@@ -1,10 +1,10 @@
 ---
 layout: post
-title: 请珍惜对你要求高的领导，说的太好了
+title: "请珍惜对你要求高的领导，说的太好了"
 date: 2013-11-07
 author: scsidisk
-category: IT
-tags: [IT]
+categories: IT
+tags: IT
 
 ---
 

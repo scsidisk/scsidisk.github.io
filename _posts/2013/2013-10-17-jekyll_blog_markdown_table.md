@@ -1,10 +1,10 @@
 ---
 layout: post
-title: 在Jekyll的博客中使用表格
+title: "在Jekyll的博客中使用表格"
 date: 2013-10-17
 author: scsidisk
-category: 文档处理
-tags: [Markdown, Jekyll]
+categories: 文档处理
+tags: Markdown, Jekyll
 ---
 
 看到人家在 Markdown 文件中随意的书写表格，但在我自己的博客中却怎么也无法输出表格样式，最后还是通过 Google 才找到答案，需要语法解释引擎 Redcarpet，且开启 tables 选项。

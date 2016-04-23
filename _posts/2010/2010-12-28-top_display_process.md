@@ -3,8 +3,8 @@ layout: post
 title: "top：显示进程"
 date: 2010-12-28 13:53
 author: scsidisk
-category: Linux
-tags: [CentOS, Linux, Shell, 命令]
+categories: Linux
+tags: CentOS, Linux, Shell, 命令
 Slug: top_display_process
 ---
 

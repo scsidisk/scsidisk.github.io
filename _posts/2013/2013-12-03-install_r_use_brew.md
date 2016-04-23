@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Installing R on OS X
+title: "Installing R on OS X"
 date: 2013-12-03
 author: scsidisk
-category: Development
-tags: [R, MacOSX, Brew]
+categories: Development
+tags: R, MacOSX, Brew
 ---
 
 This is a quick introduction to installing R on OS X Mountain Lion.

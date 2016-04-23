@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Maven 项目打包
+title: "Maven 项目打包"
 date: 2014-07-20
 author: scsidisk
-category: Java
-tags: [Java, Maven]
+categories: Java
+tags: Java, Maven
 ---
 
 打包就是将项目中的各种文件，比如源代码、编译生成的字节码、配置文件、文档，按照规范的格式生成归档，最常见的是JAR包和WAR包.

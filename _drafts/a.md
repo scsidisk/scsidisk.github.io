@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Mac 常用软件
+title: "Mac 常用软件"
 date: 2014-11-06
 author: scsidisk
 category: MacOSX

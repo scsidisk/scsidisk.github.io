@@ -3,8 +3,8 @@ layout: post
 title: "linux如何修改hostname"
 date: 2010-12-28 14:57
 author: scsidisk
-category: Linux
-tags: [CentOS, hostname, Linux]
+categories: Linux
+tags: CentOS, hostname, Linux
 Slug: 2010-12-28-how_to_set_hostname_on_linux
 ---
 

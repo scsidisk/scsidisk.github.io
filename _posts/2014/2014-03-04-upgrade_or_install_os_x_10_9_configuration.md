@@ -1,9 +1,9 @@
 ---
 layout: post
-title: 升级或安装 OS X 10.9 以后的配置
+title: "升级或安装 OS X 10.9 以后的配置"
 date: 2014-03-04 23:22
 author: scsidisk
-category: MacOSX
+categories: MacOSX
 ---
 
 ####1. 安装 Xcode 命令行工具

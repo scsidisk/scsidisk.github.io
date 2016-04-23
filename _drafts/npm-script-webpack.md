@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 用 npm script webpack 自动化任务
+title: "用 npm script webpack 自动化任务"
 date: 2016-04-10
 author: scsidisk
 category: Javascript

@@ -3,8 +3,8 @@ layout: post
 title: "Leopard系统下共享Windows系统的文件"
 date: 2010-12-28 13:51
 author: scsidisk
-category: MacOSX
-tags: [Mac, Shell]
+categories: MacOSX
+tags: Mac, Shell
 Slug: leopard_system_shared_windows_system_files
 ---
 

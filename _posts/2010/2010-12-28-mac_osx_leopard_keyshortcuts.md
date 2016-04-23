@@ -3,8 +3,8 @@ layout: post
 title: "Mac OSX Leopard 快捷键大全"
 date: 2010-12-28 14:55
 author: scsidisk
-category: MacOSX
-tags: [Leopard, Mac, Snow Leopard]
+categories: MacOSX
+tags: Leopard, Mac, Snow Leopard
 Slug: 2010-12-28-mac_osx_leopard_keyshortcuts
 ---
 

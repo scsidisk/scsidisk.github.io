@@ -3,8 +3,8 @@ layout: post
 title: "国内外DNS服务器地址列表"
 date: 2010-12-28 15:23
 author: scsidisk
-category: MacOSX
-tags: [DNS]
+categories: MacOSX
+tags: DNS
 Slug: domestic_and_foreign_dns_server_address_list
 ---
 

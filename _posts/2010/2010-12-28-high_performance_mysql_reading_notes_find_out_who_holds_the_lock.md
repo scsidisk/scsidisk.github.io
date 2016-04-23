@@ -3,8 +3,8 @@ layout: post
 title: "高性能MySQL读书笔记：找出谁持有锁"
 date: 2010-12-28 13:52
 author: scsidisk
-category: Database
-tags: [MySQL, 调优]
+categories: Database
+tags: MySQL, 调优
 Slug: high_performance_mysql_reading_notes_find_out_who_holds_the_lock
 ---
 

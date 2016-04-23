@@ -1,10 +1,10 @@
 ---
 layout: post
-title: 通过Alexa API获取Alexa排名
+title: "通过Alexa API获取Alexa排名"
 date: 2013-09-26
 author: scsidisk
-category: PHP
-tags: [PHP]
+categories: PHP
+tags: PHP
 ---
 
 通过Alexa API获取Alexa排名

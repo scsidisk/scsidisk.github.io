@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Yii中使用RBAC完全指南
+title: "Yii中使用RBAC完全指南"
 date: 2013-06-07
 author: scsidisk
-category: PHP
-tags: [PHP, Yii]
+categories: PHP
+tags: PHP, Yii
 ---
 
 ## 开始准备

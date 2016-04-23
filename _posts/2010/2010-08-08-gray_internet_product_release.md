@@ -3,7 +3,7 @@ layout: post
 title: "互联网产品的灰度发布"
 date:   2010-08-08 12:00
 categories: IT
-tags: [Gray, Public, 灰度发布, 灰度放量, ABTest, AB测试, 分流发布]
+tags: Gray, Public, 灰度发布, 灰度放量, ABTest, AB测试, 分流发布
 ---
 
 

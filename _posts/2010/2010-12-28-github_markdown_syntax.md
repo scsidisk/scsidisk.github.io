@@ -3,8 +3,8 @@ layout: post
 title: "Github Markdown 语法说明 (简体中文版)。"
 date: 2010-12-28 14:54
 author: scsidisk
-category: 文档处理
-tags: [Markdown]
+categories: 文档处理
+tags: Markdown
 Slug: github_markdown_syntax
 ---
 

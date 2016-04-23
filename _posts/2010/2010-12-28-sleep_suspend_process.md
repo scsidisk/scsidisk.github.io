@@ -3,8 +3,8 @@ layout: post
 title: "sleep：暂停进程"
 date: 2010-12-28 13:53
 author: scsidisk
-category: Linux
-tags: [CentOS, Shell, 命令]
+categories: Linux
+tags: CentOS, Shell, 命令
 Slug: sleep_suspend_process
 ---
 

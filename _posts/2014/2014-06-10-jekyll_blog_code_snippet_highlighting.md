@@ -1,10 +1,10 @@
 ---
 layout: post
-title: 在Jekyll的博客中实现语法高亮
+title: "在Jekyll的博客中实现语法高亮"
 date: 2014-06-10 12:55:55
 author: scsidisk
-category: 文档处理
-tags: [Markdown, Jekyll]
+categories: 文档处理
+tags: Markdown, Jekyll
 ---
 
 在Jekyll的博客中实现语法高亮方法如下:

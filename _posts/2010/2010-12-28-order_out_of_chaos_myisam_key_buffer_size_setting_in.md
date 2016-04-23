@@ -3,8 +3,8 @@ layout: post
 title: "拨乱反正：MyISAM中key_buffer_size的设置"
 date: 2010-12-28 13:52
 author: scsidisk
-category: Database
-tags: [MySQL]
+categories: Database
+tags: MySQL
 Slug: order_out_of_chaos_myisam_key_buffer_size_setting_in
 ---
 

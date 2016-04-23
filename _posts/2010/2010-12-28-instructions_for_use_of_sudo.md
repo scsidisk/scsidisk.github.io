@@ -3,8 +3,8 @@ layout: post
 title: "sudo的使用说明"
 date: 2010-12-28 14:55
 author: scsidisk
-category: Linux
-tags: [sudo]
+categories: Linux
+tags: sudo
 Slug: instructions_for_use_of_sudo
 ---
 

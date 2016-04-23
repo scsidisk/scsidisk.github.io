@@ -1,10 +1,10 @@
 ---
 layout: post
-title: git merge --squash介绍
+title: "git merge --squash介绍"
 date: 2012-07-01
 author: scsidisk
-category: Development
-tags: [Git]
+categories: Development
+tags: Git
 ---
 
 一般的合并流程如下：

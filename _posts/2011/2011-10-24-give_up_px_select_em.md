@@ -1,10 +1,10 @@
 ---
 layout: post
-title: 放弃px选择em
+title: "放弃px选择em"
 date: 2011-10-24
 author: scsidisk
-category: 前端开发
-tags: [CSS]
+categories: 前端开发
+tags: CSS
 ---
 
 1. 大部分人在CSS代码编写中总是先对整体定义字体尺寸，中文情况下一般为12px，而其实这样以来在通过IE顶部菜单中的“察看-文字大小”设置已无任何作用。

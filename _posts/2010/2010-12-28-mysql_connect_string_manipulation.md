@@ -3,8 +3,8 @@ layout: post
 title: "mysql中连接字符串操作"
 date: 2010-12-28 14:54
 author: scsidisk
-category: Linux
-tags: [MySQL]
+categories: Linux
+tags: MySQL
 Slug: mysql_connect_string_manipulation
 ---
 

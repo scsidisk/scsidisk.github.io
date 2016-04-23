@@ -3,8 +3,8 @@ layout: post
 title: "linux踢出用户"
 date: 2010-12-28 13:51
 author: scsidisk
-category: Linux
-tags: [CentOS, Linux, Shell, SSH]
+categories: Linux
+tags: CentOS, Linux, Shell, SSH
 Slug: linux_kicked_users
 ---
 

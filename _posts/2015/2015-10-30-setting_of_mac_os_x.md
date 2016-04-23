@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Mac 的一些有用的设置
+title: "Mac 的一些有用的设置"
 date: 2015-10-30
 author: scsidisk
-category: MacOSX
-tags: [MacOSX]
+categories: MacOSX
+tags: MacOSX
 ---
 
 ### 删除 DS_Store

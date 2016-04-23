@@ -3,8 +3,8 @@ layout: post
 title: "MAC中jdk的目录"
 date: 2012-12-12
 author: scsidisk
-category: Java
-tags: [Java, JDK, Mac]
+categories: Java
+tags: Java, JDK, Mac
 ---
 
 在MAC系统中，jdk的安装路径与windows不同，默认目录是：/System/Libray/Frameworks/JavaVM.Framwork/。

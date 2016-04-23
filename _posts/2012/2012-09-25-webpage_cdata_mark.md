@@ -1,10 +1,10 @@
 ---
 layout: post
-title: 网页中 CDATA 标记
+title: "网页中 CDATA 标记"
 date: 2012-09-25
 author: scsidisk
-category: 前端开发
-tags: [HTML]
+categories: 前端开发
+tags: HTML
 ---
 
 经常在网页html代码中看见这样的嵌入标签，但实际使用没有用过，特此在记录下：

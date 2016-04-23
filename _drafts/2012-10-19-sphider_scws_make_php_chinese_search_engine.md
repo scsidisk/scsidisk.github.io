@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Sphider + SCWS 打造完美PHP中文搜索引擎
+title: "Sphider + SCWS 打造完美PHP中文搜索引擎"
 date: 2012-10-19
 author: scsidisk
 category: PHP
-tags: [Sphider, SCWS, PHP]
+tags: Sphider, SCWS, PHP
 ---
 
 今日需要为几个网站做个全文搜索引擎，找了几个PHP开源项目，先试了一下Sphinx ，可惜是基于数据库的，相当于数据库搜索的扩展。Sphider还不错，不过中文的分词不行，基本只能靠空格和符号进行分词。想用luence的话只能用Java和.net了，没有php版的，因此只好尝试自己修改Sphider的分词了。还好找到了SCWS这个不错的中文分词系统，只需要把他的功能加入到Sphider里面就可以了。

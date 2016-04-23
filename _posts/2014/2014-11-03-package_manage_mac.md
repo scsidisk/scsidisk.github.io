@@ -1,10 +1,10 @@
 ---
 layout: post
-title: 各种包管理器使用国内镜像加速下载
+title: "各种包管理器使用国内镜像加速下载"
 date: 2014-11-03
 author: fdgogogo
-category: MacOSX
-tags: [MacOSX]
+categories: MacOSX
+tags: MacOSX
 ---
 
 ### 1. Python PyPI (pip)

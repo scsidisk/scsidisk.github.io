@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  React Native for IOS on mac
+title: " React Native for IOS on mac"
 date:   2015-12-16
 categories: ReactNative
-tags: [ReactNative, IOS]
+tags: ReactNative, IOS
 ---
 
 

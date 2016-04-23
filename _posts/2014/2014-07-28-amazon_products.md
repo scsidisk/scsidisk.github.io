@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Amazon 产品列表
+title: "Amazon 产品列表"
 date: 2014-07-28
 author: scsidisk
-category: IT
-tags: [IT]
+categories: IT
+tags: IT
 ---
 
 

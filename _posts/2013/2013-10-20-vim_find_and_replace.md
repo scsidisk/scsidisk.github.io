@@ -1,10 +1,10 @@
 ---
 layout: post
-title: vim查找替换归纳总结
+title: "vim查找替换归纳总结"
 date: 2013-10-20 10:59
 author: scsidisk
-category: VIM
-tags: [VIM]
+categories: VIM
+tags: VIM
 ---
 
 1，简单替换表达式

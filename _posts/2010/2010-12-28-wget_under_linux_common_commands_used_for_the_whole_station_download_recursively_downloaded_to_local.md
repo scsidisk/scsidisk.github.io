@@ -3,8 +3,8 @@ layout: post
 title: "用wget进行整站下载"
 date: 2010-12-28 13:50
 author: scsidisk
-category: Linux
-tags: [CentOS, Linux, Shell]
+categories: Linux
+tags: CentOS, Linux, Shell
 ---
 
 这个命令可以以递归的方式下载整站，并可以将下载的页面中的链接转换为本地链接。

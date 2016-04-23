@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Java Spark 框架实践
+title: "Java Spark 框架实践"
 date: 2014-06-26
 author: scsidisk
-category: 大数据
-tags: [Maven, Java]
+categories: 大数据
+tags: Maven, Java
 ---
 
 Java Spark - 简单的web框架

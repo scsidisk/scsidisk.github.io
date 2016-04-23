@@ -1,10 +1,10 @@
 ---
 layout: post
-title: YII autoload 与第三方冲突
+title: "YII autoload 与第三方冲突"
 date: 2014-08-12
 author: scsidisk
-category: PHP
-tags: [PHP, Yii]
+categories: PHP
+tags: PHP, Yii
 ---
 
 YII autoload 可能与第三方的类库中的 autoload 冲突，下面以 PHPExcel 为例说明。

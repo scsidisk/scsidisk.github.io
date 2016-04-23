@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Mac下使用jenv管理多个版本的JDK
+title: "Mac下使用jenv管理多个版本的JDK"
 date: 2014-07-16
 author: scsidisk
-category: Java
-tags: [Java, Jenv]
+categories: Java
+tags: Java, Jenv
 ---
 
 jenv 可以在OS X中使用jenv管理多个Java版本, 没有需求的可以忽略此文。

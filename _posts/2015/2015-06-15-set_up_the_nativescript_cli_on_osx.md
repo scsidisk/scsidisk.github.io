@@ -1,10 +1,10 @@
 ---
 layout: post
-title: 在 Mac 上使用 NativeScript
+title: "在 Mac 上使用 NativeScript"
 date: 2015-06-15 12:55:55
 author: scsidisk
-category: 移动开发
-tags: [Mac, Android]
+categories: 移动开发
+tags: Mac, Android
 ---
 
 NativeScript 是 Telerik 发布的用于创建安卓、iOS和Windows Universal跨平台原生应用的框架。

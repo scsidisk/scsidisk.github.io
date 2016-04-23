@@ -3,8 +3,8 @@ layout: post
 title: "Linux修改SSH端口和禁止Root远程登陆设置"
 date: 2010-12-28 14:56
 author: scsidisk
-category: Linux
-tags: [CentOS, Linux, SSH]
+categories: Linux
+tags: CentOS, Linux, SSH
 Slug: 2010-12-28-linux_config_ssh_port_to_disable_root_remote_login
 ---
 

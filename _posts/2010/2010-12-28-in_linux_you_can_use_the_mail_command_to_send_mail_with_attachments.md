@@ -3,8 +3,8 @@ layout: post
 title: "在Linux中用mail命令发送带附件的邮件"
 date: 2010-12-28 13:51
 author: scsidisk
-category: Linux
-tags: [CentOS, Linux]
+categories: Linux
+tags: CentOS, Linux
 Slug: in_linux_you_can_use_the_mail_command_to_send_mail_with_attachments
 ---
 

@@ -1,10 +1,10 @@
 ---
 layout: post
-title: maven国内镜像配置（Ubuntu）
+title: "maven国内镜像配置（Ubuntu）"
 date: 2014-03-30
 author: scsidisk
-category: Java
-tags: [Maven, Java]
+categories: Java
+tags: Maven, Java
 ---
 
 maven在apache的官方镜像非常慢，严重影响速度，建议使用国内的镜像。目前国内的镜像较少，可以使用oschina的镜像，具体配置过程参考：

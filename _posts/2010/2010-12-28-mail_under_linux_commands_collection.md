@@ -3,8 +3,8 @@ layout: post
 title: "Linux下Mail命令收集"
 date: 2010-12-28 13:51
 author: scsidisk
-category: Linux
-tags: [CentOS, Linux, Mail]
+categories: Linux
+tags: CentOS, Linux, Mail
 Slug: mail_under_linux_commands_collection
 ---
 

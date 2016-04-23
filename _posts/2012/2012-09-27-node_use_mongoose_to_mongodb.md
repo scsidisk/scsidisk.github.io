@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Node.js中用mongoose模块对mongodb的一些基本操作
+title: "Node.js中用mongoose模块对mongodb的一些基本操作"
 date: 2012-09-27
 author: scsidisk
-category: Node
-tags: [Node Node.js MongoDB]
+categories: Node
+tags: Node Node.js MongoDB
 ---
 
 下面是 Node.js 中用 mongoose 模块对 mongodb 的一些基本操作。

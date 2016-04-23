@@ -1,10 +1,10 @@
 ---
 layout: post
-title: 在 Mac 上使用 Homebrew
+title: "在 Mac 上使用 Homebrew"
 date: 2015-11-04
 author: scsidisk
-category: MacOSX
-tags: [Mac, Brew, Homebrew]
+categories: MacOSX
+tags: Mac, Brew, Homebrew
 ---
 
 

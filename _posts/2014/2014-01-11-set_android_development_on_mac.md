@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Mac配置android开发环境
+title: "Mac配置android开发环境"
 date: 2014-01-11
 author: scsidisk
-category: 移动开发
-tags: [Android, Java]
+categories: 移动开发
+tags: Android, Java
 ---
 
 ### Eclipse的下载

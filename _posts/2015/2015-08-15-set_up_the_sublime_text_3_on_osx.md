@@ -1,10 +1,10 @@
 ---
 layout: post
-title: 在 Mac 上使用 Sublime Text 3
+title: "在 Mac 上使用 Sublime Text 3"
 date: 2015-08-15
 author: scsidisk
-category: MacOSX
-tags: [Mac, Sublime]
+categories: MacOSX
+tags: Mac, Sublime
 ---
 
 ## 快捷键

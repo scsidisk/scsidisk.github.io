@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Mac 上面 Markdown HTML幻灯片
+title: "Mac 上面 Markdown HTML幻灯片"
 date: 2014-07-09
 author: scsidisk
-category: 文档处理
-tags: [Markdown,Slide]
+categories: 文档处理
+tags: Markdown,Slide
 ---
 
 

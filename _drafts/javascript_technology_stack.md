@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Javascript技术栈梳理
+title: "Javascript技术栈梳理"
 date: 2015-01-07
 author: 飞将军
 category: Javascript
@@ -59,24 +59,24 @@ tags: Javascript
 ## html5细分:
 
 - Web存储:
-- 
+-
 - localStroage/sessionStorage
-- 
+-
 - cookie,
 - IE UserData,
 - 离线应用,
 - SQL数据库和Index数据库
 - Web文件系统
-- 
+-
 - 多媒体和图形, 视频, 音频:
-- 
+-
 - SVG可伸缩矢量图形
 - canvas
 - audio
 - video
-- 
+-
 - geolocation地理位置
-- 
+-
 - history历史记录管理: history hash hashchange pushState() replaceState()
 - 跨域页面消息传递: postMessage()
 - Web Worker
@@ -98,17 +98,17 @@ JavaScript	基础语言	free-programming-books
 前端构建框架
 技能	用途	参考地址
 FIS	前端开发体系	未使用
-Sea.js	前端加载组件	
+Sea.js	前端加载组件
 require.js	国外的前端异步加载框架	未使用
 前端开发框架
 技能	用途	参考地址
-jQuery	Dom封装框架	
-jQuery-plugins	基于jQuery的各类插件	
-bootstrap.js	前端UI框架	
-bootstrap plugins	基于bootstrap的各类UI插件	
-handlebars	前端模版框架	
-backbone.js	基本的前端MVC框架	
-backbone plugins	基于backbone的各类插件	
+jQuery	Dom封装框架
+jQuery-plugins	基于jQuery的各类插件
+bootstrap.js	前端UI框架
+bootstrap plugins	基于bootstrap的各类UI插件
+handlebars	前端模版框架
+backbone.js	基本的前端MVC框架
+backbone plugins	基于backbone的各类插件
 ember.js	效率最高的前端MVVM框架	超级程序员开发, 未使用
 AngularJs	最流行的前端MVVM框架	google出品, 未使用
 工具类

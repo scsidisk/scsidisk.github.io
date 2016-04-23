@@ -3,7 +3,7 @@ layout: post
 title: "关于vim中undo/redo的brances研究"
 date:   2010-12-28 13:51
 categories: VIM
-tags: [CentOS, Linux, Mac, Shell, Vim]
+tags: CentOS, Linux, Mac, Shell, Vim
 ---
 
 用来用去还是vim用着顺手，对于undo/redo做了番研究，其实除了u和ctrl+r之外，vim里有一个brances的概念。

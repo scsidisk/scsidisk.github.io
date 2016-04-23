@@ -3,8 +3,8 @@ layout: post
 title: "centos网络配置"
 date: 2010-12-28 15:22
 author: scsidisk
-category: Linux
-tags: [CentOS, Linux, 网卡, 配置]
+categories: Linux
+tags: CentOS, Linux, 网卡, 配置
 Slug: centos%e7%bd%91%e7%bb%9c%e9%85%8d%e7%bd%ae
 ----
 
