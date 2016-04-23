@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "备份 Brew 或 Brew Cask 安装的软件"
-date: 2016-04-22
+date: 2016-04-23
 author: scsidisk
 categories: OSX
 tags: Brew
