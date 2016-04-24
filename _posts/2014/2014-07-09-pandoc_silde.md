@@ -283,3 +283,5 @@ This is my note.
 ```
 使用键盘s键打开提示板。当然，这个提示板是用来给演讲者自己看的，是不用mirror到外接投影仪的。
 
+reprint: <http://notes.11ten.net/pandoc-silde.html>
+

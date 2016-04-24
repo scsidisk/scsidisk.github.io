@@ -174,7 +174,7 @@ font-family:inherit;
 
 不过这里正好有个小手册，相信会让你更好的理解font的简写:
 
-![](/images/2012/030336t77.jpg)
+![](/static/images/2012/030336t77.jpg)
 
 ### 列表样式
 

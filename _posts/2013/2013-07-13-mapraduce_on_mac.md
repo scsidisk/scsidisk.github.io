@@ -15,7 +15,7 @@ tags: MacOSX,Hadoop,MapReduce
 
 在terminal里再次键入"java -version"，出现如下信息：
 
-![](/images/2013/07/mapraduce_on_mac-01.png)
+![](/static/images/2013/07/wpid-a-2.png)
 
 1.2  安装SSH
 
@@ -112,7 +112,7 @@ bin/start-all.sh
 
 如果一切正常的话，会在http://localhost:50030和http://localhost:50070分别看到map-reduce和hdfs的相关信息。
 
-![](/images/2013/07/mapraduce_on_mac-02.png)
+![](/static/images/2013/07/wpid-b.png)
 
 2. hadoop eclipse 插件编译
 
@@ -120,13 +120,13 @@ bin/start-all.sh
 
 用hadoop提供的文件自行编译，导入hadoop的eclipse-plugin文件夹.打开eclipse，在File菜单中选择Import.
 
-![](/images/2013/07/mapraduce_on_mac-03.png)
+![](/static/images/2013/07/wpid-c.png)
 
 2.2 导入后，在项目中新建lib目录，并复制jar文件
 
 在项目中新建lib目录，并将hadoop安装根目录的hadoop-core-1.0.4.jar文件，lib目录中的commons-cli-1.2.jar、commons-configuration-1.6.jar、commons-httpclient-3.0.1.jar、commons-lang-2.4.jar、jackson-core-asl-1.8.8.jar、jackson-mapper-asl-1.8.8.jar文件复制到新建的目录中。复制完成后，将新建目录中的hadoop-core-1.0.4.jar文件名改为hadoop-core.jar 。
 
-![](/images/2013/07/mapraduce_on_mac-04.png)
+![](/static/images/2013/07/wpid-d.png)
 
 2.3 修改hadoop-1.0.4/src/contrib目录的build-contrib.xml文件
 
@@ -204,7 +204,7 @@ Bundle-ClassPath: classes/,lib/hadoop-core.jar,lib/commons-cli-1.2.jar,lib/commo
 
 在eclipse的window菜单中选择Show View -> Other，在Show View窗口中选择MapReduce Tools下的Map/Reduce Locations，点击OK
 
-![](/images/2013/07/mapraduce_on_mac-05.png)
+![](/static/images/2013/07/wpid-e.png)
 
 问题记录：
 
@@ -218,7 +218,7 @@ java.lang.NoClassDefFoundError: org/codehaus/jackson/map/JsonMappingException
 
 找到刚才添加的lib目录下的几个jar文件，分别解压，然后通过betterzip将这些字节码分别添加到classes下面
 
-![](/images/2013/07/mapraduce_on_mac-06.png)
+![](/static/images/2013/07/wpid-f.png)
 
 问题2：Call to localhost/127.0.0.1:9000 failed on connection exception: java.net.ConnectException
 
@@ -230,7 +230,7 @@ bin/hadoop namenode -format
 
 重新启动后，运行该插件无问题
 
-![](/images/2013/07/mapraduce_on_mac-07.png)
+![](/static/images/2013/07/wpid-g.png)
 
 问题3：Unable to load realm info from SCDynamicStore
 

@@ -30,7 +30,7 @@ fi
 
 保存脚本（或者快捷键 command+s），文件格式选择为「应用程序」，保存应用程序文件夹。
 
-![创建 RamDisk](/images/2012/2012-04-10-create_ramdisk_in_osx-1.png "创建 RamDisk")
+![创建 RamDisk](/static/images/2012/04/2770902025.png "创建 RamDisk")
 
 #### 2. 设置为启动运行
 

@@ -5,7 +5,6 @@ date: 2010-12-28 13:53
 author: scsidisk
 categories: Linux
 tags: CentOS, Linux, Shell, 命令
-Slug: ntsysv_set_up_system_services
 ---
 
 作用：ntsysv是Red
@@ -39,11 +38,11 @@ levels执行的状态如下。
 
 （1）配置系统的各种服务运行等级
 
-\#ntsysv
+    #ntsysv
 
 如图4-6所示，可以按F1键寻求操作帮助。
 
-[![112453265](/images/2010/12/112453265-300x200.jpg)](/images/2010/12/112453265.jpg)
+[![112453265](/static/images/2010/12/112453265.jpg)](/static/images/2010/12/112453265.jpg)
 
 （点击查看大图）图4-6 配置系统的各种服务运行等级
 
@@ -51,22 +50,18 @@ levels执行的状态如下。
 
 编辑运行级别0，1和6：
 
-\#ntsysv --levels 016
+    #ntsysv --levels 016
 
 （3）在交互式界面中显示Back按钮
 
 例如，配置系统的各种服务运行等级，并且在交互式界面中显示Back按钮，可在命令行提示符下输入：
 
-\#ntsysv --back
+    #ntsysv --back
 
 如图4-7所示，原来界面中的Cancel按钮已被Back按钮取代。
 
-[![112546940](/images/2010/12/112546940-300x201.jpg)](/images/2010/12/112546940.jpg)
+[![112546940](/static/images/2010/12/112546940.jpg)](/static/images/2010/12/112546940.jpg)
 
 （点击查看大图）图4-7 在交互式界面中显示Back按钮
 
  
-
-<div class="posttagsblock">
-</div>
-

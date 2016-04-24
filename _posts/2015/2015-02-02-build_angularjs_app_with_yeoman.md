@@ -33,7 +33,7 @@ Yeoman
 
 下面这幅图很形象的表明了他们三者之间的协作关系。
 
-![](http://yeoman.io/assets/img/workflow.c3cc.jpg)
+![](/static/images/2015/02/yo-bower-grunt.jpg)
 
 Yeoman 特性：
 
@@ -209,7 +209,7 @@ $ grunt serve
 
 浏览器访问 localhost:9000，你会看到：
 
-![](/static/images/2015/yeoman-web.jpg)
+![](/static/images/2015/02/yeoman-web.jpg)
 
 创建 AngularJS 应用
 ------------------
@@ -504,7 +504,7 @@ angular.module('webApp').controller('MainCtrl', function ($scope, localStorageSe
 
 在添加一些项目到列表后，我们再次刷新我们的浏览器的时候，这些项目都还在。
 
-![](/static/images/2015/yeoman-web2.jpg)
+![](/static/images/2015/02/yeoman-web2.jpg)
 
 测试
 ----

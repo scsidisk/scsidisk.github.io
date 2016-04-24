@@ -37,7 +37,7 @@ Slug: lastcomm_display_previously_used_commands
 
 \# lastcomm -f /var/log/pacct
 
-[![101337443](/images/2010/12/101337443-300x137.jpg)](/images/2010/12/101337443.jpg)
+[![101337443](/static/images/2010/12/321WM5AE4SBN.jpg)](/static/images/2010/12/321WM5AE4SBN.jpg)
 
 （点击查看大图）图4-1 显示曾经执行过的命令
 
@@ -60,7 +60,4 @@ X：命令由信号SIGTERM终止。
 运行命令的用户名。
 
 进程使用的系统时间。
-
-<div class="posttagsblock">
-</div>
 
