@@ -12,9 +12,9 @@ tags: Brew
 
 在云存储目录中创建文件夹，保存安装过的程序
 
-    $ mkdir ~/OneDrive/sync/brew/
-    $ brew leaves > ~/OneDrive/sync/brew/soft-brew.txt
-    $ brew cask list -1 > ~/OneDrive/sync/brew/soft-brew-cask.txt
+    $ mkdir ~/brew-backup/
+    $ brew leaves > ~/brew-backup/soft-brew.txt
+    $ brew cask list -1 > ~/brew-backup/soft-brew-cask.txt
 
 自动备份
 -------
@@ -23,8 +23,8 @@ tags: Brew
 
     $ crontab -e
 
-    * 1 * * * /usr/local/bin/brew leaves > ~/OneDrive/sync/brew/soft-brew.txt
-    * 1 * * * /usr/local/bin/brew cask list -1 > ~/OneDrive/sync/brew/soft-brew-cask.txt
+    * 1 * * * /usr/local/bin/brew leaves > ~/brew-backup/soft-brew.txt
+    * 1 * * * /usr/local/bin/brew cask list -1 > ~/brew-backup/soft-brew-cask.txt
 
     ## 查看 cron
     $ crontab -l
@@ -38,5 +38,5 @@ tags: Brew
 
 恢复备份的安装列表，执行下面的命令
 
-    $ brew install `cat ~/OneDrive/sync/brew/soft-brew.txt`
-    $ brew cask install `cat ~/OneDrive/sync/brew/soft-brew-cask.txt`
+    $ brew install `cat ~/brew-backup/soft-brew.txt`
+    $ brew cask install `cat ~/brew-backup/soft-brew-cask.txt`
