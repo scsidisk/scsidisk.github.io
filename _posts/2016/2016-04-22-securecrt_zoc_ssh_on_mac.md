@@ -3,7 +3,7 @@ layout: post
 title: "Mac OS X 上面的仿真终端"
 date: 2016-04-22
 author: scsidisk
-categories: OSX
+categories: MacOSX
 tags: SecureCRT, Zoc, SSH
 ---
 
