@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Mac OS X 上发送 GPG 加密邮件"
-date: 2014-06-04
+date: 2015-06-04
 author: scsidisk
 categories: MacOSX
 tags: MacOSX, Mail, GPG
