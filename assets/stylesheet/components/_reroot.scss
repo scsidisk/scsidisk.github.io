@@ -1,9 +1,17 @@
 body{
-  background: #E3E3E3;
-  font-family: $serif-font;
+  background: #f6f6f6;
+  font-family: $apple-font;
+  font-size: $font-size-normal;
+  font-weight: 200;
 }
 
 ul{
   margin-top: 0;
   margin-bottom: 0;
+}
+
+p { line-height: 1.5; }
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    font-weight: $font-weight-normal;
 }
