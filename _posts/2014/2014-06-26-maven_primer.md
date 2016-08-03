@@ -81,13 +81,17 @@ maven 目标和 ant 的 target 差不多。在命令行中执行下面的命令�
 
 ```
 $ mvn archetype:generate -DgroupId=com.mycompany.helloworld -DartifactId=helloworld -Dpackage=com.mycompany.helloworld -Dversion=1.0-SNAPSHOT
+
+或参考maven手册
+mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+```
+
+<div style="display:none">
 $ mvn archetype:generate -DgroupId=com.xiaomib2c.hbaseTest -DartifactId=hbaseTest -Dpackage=com.xiaomib2c.hbaseTest -Dversion=1.0-SNAPSHOT
 $ mvn archetype:generate -DgroupId=com.xiaomib2c.statMonitor -DartifactId=statMonitor -Dpackage=com.xiaomib2c.stat -Dversion=1.0-SNAPSHOT
 或者
 mvn archetype:create -DgroupId=oschina -DartifactId=simple -DpackageName=net.oschina.simple  -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false
-或参考maven手册
-mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
-```
+</div>
 
 archetype:generate 目标会列出一系列的 archetype 让你选择。 Archetype 可以理解成项目的模型。 Maven 为我们提供了很多种的项目模型，包括从简单的 Swing 到复杂的 Web 应用。我们选择默认的是编号 #16.
 
