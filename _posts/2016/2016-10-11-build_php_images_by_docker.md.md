@@ -3,7 +3,7 @@ layout: post
 title: "Docker在PHP项目开发中的应用"
 date: 2016-10-11
 author: scsidisk
-category: Docker
+category: Virtualization
 tags: Docker, PHP
 ---
 
