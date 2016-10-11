@@ -132,6 +132,16 @@ Supervisorctl 是 supervisord 的一个命令行客户端工具，启动时需�
     $ supervisorctl reread
     $ supervisorctl update
 
+centos 7 安装 supervisor
+------------------------
+
+    yum -y install python-setuptools
+    easy_install supervisor
+    echo_supervisord_conf > /etc/supervisord.conf
+    mkdir -p /var/log/supervisor
+    mkdir -p /etc/supervisor/conf.d/
+    echo -e "[include]\nfiles = /etc/supervisor/conf.d/*.conf">>/etc/supervisord.conf
+
 其它
 ----
 
