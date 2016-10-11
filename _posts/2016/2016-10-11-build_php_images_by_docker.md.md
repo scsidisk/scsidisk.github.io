@@ -73,7 +73,7 @@ tags: Docker, PHP
     │   ├── php-fpm.conf
     │   ├── php.ini
     │   ├── redis.tgz
-    └── redis
+    ├── redis
     │   └── Dockerfile
     └── docker-compose.yml
 
