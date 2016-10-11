@@ -7,6 +7,8 @@ categories: MacOSX
 tags: MacOSX
 ---
 
+各种包管理器使用国内镜像加速下载
+
 ### 1. Python PyPI (pip)
 
 添加豆瓣源

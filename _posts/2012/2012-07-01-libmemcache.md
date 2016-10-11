@@ -7,6 +7,8 @@ categories: Linux
 tags: Memcache
 ---
 
+libmemcache 是 memcached C的客户端之一。
+
 libmemcache
 ===========
 

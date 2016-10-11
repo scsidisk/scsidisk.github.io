@@ -7,6 +7,8 @@ categories: Java
 tags: Maven, Java
 ---
 
+下面是 Maven 入门。
+
 ### Maven 是做什么用的？
 
 Maven 是一个项目管理和构建自动化工具。使用惯例优于配置的原则 。它要求在没有定制之前，所有的项目都有如下的结构：

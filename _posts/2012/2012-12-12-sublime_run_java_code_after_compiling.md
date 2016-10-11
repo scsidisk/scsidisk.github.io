@@ -7,6 +7,7 @@ categories: MacOSX
 tags: Java, Sublime
 ---
 
+Sublime run Java code after compiling
 
 ### 1. 创建执行脚本
 

@@ -7,6 +7,8 @@ categories: MacOSX
 tags: MacOSX
 ---
 
+Mac 的一些有用的设置
+
 ### 删除 DS_Store
 
 ```
