@@ -173,6 +173,10 @@ php容器除了运行php-fpm外, 还应该作为项目的php cli使用, 这样�
 
 同理还可以实现phpunit、npm、gulp等命令行工具在容器内运行.
 
+如果在已经运行的容器中执行命令可以使用下面的形式
+
+    docker exec -it eva/php [path to/]php --version
+
 ### Redis容器
 
 为了方便演示, Redis仅仅作为缓存使用, 没有持久化需求, 因此Dockerfile仅有一行
