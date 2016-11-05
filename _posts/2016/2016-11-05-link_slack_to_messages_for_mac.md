@@ -66,3 +66,10 @@ tags: Slack
     - 聊天室名称: general
 
     点击左下角 "+" 即可添加聊天室，双击聊天室，进入以后即可等待收取信息。
+
+5. 限制
+---------
+
+     只允许 XMPP 客户端向 Slack 发消息， Slack 不会向 XMPP 发消息。
+
+     如果需要双向通讯，需要使用 [HTTP-based API](https://api.slack.com/)
