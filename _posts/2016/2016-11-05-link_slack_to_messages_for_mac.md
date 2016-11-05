@@ -3,7 +3,7 @@ layout: post
 title: 使用 Messages for Mac 连接 Slack
 date: 2016-11-05
 author: scsidisk
-category: Slack MacOSX
+category: MacOSX
 tags: Slack
 ---
 
