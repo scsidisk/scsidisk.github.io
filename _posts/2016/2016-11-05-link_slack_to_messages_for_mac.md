@@ -58,7 +58,7 @@ tags: Slack
 4. 在频道中查看信息
 -----------------
 
-    在 Messages 窗口按 ⌘+R 出现聊天室选择
+    在 Messages 窗口按 ⌘+R 出现聊天室选择响应的 Channel
 
     ![](/static/images/2016/11/link_slack_to_messages_for_mac-00004.png)
 
