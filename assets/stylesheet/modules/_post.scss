@@ -56,6 +56,11 @@
   .content{
     ul{
       list-style: disc inside;
+      margin-left: 2rem;
+      li {
+        margin-left: 2rem;
+        list-style-position: initial;
+      }
     }
   }
 
