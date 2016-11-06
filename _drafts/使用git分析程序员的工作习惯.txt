@@ -1,0 +1,374 @@
+使用git分析程序员的工作习惯
+
+2010年12月02日 星期四 14:25
+
+一、用git log命令输出统计信息
+
+自从我学会git之后就常常在组内宣传它有多好，另外还自己搭了一个代码仓库服务器，用来存放自己管理的项目代码。
+
+今天在浏览提交历史的时候突然有了一个想法，就是可以利用提交历史中的统计信息分析程序员的工作习惯。例如，每次提交是在几点钟，平均每个提交所修改的行数是多少。
+
+比如，一般用git log，显示的信息是这样的：
+
+‍commit 8b7cb40d49749dfbb735bdef8c04f26f8d80ff90
+Author: Zhengsheng Zhou <edwardbadboy@qq.com>
+Date:   Tue Nov 30 19:17:13 2010 +0800
+
+    add book marks
+
+commit e6203a80130e8084cb5e837e37f0323de2a39f3a
+Author: Zhengsheng Zhou <edwardbadboy@qq.com>
+Date:   Tue Nov 30 19:16:38 2010 +0800
+
+    don't wait idle channel when it ends
+
+commit 395c6d9ad7866ab39ccc64fd557548ab008c2cdd
+Author: Zhengsheng Zhou <edwardbadboy@qq.com>
+Date:   Tue Nov 30 17:01:35 2010 +0800
+
+    apply node selecting and broadcasting rules to supernode
+    
+    don't broacast ordinary hit to tracker.
+    don't return ordinary nodes to other supernodes when suggesting nodes.
+    don't return tracker and other supernodes to ordinary nodes when
+    suggesting nodes.
+    
+    modify rule of statistics of listener number and relay number.
+    report sum of listener and relay to tracker instead of local numbers.
+
+设置一下format之后，就可以只显示某个作者的所有提交的时间。比如下面命令显示的是在当前分支中，我的所有提交分别都是在什么时候发生的：
+
+‍git log --author="Zhengsheng Zhou" --pretty=format:"%ci"
+
+得到的结果类似于
+
+2010-11-30 19:17:13 +0800
+2010-11-30 19:16:38 +0800
+2010-11-30 17:01:35 +0800
+2010-11-30 11:34:09 +0800
+2010-11-30 11:31:15 +0800
+2010-11-29 18:04:08 +0800
+2010-11-29 17:27:59 +0800
+2010-11-29 17:25:26 +0800
+2010-11-29 17:22:06 +0800
+2010-11-29 11:57:49 +0800
+
+……
+
+有了这样的输出以后，就可以写一个脚本，把时间取出来，统计自己感兴趣的东西了。
+
+另外git log还能显示提交历史的一些统计信息，比如git log --shortstat则是显示每次提交修改了几个文件，增加了多少行，删除了多少行。但是--shortstat除了会显示汇总信息之外，还会显示commit id、作者、提交留言等等，如果说只希望显示汇总信息，就用下面的命令：
+
+git log --author="Zhengsheng Zhou" --shortstat --pretty=format:""
+
+其运行结果是：
+
+
+1 files changed, 0 insertions(+), 0 deletions(-)
+
+
+1 files changed, 4 insertions(+), 2 deletions(-)
+
+
+6 files changed, 214 insertions(+), 3 deletions(-)
+
+
+1 files changed, 0 insertions(+), 0 deletions(-)
+
+
+2 files changed, 9 insertions(+), 2 deletions(-)
+
+
+1 files changed, 0 insertions(+), 0 deletions(-)
+
+……
+
+可以观察到，因为指定了一个空的format，所以原来显示提交留言等的地方都变成了空行。
+
+有了这样的输出后，就可以写一个脚本，统计代码的修改情况了。
+ 
+ 
+
+二、php统计脚本
+
+具体的说，我想知道，提交在每天的什么时间段是最频繁的，每次提交所插入的代码行数是多少。所以就写了两个php脚本。
+
+第一个脚本统计的是提交的时间段信息：
+
+‍#!/usr/bin/php
+<?php
+//read from 
+//git log --author="Zhengsheng Zhou" --pretty=format:"%ci"
+$commit_count=0;
+$time_section=array();
+$time_section['0_6']=0;
+$time_section['7_11']=0;
+$time_section['12_17']=0;
+$time_section['18_23']=0;
+
+$hours=array();
+while (($line=fgets(STDIN))!==false) {
+    $time=explode(' ',$line);
+    $hour=explode(':',$time[1]);
+    if(0<=$hour[0] && $hour[0]<=6){
+        $time_section['0_6']++;
+    }else if(7<=$hour[0] && $hour[0]<=11){
+        $time_section['7_11']++;
+    }else if(12<=$hour[0] && $hour[0]<=17){
+        $time_section['12_17']++;
+    }else if(18<=$hour[0] && $hour[0]<=23){
+        $time_section['18_23']++;
+    }
+    $hours[$hour[0]]++;
+    ++$commit_count;
+}
+echo "$commit_count commits total\n";
+printf("There are %d commits between 0:00-6:59 before dawn.\n",$time_section['0_6']);
+printf("There are %d commits between 7:00-11:59 in the morning.\n",$time_section['7_11']);
+printf("There are %d commits between 12:00-17:59 in the afternoon.\n",$time_section['12_17']);
+printf("There are %d commits between 18:00-23:59 in the evening.\n",$time_section['18_23']);
+echo "Details:\n";
+ksort($hours);
+foreach($hours as $k => $v){
+    echo "There are $v commits in $k o'clock.\n";
+}
+?>
+
+这个脚本统计当前分支的所有提交，看凌晨、早上、下午、晚上的提交次数各是多少，此外把每个小时有多少提交的详细情况输出。
+
+第二个脚本统计的是提交时插入的代码行数的情况：
+
+‍#!/usr/bin/php
+<?php
+//read from 
+//git log --author="Zhengsheng Zhou" --shortstat --pretty=format:""
+$commit_count=0;
+$insert_counts=array();
+$insert_counts['0_25']=0;
+$insert_counts['26_50']=0;
+$insert_counts['51_100']=0;
+$insert_counts['101_200']=0;
+$insert_counts['201-400']=0;
+$insert_counts['401_']=0;
+$total_ins=0;
+while (($line=fgets(STDIN))!==false) {
+    if($line=="" || $line=="\n"){
+        continue;
+    }
+    $changes=explode(', ',$line);
+    $inserts=explode(' ',$changes[1]);
+    $ins=$inserts[0];
+    if(0<=$ins && $ins<=25){
+        $insert_counts['0_25']++;
+    }else if(26<=$ins && $ins<=50){
+        $insert_counts['26_50']++;
+    }else if(51<=$ins && $ins<=100){
+        $insert_counts['51_100']++;
+    }else if(101<=$ins && $ins<=200){
+        $insert_counts['101_200']++;
+    }else if(201<=$ins && $ins<=400){
+        $insert_counts['201_400']++;
+        continue;
+    }else if(401<=$ins){
+        $insert_counts['401_']++;
+        continue;
+    }
+    $total_ins+=$ins;
+    ++$commit_count;
+}
+echo "$commit_count effective commits total.\n";
+printf("Excluding commits with insertions > 200, the average lines of insertion is %d lines per commit.\n",$total_ins/$commit_count);
+echo "Details:\n";
+printf("There are %d commits with insertions between 0 to 25 lines.\n",$insert_counts['0_25']);
+printf("There are %d commits with insertions between 26 to 50 lines.\n",$insert_counts['26_50']);
+printf("There are %d commits with insertions between 51 to 100 lines.\n",$insert_counts['51_100']);
+printf("There are %d commits with insertions between 101 to 200 lines.\n",$insert_counts['101_200']);
+printf("There are %d commits with insertions between 201 to 400 lines.\n",$insert_counts['201_400']);
+printf("There are %d commits with insertions above 400 lines.\n",$insert_counts['401_']);
+?>
+
+这个脚本累计所有提交所插入的行数，再除以提交数，看平均每次提交插入多少行代码。由于我的这个项目是基于一个开源项目的，所以初始提交就有4万多行，那是别人已经写好的代码。同时有时候会直接从别的项目里“借鉴”整个源文件过来，所以我认为大于200行的提交一般都不是自己一行行写的，而是别人的工作，因此遇到大于200行的提交就不算到统计信息里去。
+
+另外还分行数区间输出提交数，比如，插入了25行以下代码的有多少个提交，插入了26到50行代码的有多少个提交，接着是51到100行，101到200行，201到400行，以及400行以上的情况。这里就不限制提交的行数了。
+ 
+ 
+
+三、统计结果和分析
+
+1、自我分析
+
+我当前在做的项目叫做peerview，目标是通过P2P网络提供直播服务，是基于开源项目peercast一点一点改造成现在的样子的。在peercast的基础上加入了IPv6支持、身份识别、超级节点等功能，对于原来peercast底层不太合理的地方也作了许多修改。最近半年都在弄这个，所以决定基于这个项目统计一下我的编程习惯。
+
+运行刚才提到的时间段统计脚本：
+
+‍git log --author="Zhengsheng Zhou" --pretty=format:"%ci"|./date_statistics.php
+
+得到结果：
+
+‍128 commits total
+There are 0 commits between 0:00-6:59 before dawn.
+There are 43 commits between 7:00-11:59 in the morning.
+There are 48 commits between 12:00-17:59 in the afternoon.
+There are 37 commits between 18:00-23:59 in the evening.
+Details:
+There are 8 commits in 09 o'clock.
+There are 17 commits in 10 o'clock.
+There are 18 commits in 11 o'clock.
+There are 9 commits in 12 o'clock.
+There are 4 commits in 13 o'clock.
+There are 4 commits in 14 o'clock.
+There are 5 commits in 15 o'clock.
+There are 7 commits in 16 o'clock.
+There are 19 commits in 17 o'clock.
+There are 6 commits in 18 o'clock.
+There are 10 commits in 19 o'clock.
+There are 4 commits in 20 o'clock.
+There are 14 commits in 21 o'clock.
+There are 2 commits in 22 o'clock.
+There are 1 commits in 23 o'clock.
+
+粗看上去，似乎上午下午的提交数比较多，晚上的稍少一些，凌晨是一个也没有，说明我基本不熬夜，呵呵。
+
+从详细情况里面可以发现，10点到11点、17点、21点是我的提交的三个小高峰。说明我早上一般工作到10-11点就会出成果，如果认为我一般从9点开始工作，那么出成果就需要2个小时。17点和21点发生的提交数也很多，恐怕原因是17点之后我就去要吃饭了，在此之前会汇总工作。21点之后一般都开始夜生活，洗澡、看书、洗衣服，所以在这个时间段也会汇总一下工作。一般18点吃了饭，吃完后歇会儿看动画就到19点了，再开始工作，到21点出成果，也是两个小时。说明如果给我2个小时以上的完整时间，工作效率会比较高。
+
+运行关于代码行数的统计脚本：
+
+‍git log --author="Zhengsheng Zhou" --shortstat --pretty=format:""|../line_statistics.php
+
+得到结果：
+
+111 effective commits total.
+Excluding commits with insertions > 200, the average lines of insertion is 28 lines per commit.
+Details:
+There are 83 commits with insertions between 0 to 25 lines.
+There are 11 commits with insertions between 26 to 50 lines.
+There are 5 commits with insertions between 51 to 100 lines.
+There are 12 commits with insertions between 101 to 200 lines.
+There are 5 commits with insertions between 201 to 400 lines.
+There are 6 commits with insertions above 400 lines.
+
+这里的111 effective commits和上一个脚本的128 commits有出入，原因是有的提交是关于分支合并的提交，这种提交会在合并之后额外多出一个关于合并本身的提交，但是文件其实没有改动，所以有的提交用--shortstat是没有输出的，就会导致这里统计的是111个提交，而上一个脚本统计的是128个提交。
+
+刚才已经讨论过，对于大于200行的提交，我都不认为是自己原创的，排除这些提交后，平均每个提交会插入28行。从详细信息里面可以看到，有83个提交所插入的行数都是25以下，说明大部分提交都是对项目代码进行小幅增量式的修改。这也是和我的工作方法一致的。
+
+通常来说，每修改一个地方，我都会编译一下，测试一下，保证当前代码是对的，然后将代码提交。这也是使用版本控制系统时所提倡的工作方法。
+
+刚才提到，我个人在一天当中有几个出成果的小高峰，在这种时候，发生的提交数特别多。这并不表示我整天的工作都是集中在10点到11点完成的。相反的，我的工作时间是平均分配的，有时加入比较复杂的功能，不想打断工作每次改一点就提交，而是一口气改完程序，一起提交。这个时候，我会用git add -i来拆分我的工作，把大的修改拆成很多逻辑上能够自成一体的小修改，分别提交。（这样提交历史很好看，将来如果要cherry-pick、rebase什么的也很方便。其实我非常依赖于git add的-i选项的patch模式，太好用了。）所以导致到了汇总工作的时间，提交就特别频繁。
+
+总的来说，用了git以后，对代码的控制强了不少。大家都来用git吧！绝对是life-changing的体验！
+ 
+ 
+
+2、专业程序员
+
+下面我们来看一下专业程序员的工作习惯。
+
+首先到git的官方代码仓库找到git的源码：
+
+git clone git://git.kernel.org/pub/scm/git/git.git
+
+cd git
+
+然后看看Junio C Hamano的提交情况：
+
+git log --author="Junio C Hamano" --pretty=format:"%ci"|./date_statistics.php 
+8589 commits total
+There are 1710 commits between 0:00-6:59 before dawn.
+There are 820 commits between 7:00-11:59 in the morning.
+There are 3189 commits between 12:00-17:59 in the afternoon.
+There are 2870 commits between 18:00-23:59 in the evening.
+Details:
+There are 716 commits in 00 o'clock.
+There are 493 commits in 01 o'clock.
+There are 276 commits in 02 o'clock.
+There are 119 commits in 03 o'clock.
+There are 59 commits in 04 o'clock.
+There are 27 commits in 05 o'clock.
+There are 20 commits in 06 o'clock.
+There are 23 commits in 07 o'clock.
+There are 68 commits in 08 o'clock.
+There are 146 commits in 09 o'clock.
+There are 188 commits in 10 o'clock.
+There are 395 commits in 11 o'clock.
+There are 493 commits in 12 o'clock.
+There are 460 commits in 13 o'clock.
+There are 493 commits in 14 o'clock.
+There are 548 commits in 15 o'clock.
+There are 666 commits in 16 o'clock.
+There are 529 commits in 17 o'clock.
+There are 410 commits in 18 o'clock.
+There are 306 commits in 19 o'clock.
+There are 215 commits in 20 o'clock.
+There are 477 commits in 21 o'clock.
+There are 683 commits in 22 o'clock.
+There are 779 commits in 23 o'clock.
+
+结论，从下午到凌晨的提交最多，早上的提交最少，和我相反，哈哈。
+
+
+git log --author="Junio C Hamano" --shortstat --pretty=format:""|./line_statistics.php 
+4348 effective commits total.
+Excluding commits with insertions > 200, the average lines of insertion is 24 lines per commit.
+Details:
+There are 3066 commits with insertions between 0 to 25 lines.
+There are 613 commits with insertions between 26 to 50 lines.
+There are 448 commits with insertions between 51 to 100 lines.
+There are 221 commits with insertions between 101 to 200 lines.
+There are 83 commits with insertions between 201 to 400 lines.
+There are 48 commits with insertions above 400 lines.
+
+结论，主要也是小幅提交，平均提交长度是24行插入，和我的习惯一样，呵呵。
+
+小结一下，要成为专业的C程序员，就必须从下午工作到凌晨，白天睡大觉！哈哈。
+
+下面再看看Erlang/OTP的开发者的情况，首先找到OTP的源代码库：
+
+git clone https://github.com/erlang/otp.git
+
+cd otp
+
+然后看看Bj?rn Gustavsson的情况：
+
+git log --author="Gustavsson" --pretty=format:"%ci"|./date_statistics.php 
+327 commits total
+There are 15 commits between 0:00-6:59 before dawn.
+There are 113 commits between 7:00-11:59 in the morning.
+There are 184 commits between 12:00-17:59 in the afternoon.
+There are 15 commits between 18:00-23:59 in the evening.
+Details:
+There are 2 commits in 04 o'clock.
+There are 13 commits in 06 o'clock.
+There are 6 commits in 07 o'clock.
+There are 30 commits in 08 o'clock.
+There are 15 commits in 09 o'clock.
+There are 26 commits in 10 o'clock.
+There are 36 commits in 11 o'clock.
+There are 46 commits in 12 o'clock.
+There are 12 commits in 13 o'clock.
+There are 39 commits in 14 o'clock.
+There are 36 commits in 15 o'clock.
+There are 27 commits in 16 o'clock.
+There are 24 commits in 17 o'clock.
+There are 10 commits in 18 o'clock.
+There are 2 commits in 19 o'clock.
+There are 2 commits in 21 o'clock.
+There are 1 commits in 22 o'clock.
+
+看来这个同志的工作时间很规律，8点就开始出小高峰，估计7点半就上班了。。另一个小高峰是12点，看来是上午工作结束后的汇总。下午过了18点以后就几乎没有提交了，说明下班后绝对不忙工作的事情。这位先生可能是全职的程序员，主要工作就是维护OTP吧。而刚才的Junio C Hamano的工作方式就更弹性一些。这是否说明做Erlang函数式编程的人生活得更健康一点呢？哈哈，我瞎掰的，读者要是有兴趣可以自己多取几个样，分析一下。
+
+最后看看他的代码行数情况：
+
+git log --author="Gustavsson" --shortstat --pretty=format:""|./line_statistics.php 
+229 effective commits total.
+Excluding commits with insertions > 200, the average lines of insertion is 18 lines per commit.
+Details:
+There are 181 commits with insertions between 0 to 25 lines.
+There are 24 commits with insertions between 26 to 50 lines.
+There are 16 commits with insertions between 51 to 100 lines.
+There are 8 commits with insertions between 101 to 200 lines.
+There are 4 commits with insertions between 201 to 400 lines.
+There are 15 commits with insertions above 400 lines.
+
+恩，英雄所见略同，专业的程序员平均长度都是很短的（不是那个的平均长度哦，你想哪去了！给我去墙角罚站！），这位先生平均每次插入18行，229次提交中有181次都在25行以下。再次说明小幅增量开发并坚持集成和测试的方法是很有效的。
+
+有兴趣的同学可以再到github上找几个大的开源项目来分析分析，统计些别的有意思的内容。甚至可以写一个自动脚本，自己去github上下载几百个项目进行批量统计，说不定还能出篇很好的关于开发时间的论文呢。

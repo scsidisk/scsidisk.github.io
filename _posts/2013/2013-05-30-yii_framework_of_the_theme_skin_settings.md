@@ -7,6 +7,8 @@ categories: PHP
 tags: PHP, Yii
 ---
 
+Yii框架的主题、皮肤设置
+
 ## Theming(主题)
 
 Theming是一个在Web应用程序里定制网页外观的系统方式。通过采用一个新的主题，网页应用程序的整体外观可以立即改变。

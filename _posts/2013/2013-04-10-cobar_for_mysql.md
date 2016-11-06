@@ -7,6 +7,8 @@ categories: Database
 tags: Cobar, MySQL
 ---
 
+Cobar for MySQL
+
 ### 1. Cobar是什么？
 
 Cobar是基于MySQL关系型数据的分布式处理系统，它可以在分布式的环境下看上去像传统数据库一样为您提供海量数据服务。

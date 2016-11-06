@@ -7,10 +7,11 @@ categories: 文档处理
 tags: AsciiDoc, Mac
 ---
 
+轻量标记语言通过简单的文本格式生成复杂样式的文档工具。
+
 [TXT2TAGS](http://txt2tags.sourceforge.net/)
 --------------------------------------------
 
-<div class="post_brief">
 最开始接触的轻量标记语言，是在啄木鸟社区浏览 python 时意外收获的。于自己
 使用 markdown 记录心得和写文章之前一直使用 txt2tags。txt2tags 给自己的影
 响很好，使自己在庞大而强大的TeX 也有了另外的选择。
@@ -111,7 +112,4 @@ SUMMARY
 自己一直很偏爱
 markdown，现在文章写作基本都是用其描述的。而且也可以很方便与 html 整合。
 
-</div>
-<div class="posttagsblock">
-</div>
 

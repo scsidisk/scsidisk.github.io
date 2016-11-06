@@ -7,6 +7,8 @@ categories: PHP
 tags: PHP, Class, Function
 ---
 
+php获取/检查当前类名方法名
+
 ### 1. 使用函数检查
 
 - function_exists() - Return TRUE if the given function has been defined
