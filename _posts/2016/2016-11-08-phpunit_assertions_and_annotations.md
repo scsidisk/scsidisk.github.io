@@ -22,26 +22,26 @@ tags: PHPUnit Test
 
 ### 逻辑判断
 
-- assertEmpty($actual) -- 是否为空
-- assertFalse($condition) -- 是否为false
-- assertTrue($condition) -- 为真
-- assertNan($variable) -- 是否为 NAN
-- assertNull($variable) -- 是否为 NULL
+- `assertEmpty($actual)` -- 是否为空
+- `assertFalse($condition)` -- 是否为false
+- `assertTrue($condition)` -- 为真
+- `assertNan($variable)` -- 是否为 NAN
+- `assertNull($variable)` -- 是否为 NULL
 
 ### 比较
 
-- assertEquals($expected, $actual) -- $expected 等于 $actual
-- assertGreaterThan($expected, $actual) -- $expected 大于 $actual
-- assertGreaterThanOrEqual($expected, $actual) -- $expected大于等于$actual
-- assertLessThan($expected, $actual) -- $expected 小于 $actual
-- assertLessThanOrEqual($expected, $actual) -- $expected 小于等于 $actual
-- assertSame($expected, $actual) -- 是否完全相同
-- assertInstanceOf($expected, $actual) -- $actual是$expected的实例
+- `assertEquals($expected, $actual)` -- $expected 等于 $actual
+- `assertGreaterThan($expected, $actual)` -- $expected 大于 $actual
+- `assertGreaterThanOrEqual($expected, $actual)` -- $expected大于等于$actual
+- `assertLessThan($expected, $actual)` -- $expected 小于 $actual
+- `assertLessThanOrEqual($expected, $actual)` -- $expected 小于等于 $actual
+- `assertSame($expected, $actual)` -- 是否完全相同
+- `assertInstanceOf($expected, $actual)` -- $actual是$expected的实例
 
 ### 验证
 
-- assertRegExp($pattern, $string) -- 匹配正则表达式
-- assertStringMatchesFormat($format, $string) -- 匹配格式
+- `assertRegExp($pattern, $string)` -- 匹配正则表达式
+- `assertStringMatchesFormat($format, $string)` -- 匹配格式
     - 格式定义字符串中可以使用如下占位符：
     - %e：表示目录分隔符，例如在 Linux 系统中是 /。
     - %s：一个或多个除了换行符以外的任意字符（非空白字符或者空白字符）。
@@ -54,51 +54,51 @@ tags: PHPUnit Test
     - %x：一个或多个十六进制字符。所谓十六进制字符，指的是在以下范围内的字符：0-9、a-f、A-F。
     - %f：浮点数，例如 3.142、-3.142、3.142E-10、3.142e+10。
     - %c：单个任意字符。
-- assertStringEndsWith($suffix, $string) -- $string 以 $suffix 结尾
-- assertStringStartsWith($suffix, $string) -- $string 不以 $prefix 开头
+- `assertStringEndsWith($suffix, $string)` -- $string 以 $suffix 结尾
+- `assertStringStartsWith($suffix, $string)` -- $string 不以 $prefix 开头
 
 ### 文件相关
 
-- assertFileEquals($filename, $filename) -- 文件内容是否相同
-- assertFileExists($filename) -- 文件是否存在
-- assertFileIsWritable($filename) -- $filename 所指定的文件不是个文件且可写
-- assertFileIsReadable($filename) -- $filename 所指定的文件不是个文件且可读
-- assertDirectoryExists($directory) -- $directory 所指定的目录存在
-- assertDirectoryIsReadable($directory) -- $directory 所指定的目录是个目录且可读
-- assertDirectoryIsWritable($directory) -- $directory 所指定的目录是个目录且可写
-- assertIsReadable($filename) -- $filename 所指定的文件或目录可读
-- assertIsWritable($filename) -- $filename 所指定的文件或目录可写
-- assertStringEqualsFile($expectedFile, $actualString) -- $expectedFile 文件内容为 $actualString
-- assertStringMatchesFormatFile($formatFile, $string) -- $string 匹配于 $formatFile的内容所定义的格式`
+- `assertFileEquals($filename, $filename)` -- 文件内容是否相同
+- `assertFileExists($filename)` -- 文件是否存在
+- `assertFileIsWritable($filename)` -- $filename 所指定的文件不是个文件且可写
+- `assertFileIsReadable($filename)` -- $filename 所指定的文件不是个文件且可读
+- `assertDirectoryExists($directory)` -- $directory 所指定的目录存在
+- `assertDirectoryIsReadable($directory)` -- $directory 所指定的目录是个目录且可读
+- `assertDirectoryIsWritable($directory)` -- $directory 所指定的目录是个目录且可写
+- `assertIsReadable($filename)` -- $filename 所指定的文件或目录可读
+- `assertIsWritable($filename)` -- $filename 所指定的文件或目录可写
+- `assertStringEqualsFile($expectedFile, $actualString)` -- $expectedFile 文件内容为 $actualString
+- `assertStringMatchesFormatFile($formatFile, $string)` -- $string 匹配于 $formatFile的内容所定义的格式`
 
 ### XML相关
 
-- assertEqualXMLStructure($expectedElement, $actualElement[, $checkAttributes = false]) -- $actualElement 与 $expectedElement 的 XML 结构相同
-- assertXmlFileEqualsXmlFile($expectedFile, $actualFile) -- $actualFile 与 $expectedFile 对应的 XML文档相同`
+- `assertEqualXMLStructure($expectedElement, $actualElement[, $checkAttributes = false])` -- $actualElement 与 $expectedElement 的 XML 结构相同
+- `assertXmlFileEqualsXmlFile($expectedFile, $actualFile)` -- $actualFile 与 $expectedFile 对应的 XML文档相同`
 - assertXmlStringEqualsXmlFile($expectedFile, $actualXml) --
 $actualXml 与 $expectedFile 对应的 XML 文档相同`
-- assertXmlStringEqualsXmlString($expectedXml, $actualXml) -- $actualXml 与 $expectedXml 对应的 XML文档相同`
+- `assertXmlStringEqualsXmlString($expectedXml, $actualXml)` -- $actualXml 与 $expectedXml 对应的 XML文档相同`
 
 ### json 相关
 
-- assertJsonFileEqualsJsonFile($expectedFile, $actualFile) -- $actualFile 与 $expectedFile 匹配
-- assertJsonStringEqualsJsonFile($expectedFile, $actualJson) -- $actualJson 与 $expectedFile 匹配
-- assertJsonStringEqualsJsonString($expectedJson, $actualJson) -- $actualJson 与 $expectedJson 匹配
+- `assertJsonFileEqualsJsonFile($expectedFile, $actualFile)` -- $actualFile 与 $expectedFile 匹配
+- `assertJsonStringEqualsJsonFile($expectedFile, $actualJson)` -- $actualJson 与 $expectedFile 匹配
+- `assertJsonStringEqualsJsonString($expectedJson, $actualJson)` -- $actualJson 与 $expectedJson 匹配
 
 ### 其他
 
-- assertArrayHasKey($key, $array) -- $array 包含 $key
-- assertClassHasAttribute($attributeName, $className) -- $className::attributeName 存在
-- assertArraySubset($subset, $array[, $strict = '']) -- $array 包含 $subset
-- assertClassHasStaticAttribute($attributeName, $className) -- $className::attributeName 存在
-- assertContains($needle, Iterator|$haystack) -- $needle 是 $haystack的元素
-- assertContainsOnly($type, Iterator|$haystack) -- $haystack 仅包含类型为 $type 的变量
-- assertContainsOnlyInstancesOf($classname, Traversable|$haystack) -- $haystack 仅包含类 $classname的实例`
-- assertCount($expectedCount, $haystack) -- $haystack 中的元素数量是 $expectedCount
-- assertInfinite($variable) -- $actual 是 INF
-- assertInternalType($type, $actual) -- $expected 的类型是 $actual
-- assertObjectHasAttribute($attributeName, $object) -- $object->attributeName 存在
-- assertThat($value, $constraint) -- $value 符合约束条件 $constraint
+- `assertArrayHasKey($key, $array)` -- $array 包含 $key
+- `assertClassHasAttribute($attributeName, $className)` -- $className::attributeName 存在
+- `assertArraySubset($subset, $array[, $strict = ''])` -- $array 包含 $subset
+- `assertClassHasStaticAttribute($attributeName, $className)` -- $className::attributeName 存在
+- ``assertContains($needle, Iterator|$haystack)` -- $needle 是 $haystack的元素
+- `assertContainsOnly($type, Iterator|$haystack)` -- $haystack 仅包含类型为 $type 的变量
+- `assertContainsOnlyInstancesOf($classname, Traversable|$haystack)` -- $haystack 仅包含类 $classname的实例`
+- `assertCount($expectedCount, $haystack)` -- $haystack 中的元素数量是 $expectedCount
+- `assertInfinite($variable)` -- $actual 是 INF
+- `assertInternalType($type, $actual)` -- $expected 的类型是 $actual
+- `assertObjectHasAttribute($attributeName, $object)` -- $object->attributeName 存在
+- `assertThat($value, $constraint)` -- $value 符合约束条件 $constraint
 
 ## 2. 标注
 
