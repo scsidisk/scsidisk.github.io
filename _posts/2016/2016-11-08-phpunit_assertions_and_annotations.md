@@ -89,9 +89,9 @@ $actualXml 与 $expectedFile 对应的 XML 文档相同- **assertXmlStringEquals
 - **assertClassHasAttribute($attributeName, $className)** -- $className::attributeName 存在
 - **assertArraySubset($subset, $array[, $strict = ''])** -- $array 包含 $subset
 - **assertClassHasStaticAttribute($attributeName, $className)** -- $className::attributeName 存在
-- **assertContains($needle, Iterator|$haystack)** -- $needle 是 $haystack的元素
-- **assertContainsOnly($type, Iterator|$haystack)** -- $haystack 仅包含类型为 $type 的变量
-- **assertContainsOnlyInstancesOf($classname, Traversable|$haystack)** -- $haystack 仅包含类 $classname的实例
+- **assertContains($needle, Iterator｜$haystack)** -- $needle 是 $haystack的元素
+- **assertContainsOnly($type, Iterator｜$haystack)** -- $haystack 仅包含类型为 $type 的变量
+- **assertContainsOnlyInstancesOf($classname, Traversable｜$haystack)** -- $haystack 仅包含类 $classname的实例
 - **assertCount($expectedCount, $haystack)** -- $haystack 中的元素数量是 $expectedCount
 - **assertInfinite($variable)** -- $actual 是 INF
 - **assertInternalType($type, $actual)** -- $expected 的类型是 $actual
