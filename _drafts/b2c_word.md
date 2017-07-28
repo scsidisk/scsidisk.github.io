@@ -1,0 +1,102 @@
+信息管理系统的名词和缩写
+=====================
+
+## 系统
+
+- AIS (accounting information system) 会计信息系统
+- BPM Business Process Management业务流程管理
+- BPR (business process reengineering) 业务流程重组
+- CRM (customer relationship management) 客户关系管理
+- CRW (customer relationship management) 客户关系管理
+- DM 需求管理 Demand Management
+- DMS Doctment Management Systems 文档管理系统
+- DRP 分销资源计划(Distribution Resource Planning)
+- DSP 精准营销 Demand-Side Platform
+- DSS (decision support system) 决策信息系统
+- ECS (enterprise collaboration system) 办公自动化系统 -> （企业协作系统 ）
+- EFT (electronic funds transfer) 电子资金转账
+- EIP Enterprise Information Portal 企业信息门户
+- EIS (executive information system) 经理信息系统
+- ERP 企业资源计划（Enterprise Resource Planning） 主要用在财务及物流方面 供应商有SAP等
+- ES (expert system) 专家系统
+- EPS (electronic payment system) 电子支付系统
+- FAQ (frequently asked question) 常见问答列表
+- FBS (functional business system) 企业职能系统
+- FMS (financial management system) 财务管理系统
+- FQ 成品质量管 Finish or Final Quality Contro
+- GMS (games management system) 赛事管理系统
+- HRIS (human resource information system) 人力资源信息系统
+- HRM 人力资源管理
+- IDS (information diffusion system) 信息传播系统
+- IPQ 制程质量管 In-Process Quality Contro
+- KMS (knowledge management system) 知识管理系统
+- MES (Manufacturing Execution System) 生产管理系统/制造执行管理系统
+- MIS (management information support system) 管理信息系统
+- MIS (marketing information system) 营销信息系统
+- MIS（Management Information System）管理信息系统
+- MP 主生产排 Master Production Schedul
+- MR 物料需求计 Material Requirement Plannin
+- MRP (material requirements planning) 物料需求计划
+- MRP (manufacturing resources planning) 制造资源计划
+- OA 办公软件(Office Automation) 日常办公用
+- OD 委托设计与制造 Original Design &amp; Manufacture
+- OE 委托代工 Original Equipment Manufactur
+- OMS (Order Management System) 订单管理系统
+- OQ 出货质量管 Out-going Quality Control
+- OSS (operations support system) 运营处理系统
+- OTPS (online transaction processing system) 在线事务处理系统
+- PCS (process control system) 过程控制系统
+- PDM 产品数据管理(Product Data Management)
+- PLM 产品生命周期管 Product Lifecycle Management，供应商有UGS等。
+- PM Project Management项目管理
+- POS (point-of-sale) 零售点
+- PRM (partner relationship management) 业务伙伴关系管理
+- RTP (real-time personalization) 实时的个性化
+- SCM (supply chain management) 供应链管理
+- SIS (strategic information system) 战略信息系统
+- SRM 供应商关系管理 Supplier Relationship Managemen
+- SSC (财务)共享服务中 Shared Services Center
+- TMS 运输管理系 Transportation Management Syste
+- TPS (transaction processing system) 事务处理系统
+- VOC 媒体洞察 Voice of Customer
+- WMS (Warehouse Management System) 仓库管理系统
+- BI 商业智能 Business Intelligenc
+
+
+- -- (competitive strategy) 竞争战略
+- -- (computer-sided process planning) 计算机辅助工艺设计
+- -- (customer-focused business) 以客户为中心的企业
+- -- (e-business) 电子化
+- -- (electronic commerce) 电子商务
+- -- (enterprise application architecture) 企业应用体系结构
+- -- (information system model) 信息系统模型
+- -- (knowledge-creating company) 知识创造型企业
+- -- (leverage investment in information technology) 发挥信息技术投资的杠杆效应
+- -- (lock in customers and suppliers) 锁定客户与供应商
+- -- (one-to-one marketing) 一对一营销
+- -- (online HRM system) 在线HRM系统
+- -- (sales force automation) 销售人员自动化
+- -- (transaction processing cycle) 事务处理周期
+- AI 人工智能
+- B2B 企业对企业 -> 电子商务
+- B2C 企业对消费者 -> 电子商务
+- C2C 消费者对消费者 -> 电子商务
+- CAD (computer-aided design) 计算机辅助设计
+- CAE (computer-aided engineering) 计算机辅助工程
+- CAPP 计算机辅助工艺过程设计(Computer Aided Process Planning)
+- CIM (computer-integrated manufacturing) 计算机集成制造
+- CIS (cross-functional information system) 具有交叉功能的信息系统
+- EAI (enterprise application integration) 企业应用集成
+- EC (electronic commerce) 电子商务
+- EC 电子商务平 Electronic Commerce Platfor
+- EDP 电子数据处理
+- ES 专家系统
+- ESC (enterprises collaboration system) 企业协作系统
+- IIS (interenterprise information system) 跨企业的信息系统
+- IS (information system) 信息系统, 信息架构，信息传递，信息利用等有关系的系统。
+- IS (specialist) 信息系统专家
+- IT (information technology) 信息技术, 管理和处理信息所采用的各种技术的总称。
+- MD 主数据管理系 Master Data Danagement
+- SET (secure electronic transaction) 安全电子交易
+- URP 联盟体资源计划(Union Resource Planning的简称)
+- URP (Union Resource Planning) 联盟体资源计划, 新一代面向以品牌企业为核心的经济资源联盟体的商务管理模式，它以- 资源共享和利益共享为基础，以联盟体资源优化为目标，实时传递联盟体成员之间的信息，是经济资源联盟体有效协同的工具。
