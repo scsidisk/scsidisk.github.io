@@ -51,5 +51,11 @@ tags: MacOSX, Mail
 
 ### 4. 其他客户端
 
-- airmail 需要安装1.5版本[beta] S/MIME 插件 http://airmailapp.com/smime/ 目前有bug
-- 雷鸟没有用过，不太清楚
+- Airmail 需要安装1.5版本 S/MIME 插件 https://rink.hockeyapp.net/apps/032b578f7c9994e38e07bd6c859d9d1e
+- Thunderbird(雷鸟) [设置方法](http://kb.mozillazine.org/Installing_an_SMIME_certificate)
+
+### 使用邮件签名或者邮件加密的方法
+
+Thunderbird有一个插件Enigmail支持对 GnuPG 加密方法的调用，而另外一个选择则是S/MIME方式。目前大部分非网页方式的邮件客户端都提供S/MIME的加密方式，所以兼容性还算是不错。我们需要做的只是准备一个密钥证书，然后导入Thunderbird即可。当然，你可以自己制作一个证书，但是别人未必会承认这个证书，我们最好还是能使用比较权威的机构提供的证书。
+
+我目前还是倾向于使用S/MIME方式，而不是GnuPG方式，因为Google后发现似乎不同的PG系列支持软件在各种不同平台的邮件客户端上有一定的不兼容问题，主要是表现在加密了的邮件在解码的时候；而相对来说，S/MIME方式是受到更广泛支持的标准。
