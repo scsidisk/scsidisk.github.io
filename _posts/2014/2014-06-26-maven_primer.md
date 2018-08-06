@@ -82,10 +82,9 @@ http://maven.oschina.net/help.html
 maven 目标和 ant 的 target 差不多。在命令行中执行下面的命令来建立我们的 hello world 项目
 
 ```
-$ mvn archetype:generate -DgroupId=com.mycompany.helloworld -DartifactId=helloworld -Dpackage=com.mycompany.helloworld -Dversion=1.0-SNAPSHOT
-
-或参考maven手册
-mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=helloworld -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=web1 -DarchetypeArtifactId=maven-archetype-site-simple -DinteractiveMode=false
+mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=web2 -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false
 ```
 
 <div style="display:none">
